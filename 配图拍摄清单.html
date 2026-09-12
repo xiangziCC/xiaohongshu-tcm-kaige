@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="HWR5roOWdoH3IYIAScfeJ8">
+<head data-page-node-id="BdrriX7EBlwwVIg9j1uoqv">
+<meta charset="UTF-8" data-page-node-id="G9IWGDYLuYp8TpA2iOVEqt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="icNeW0lEgLrT64O86E6BiB">
+<title>小红书·配图拍摄清单｜学中医的凯</title>
+<style>
+  :root{
+    --bg:#faf8f3; --ink:#2c2c2c; --green:#2d5f4f; --green-d:#1f4438;
+    --red:#c0392b; --line:#e3ddd0; --card:#ffffff; --muted:#8a8276;
+    --gold:#b5893f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--ink);line-height:1.75;font-size:15px}
+  a{color:inherit}
+  /* 顶部封面条 */
+  .hero{background:linear-gradient(135deg,var(--green-d),var(--green));color:#fff;padding:30px 26px 24px}
+  .hero h1{font-size:24px;font-weight:700;letter-spacing:1px}
+  .hero .sub{margin-top:8px;color:#d8e6df;font-size:14px}
+  .hero .tags{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
+  .hero .tags span{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);padding:4px 10px;border-radius:20px;font-size:12.5px}
+  /* 导航 */
+  .nav{position:sticky;top:0;background:var(--green);z-index:50;display:flex;flex-wrap:wrap;gap:2px;padding:0 14px;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+  .nav a{color:#eaf3ee;text-decoration:none;padding:12px 13px;font-size:13.5px;white-space:nowrap;border-bottom:3px solid transparent}
+  .nav a:hover{background:rgba(255,255,255,.1);border-bottom-color:var(--gold)}
+  /* 进度条 */
+  .progress{position:sticky;top:46px;z-index:49;background:#fff;border-bottom:1px solid var(--line);padding:10px 26px;display:flex;align-items:center;gap:14px;font-size:13.5px}
+  .progress .bar{flex:1;height:10px;background:#ece7da;border-radius:6px;overflow:hidden;max-width:360px}
+  .progress .bar i{display:block;height:100%;background:var(--green);width:0;transition:width .3s}
+  .progress b{color:var(--green-d)}
+  .progress .reset{margin-left:auto;color:var(--muted);font-size:12.5px;cursor:pointer;text-decoration:underline}
+  /* 容器 */
+  .wrap{max-width:920px;margin:0 auto;padding:26px 22px 80px}
+  section{margin-bottom:38px;scroll-margin-top:96px}
+  h2{font-size:20px;color:var(--green-d);border-left:5px solid var(--gold);padding-left:12px;margin-bottom:6px}
+  h2 .en{font-size:12px;color:var(--muted);font-weight:400;margin-left:8px}
+  .lead{color:var(--muted);font-size:13.5px;margin:6px 0 16px}
+  /* 卡片 */
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+  .card h3{font-size:16.5px;color:var(--green-d);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+  .card h3 .no{background:var(--green);color:#fff;width:26px;height:26px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:13px;flex:none}
+  .card .pin{font-size:12px;background:#f3ede0;color:var(--gold);padding:2px 8px;border-radius:10px;font-weight:600}
+  /* 表格 */
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:4px}
+  th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+  th{background:#f3efe6;color:var(--green-d);font-weight:600}
+  td code{background:#f1ece1;padding:1px 6px;border-radius:5px;font-size:12.5px;color:var(--green-d)}
+  /* 9图格子 */
+  .grid9{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0}
+  .grid9 .g{border:1px dashed var(--line);border-radius:8px;padding:9px;font-size:12.5px;background:#fcfbf7;min-height:74px}
+  .grid9 .g b{color:var(--gold);display:block;font-size:12px;margin-bottom:3px}
+  /* 清单勾选 */
+  .check{display:flex;align-items:flex-start;gap:10px;padding:9px 12px;border:1px solid var(--line);border-radius:9px;margin-bottom:8px;background:#fff;cursor:pointer;font-size:14px}
+  .check:hover{background:#fbf9f3}
+  .check input{margin-top:5px;width:17px;height:17px;accent-color:var(--green);flex:none;cursor:pointer}
+  .check .meta{color:var(--muted);font-size:12.5px}
+  .check.done{opacity:.62}
+  .check.done .txt{text-decoration:line-through}
+  /* 复制按钮 */
+  .copy{background:var(--green);color:#fff;border:none;padding:7px 13px;border-radius:8px;font-size:12.5px;cursor:pointer;margin-top:4px}
+  .copy:hover{background:var(--green-d)}
+  .copy:active{transform:scale(.97)}
+  .copy.ok{background:var(--gold)}
+  /* 红线 */
+  .danger{border:2px solid var(--red);background:#fdf3f1;border-radius:12px;padding:18px 20px}
+  .danger h3{color:var(--red);font-size:16px;margin-bottom:12px}
+  .danger ul{list-style:none}
+  .danger li{padding:7px 0 7px 26px;position:relative;border-bottom:1px dashed #f0d9d4;font-size:14px}
+  .danger li:last-child{border-bottom:none}
+  .danger li:before{content:"✕";position:absolute;left:0;top:7px;color:var(--red);font-weight:700}
+  .tip{background:#f3efe6;border-left:4px solid var(--gold);padding:10px 14px;border-radius:0 8px 8px 0;font-size:13px;color:var(--green-d);margin-top:10px}
+  .foot{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}
+</style>
+</head>
+<body data-page-node-id="KynO2mFhn6MZpQQ0xmfqxz">
+
+<div class="hero" data-page-node-id="GXnX4bWDQNRbX6ubq4KlDJ">
+  <h1 data-page-node-id="GvuoLpUJmrX1qFNbs39f7Y">小红书 · 配图拍摄清单</h1>
+  <div class="sub" data-page-node-id="oqirBF90mzovaEDqCrGWas">账号「学中医的凯」｜从互联网人转行中医师承的全心路历程</div>
+  <div class="tags" data-page-node-id="vYaveorhLWHi6fJOrhtZ7t">
+    <span data-page-node-id="Mx4K9MGdp9XOUl7Ycf4AkQ">不露脸 · 只露手和桌面</span>
+    <span data-page-node-id="sB6M7hJGMBfygE8sx7O1yq">手写体 + 实物桌面 + 局部特写</span>
+    <span data-page-node-id="ByBHznRAVbf8buqqdwZeW7">靠文字密度和真实感取胜</span>
+    <span data-page-node-id="950H7yEpeh3S7HHBBe6Cu2">双击可看 · 拍时旁边开着</span>
+  </div>
+</div>
+
+<nav class="nav" data-page-node-id="lY8RvMNgsxOh0FK7wYEA4f">
+  <a href="#door" data-page-node-id="rUppAuwxkMuHn96WLyRAJz">门面三件套</a>
+  <a href="#tpl" data-page-node-id="8VNTD2WfUBPdHxXrApf9vz">9 图通用模板</a>
+  <a href="#posts" data-page-node-id="rfPLUAAZz4ewDC8a82xvxN">5 篇具体配图</a>
+  <a href="#lib" data-page-node-id="hyOGTId23q4fkf9LUA08aG">素材库一次拍够</a>
+  <a href="#red" data-page-node-id="nBAMp1vVhnYCPYGtM8PSHF">图上红线</a>
+  <a href="#todo" data-page-node-id="7vatEL6h7VjVdseIrgDH27">拍摄进度勾选</a>
+</nav>
+
+<div class="progress" data-page-node-id="1NXpuLM6vKf6acQpUbjxMm">
+  <span data-page-node-id="rywJtFGINPCBkpRG2u9U2z">拍摄进度 <b id="pnum" data-page-node-id="btHReOrj4qnKRhPGKoIONJ">0/0</b></span>
+  <div class="bar" data-page-node-id="bQDbw5aopXyKpEDZMRRASP"><i id="pbar" data-page-node-id="1UyyapMgEZoCPjaFUnN6jP"></i></div>
+  <span class="reset" onclick="resetTodo()" data-page-node-id="oAsC7uPCMQlYpdX4WAO3ED">清空勾选</span>
+</div>
+
+<div class="wrap" data-page-node-id="znq8X5P7torFtEL4f5lz2A">
+
+  <!-- 门面三件套 -->
+  <section id="door" data-page-node-id="1z2qRe8QrLXjaHBOCh8TQJ">
+    <h2 data-page-node-id="eRyavnpyv8jc0zGCGC5usg">一、门面三件套<span class="en" data-page-node-id="5RJSsAb7GqxF9ctFKBLMHD">别人点不点进你主页，看这三张</span></h2>
+    <p class="lead" data-page-node-id="96ctQzhkgLhiUu6g4lyPfT">头像 + 主页背景图 + 置顶笔记封面。宁少勿糙，这两张图决定「刷到你的人信不信你是真中医」。</p>
+    <div class="card" data-page-node-id="2LPm7Zjm6HYTcy9WJjE2rP">
+      <table data-page-node-id="a0cedrCFklQl353BCnDLOc">
+        <tr data-page-node-id="muylyvlOxfM9NLp177ARsn"><th style="width:90px" data-page-node-id="jC3O0uaVpSv65sz6ndB1NL">位置</th><th data-page-node-id="R3ZLMITvhbDM6fI0l8Wk07">发什么</th><th data-page-node-id="LrlOOxDLwRqYLGfQCeyLm5">拍法</th><th style="width:130px" data-page-node-id="GQzBuZw8hCajHYz5owWXWa">注意</th></tr>
+        <tr data-page-node-id="AxEvsbB0fErHXlXK0HALqm">
+          <td data-page-node-id="fTsti29pByobULiRJ1HO0H"><b data-page-node-id="WUo5kBCrgUoLSAJyxYGdIl">头像</b></td>
+          <td data-page-node-id="NoQsIbWgJi1T7sIdDwKMUo">一只手 + 一本翻开的中医书 / 手写条文的一角</td>
+          <td data-page-node-id="yAyjC5BdgVxN069NL5jAhF">俯拍桌面，手入镜写字或扶书，<b data-page-node-id="4Lvm6e9DaiMsmGf6BpXbGw">不拍脸</b></td>
+          <td data-page-node-id="ZkB3wMUsUAhDRYmAic02r2">别用网图；5 篇都用同一只手，强化记忆</td>
+        </tr>
+        <tr data-page-node-id="LZFDHG1ERfPlBT4SKA61kG">
+          <td data-page-node-id="A8AlVKHKjuwu1A2rBmhAxH"><b data-page-node-id="UDXRYiknaHjxupOvrmH7eb">主页背景图</b></td>
+          <td data-page-node-id="JmiyqhUVkxCmGQRTFXNxgw">书桌全景：摊开的《黄帝内经》/跟诊笔记 + 毛笔或钢笔 + 一杯茶</td>
+          <td data-page-node-id="GILW28cT3QQ0krO7RND9Qr">横版 16:9 俯拍，留白多、干净</td>
+          <td data-page-node-id="gQL9lPAptcFfImwsEN2iBJ">别出现师父姓名 / 医院 LOGO / 联系方式</td>
+        </tr>
+        <tr data-page-node-id="2RDuLHSVlZgKDMjVqj6pTY">
+          <td data-page-node-id="4C2wqYoqpdj6MADvZSssyP"><b data-page-node-id="P2bQUmVcmtbgY0Z2KKpDBs">置顶封面</b></td>
+          <td data-page-node-id="K8EHo4QDl9RswkVnUt7OHq">第 1 篇「我，产品总监，在中医考试上栽了」封面</td>
+          <td data-page-node-id="ACdPuan8D657auQEliZfsp">用《封面生成器.html》做，大字标题 + 手写体副标</td>
+          <td data-page-node-id="n5H9hGDHdHALFQmiNgMCUB">置顶 = 门面担当，必须最抓眼</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- 9图模板 -->
+  <section id="tpl" data-page-node-id="e5P2LkTCGW6zxPM6QsGOmI">
+    <h2 data-page-node-id="bW8FCD8lLyDBhMYUdmFcF7">二、单篇笔记 9 图通用模板<span class="en" data-page-node-id="oDg4W4Dqx8DOTCAs6AHooH">钩子→证据→干货→收尾</span></h2>
+    <p class="lead" data-page-node-id="kiaE63Ar6UsOwQyj3Lrga8">小红书单篇最多 9 图。下面这套结构 5 篇通用，按顺序填，读者滑到第 9 张刚好被引导互动。</p>
+    <div class="card" data-page-node-id="nvL20SUVmr2aDVLCct0f84">
+      <div class="grid9" data-page-node-id="RAcNEdBCuXqvA1UDdYpoFl">
+        <div class="g" data-page-node-id="AyX9NPKEQggSjLqx6j4gXF"><b data-page-node-id="pTGDZ68rWj0rsQBg0Jjqqv">图1 · 封面</b>大字痛点 / 反差标题（生成器做）</div>
+        <div class="g" data-page-node-id="EKwjYfusuTRYmnA2iGwjyS"><b data-page-node-id="h0LZK53949LZoWYrwhp3n4">图2 · 结论</b>一句话讲清这篇价值</div>
+        <div class="g" data-page-node-id="7Jp1rIbUvoqldAVfSfzhG4"><b data-page-node-id="dlhYH2dunuBCuC0YwZt3za">图3 · 证据</b>手写笔记 / 原文截图 / 时间线</div>
+        <div class="g" data-page-node-id="UrHzrNea7c5emsV3TMv8S3"><b data-page-node-id="YJU7OlFeBAF1FR5kOgSZpe">图4 · 证据</b>露手实拍故事图</div>
+        <div class="g" data-page-node-id="5tEoFixT7n3MDW49Kff4FB"><b data-page-node-id="uBLEJ1SYw9JHGD2J77DlAj">图5 · 故事</b>经历片段特写</div>
+        <div class="g" data-page-node-id="XbdSoO9fK2YEf6d7dr1Csk"><b data-page-node-id="uHrL2xiG1wRleZMgAmtvHg">图6 · 故事</b>经历片段特写</div>
+        <div class="g" data-page-node-id="JiMKcJzXOs46SvQDDP1ubf"><b data-page-node-id="IuKemAtDLAY3qA8HdqvfZP">图7 · 干货</b>清单 / 步骤（白底黑字）</div>
+        <div class="g" data-page-node-id="H816Py0gy0NiY6doKpH5ZI"><b data-page-node-id="HcEAVosJcuOPDoGLTdW45o">图8 · 干货</b>避坑要点</div>
+        <div class="g" data-page-node-id="2vnTwyrdTbf7DO26CXoCeP"><b data-page-node-id="OYG1onnIL5DaVRDBujS7Xz">图9 · 钩子</b>「你也在转行吗？评论区聊聊」</div>
+      </div>
+      <div class="tip" data-page-node-id="Es6bM9eoz9z1OunnNZ4As0">证据 / 故事图优先用「手写体 + 露手实拍」，别用网图；干货图用白底黑字排版，截图清晰能存。</div>
+    </div>
+  </section>
+
+  <!-- 5篇具体配图 -->
+  <section id="posts" data-page-node-id="hSlCgtrh7JuuN3cxPsy8tp">
+    <h2 data-page-node-id="cbfhgvL616li4PbspFT9rg">三、5 篇具体配图<span class="en" data-page-node-id="x3FJLyRqtdyvpCrLwzK8Er">逐篇对照，拍时打勾</span></h2>
+    <p class="lead" data-page-node-id="cP8S00gi9lZp0YpeN4OzfW">每篇给「封面 + 9 图内容 + 拍法」。点卡片右上「复制本篇清单」可贴到手机备忘录带着拍。</p>
+
+    <!-- 篇1 -->
+    <div class="card" data-page-node-id="2UT5GHomMNHVXTLJilTsrj">
+      <h3 data-page-node-id="jjJchxU0XCxSN8mSrpxLFV"><span class="no" data-page-node-id="2vBpTcSLq7Jh2NfClROIF2">1</span>置顶 · 我，产品总监，在中医考试上栽了 <span class="pin" data-page-node-id="XQwxxF90jGu6ImuzbZHz53">置顶</span></h3>
+      <table data-page-node-id="tpenWBBGbbujDQEPIcrMVB">
+        <tr data-page-node-id="KIUC8rzhTXW6XaeyOLg1Yd"><th style="width:74px" data-page-node-id="EqQAr9xwG7TREpHPtYgWHC">图位</th><th data-page-node-id="xDQ0lSxngQPaHxMVEjWFRm">内容</th><th data-page-node-id="85cJVnWW1JU6B0IdXDRbDv">拍法</th></tr>
+        <tr data-page-node-id="TOPfNYOBd25Umiy6otHRzd"><td data-page-node-id="U1xuGxPKUwf0LUkrtLSerL">封面</td><td data-page-node-id="DjXnM2uLzARVBowAfjCwvZ">大字「上市公司产品总监，栽在中医考试上」</td><td data-page-node-id="MKUZAD6TtHBNvnGVj9ZB5D">生成器做</td></tr>
+        <tr data-page-node-id="Lw7qTSNo2rerN5aDG7YBgG"><td data-page-node-id="z5qdHkKPt3cljNtKVZKRGs">图2</td><td data-page-node-id="mrZjCm2L9aSGHFplRwDFDq">结论：「带 7 人过，我自己挂了——我在前面替你们探路」</td><td data-page-node-id="BWEbZbFYmqf47WlN1aHcCT">手写便签</td></tr>
+        <tr data-page-node-id="TN0fkGgPLPx5Gm8gNOhUsU"><td data-page-node-id="nnIdZKGwIxigCbRARDO72y">图3</td><td data-page-node-id="BQEcyehBtQTJsBdHTNejrz">离职证明 / 工牌（打码）</td><td data-page-node-id="1HvzAwBfCTF8PyeRhiUdis">俯拍，关键信息涂掉</td></tr>
+        <tr data-page-node-id="IEseluLDcZqm6IkqNPfXmP"><td data-page-node-id="keQbF47xfrRLyBrCZYTzcx">图4</td><td data-page-node-id="IAPiSnVLxWvlbOtk4D6wh7">考试倒计时手写（出师考核 2028）</td><td data-page-node-id="7En1TzZnxzmNrYBtO4Jxv0">露手写便签</td></tr>
+        <tr data-page-node-id="JtUB2207vBNyE2hBgHugZZ"><td data-page-node-id="lyp00Fzv4rP9dB2JTqqdDy">图5</td><td data-page-node-id="O32ForwqA5MdYCwo58XkBY">「带过 7 人全过」手写记录</td><td data-page-node-id="ezUEPsF3aGeWXIBwGhMTut">露手</td></tr>
+        <tr data-page-node-id="PRPu3hpkdfGaobh38gpXQj"><td data-page-node-id="12rGZ06kkpB6k4NGF49tJR">图6</td><td data-page-node-id="YsuXw9WSKLr7z04SOtkacc">自己挂科批语「无临床经验」手写还原</td><td data-page-node-id="qlAvGBRMgwZCPFImuVEmU7">露手（虚构还原，非真卷）</td></tr>
+        <tr data-page-node-id="wnHlxdHNMO8Br7rgbRpFjm"><td data-page-node-id="viBEU87Ir4x5bRXzqBKWlO">图7</td><td data-page-node-id="zELzSSEZTktMoZHO7ZNOIJ">干货：师承 vs 确有专长 区别清单</td><td data-page-node-id="NRA2PGjTkPuSN5mPuJQft0">白底黑字</td></tr>
+        <tr data-page-node-id="inHUAQG17QqgNsABboVk8e"><td data-page-node-id="UH090GBTslfLPp55HhKFOh">图8</td><td data-page-node-id="UCahuezINELm0hkkGI22nQ">干货：转行中医 3 条必经路</td><td data-page-node-id="uv4JLOa3Z834CAZFFtgWgX">白底黑字</td></tr>
+        <tr data-page-node-id="b8mEkAxaqK7xsCg2OsDlHl"><td data-page-node-id="IpfFlEDGTzfDMlH6emqSpJ">图9</td><td data-page-node-id="KLhnXe7VGpDNDaYlPYgCO7">钩子：「你也在纠结转行吗？聊聊」</td><td data-page-node-id="UAJy2IZgtEPOPPbxDLPdkk">手写体</td></tr>
+      </table>
+      <button class="copy" onclick="copyPost(1)" data-page-node-id="tbw0PKpjk3OXD44WzS6Azu">复制本篇清单</button>
+    </div>
+
+    <!-- 篇2 -->
+    <div class="card" data-page-node-id="HE5jRSafkfK0l9R0HWQGvG">
+      <h3 data-page-node-id="ySTjcZtygWkm6maWjIxBbi"><span class="no" data-page-node-id="xApDtcpHqyvimHQpJwbvx7">2</span>两块九 · 口罩期间全家阳了的那副药</h3>
+      <table data-page-node-id="1YuWDcy4evSJtp5sFjwaWv">
+        <tr data-page-node-id="tJsVeYdVuiUDRTjPEmTWm8"><th style="width:74px" data-page-node-id="OexjsOvigtNeubPRZEvv8z">图位</th><th data-page-node-id="nyci98BbNVxxDzMFzFgQQH">内容</th><th data-page-node-id="7lxzAUR1Ad8h9vkvQLfF3f">拍法</th></tr>
+        <tr data-page-node-id="NMfn4NTk22wCaTRWlCS7hJ"><td data-page-node-id="JJgMkwYMSeWk09XenHGQUS">封面</td><td data-page-node-id="VCUwutjqEZ6sUqcs5fOWKl">大字「两块九毛钱，全家烧退了」</td><td data-page-node-id="dvrXulMlGELZkpivcZEa0G">生成器做</td></tr>
+        <tr data-page-node-id="HhLYM1w4pecG2BvDg6BzHk"><td data-page-node-id="rbu2Uj6CtnyE81vQGPBHif">图2</td><td data-page-node-id="zaoAlxnGgqaHyd51udSaKj">结论：「口罩期间，药店被买空，找朋友开的方」</td><td data-page-node-id="eZ5TGvLu1HL5TfCtZiWfYL">手写便签</td></tr>
+        <tr data-page-node-id="C4D7NHIt33r5mUX2XrTrXx"><td data-page-node-id="GGz4yf8hAmMuA1PEAokCHH">图3</td><td data-page-node-id="qtNLgIg7JblBgRloFhwCpU">药方手写特写——<b data-page-node-id="Xoo9dDNJQcMS9KHjdjBb8K">只写「2.9 元」和「口罩期间」，不写方子组成</b></td><td data-page-node-id="8bDh0BRGJrGc5HxPJPrTA1">露手（重点：不暴露药味）</td></tr>
+        <tr data-page-node-id="XrGpvrOryE0K6Jmg5zw2Em"><td data-page-node-id="Mz5vo5QYlc3BM23Q30zC7b">图4</td><td data-page-node-id="M6LxvwZgNtKNufvttUl0LE">全家阳了那天的日历圈</td><td data-page-node-id="WJzEja6sTDgzFggCSTUTmD">实拍 / 手写</td></tr>
+        <tr data-page-node-id="RIRkCWuynYh1RG60CnMGUP"><td data-page-node-id="HUoigEgRYZy81Sqq12EEzf">图5</td><td data-page-node-id="oAfNIPy0AWmkIV5VRmbtkW">空药袋 / 饮片包装（无字特写）</td><td data-page-node-id="senqD2ZCDD8gwq1UXW8qb7">俯拍</td></tr>
+        <tr data-page-node-id="ilM4nFozEZXWlat9aPfwZG"><td data-page-node-id="sxC6OUt6jFVUgEAzcFeK3f">图6</td><td data-page-node-id="Z9UjxDAcSKU0edjeKmHTat">时间线：下午喝 → 当晚退烧</td><td data-page-node-id="eH3hFUC6sIVYyFumvvJ8F5">手写便签</td></tr>
+        <tr data-page-node-id="HHG6zxdGca2vlSjBm1xtML"><td data-page-node-id="YlLX1SQFmkgMnT9XhUY0ni">图7</td><td data-page-node-id="S3zNEnQ1m1eXDHUAXKBSN3">干货：普通人学中医的第一课是「先信中医」</td><td data-page-node-id="j2mHevqdqxyiYOcMEZfYDQ">白底黑字</td></tr>
+        <tr data-page-node-id="kKFCTLHDBkT9ZGpE09jHPY"><td data-page-node-id="aQYIz3pQuPZEOP2YIo47dD">图8</td><td data-page-node-id="y0HpeCw3uAS0dIY5LjIa6e">避坑：别自己照方抓药，辨证是底线</td><td data-page-node-id="H8dtRFf0MopI0EKloADKPf">白底黑字（合规）</td></tr>
+        <tr data-page-node-id="utig71UJqSRYCUQmbPEYef"><td data-page-node-id="dewmfNG6ZqZhSig5H4YL6J">图9</td><td data-page-node-id="ZSFGI1uggKhlrD8piZczcp">钩子：「你家人阳了怎么扛过来的？」</td><td data-page-node-id="3EiOrFNPDRlIfDUnOnldxX">手写体</td></tr>
+      </table>
+      <button class="copy" onclick="copyPost(2)" data-page-node-id="tD8S90OeIQCG6VgX9rmua0">复制本篇清单</button>
+    </div>
+
+    <!-- 篇3 -->
+    <div class="card" data-page-node-id="JEYLaFG2Eb20WCnhHr6PKS">
+      <h3 data-page-node-id="SG4gIa1lXIYMiLcjL0Nq78"><span class="no" data-page-node-id="L3QEq4ZYyLe1ggwpIfSWPt">3</span>考官在我卷子上写了一句话，我是偷看到的</h3>
+      <table data-page-node-id="vcUb20JTj0oadJeReTVMr7">
+        <tr data-page-node-id="zRiAMfHapaCBe9kkil9bDJ"><th style="width:74px" data-page-node-id="J1vYFAjJ8ItSBrWPDYH3cQ">图位</th><th data-page-node-id="32L6X6pOFybA9YYuJnnijH">内容</th><th data-page-node-id="8ar7q5LOYjuBDcwDYa1nM5">拍法</th></tr>
+        <tr data-page-node-id="TVL4VwW1grwwuLnGdHoWIS"><td data-page-node-id="UePG51WRQuHlAU8TyVGTai">封面</td><td data-page-node-id="i89FriP9HMxb6BusdV2o09">大字「考官的得分卡，我是偷看的」</td><td data-page-node-id="XZbeX78ULlndz36JHZlDWW">生成器做</td></tr>
+        <tr data-page-node-id="pkVwEmWBD9RjqOvnEj1XlA"><td data-page-node-id="AjRkvAFGBIjgGs5ocz3duT">图2</td><td data-page-node-id="8PNc8mO4nCqlF4Qru5PUF8">结论：技能考试是<b data-page-node-id="2hq3DsDAif68pBlXjPGUUJ">面试</b>，全程不动笔，考官持得分卡打分</td><td data-page-node-id="DHD07AKVkciCZACzw4hfc5">手写便签</td></tr>
+        <tr data-page-node-id="S2pi50VsCgTMkE8BoUhtLA"><td data-page-node-id="icdg6ogdZ9jxx134URdc14">图3</td><td data-page-node-id="XYbCtIoXpBaxe4kVGMOaw0">手绘「得分卡」示意图（虚构，不拍真卷）</td><td data-page-node-id="uTbz31E12i4GnDIHB2pmRN">露手画</td></tr>
+        <tr data-page-node-id="lAAqyREWEC7k7l7botWLrd"><td data-page-node-id="AjZlZFXIl5Bxurava8V3Yo">图4</td><td data-page-node-id="YgShpvkb1z5fnRRBPd2Vz4">面试流程：考官问 → 你答 → 打分（你看到不成绩）</td><td data-page-node-id="9EeHgGzoRYy56Uw5PFAEMm">手写流程图</td></tr>
+        <tr data-page-node-id="QagxtlqNku6f5kbdGSAvc5"><td data-page-node-id="Bh4ATBGQbCQDBhwKgAk3ZC">图5</td><td data-page-node-id="peAM9W37Ny3ad2gipDnrV7">志愿者引导出教室、路上偷看得分卡（还原）</td><td data-page-node-id="2I991QFFC4MA916WRFzmOQ">露手 / 场景手绘</td></tr>
+        <tr data-page-node-id="bVtTZO7r7hDAOmitMhBy3V"><td data-page-node-id="kLZYS0HPDstRWGz7OPEEia">图6</td><td data-page-node-id="1QQW3kImZEYkWh609tpZoo">批语「无临床经验」手写还原</td><td data-page-node-id="RLI84nWXnLaz8YsHcexAVY">露手</td></tr>
+        <tr data-page-node-id="nWAh2QcXCWXeuRyg4t1h1L"><td data-page-node-id="7bh6MV0VA2dAn5YAN4eFD2">图7</td><td data-page-node-id="Zrg6BIysaaO3j4fGHY1KPJ">干货：技能考试考什么（六经辨证 / 方歌 / 临床问答）</td><td data-page-node-id="Vz5pjW0tmZeZlQBmCVuW0t">白底黑字</td></tr>
+        <tr data-page-node-id="ZJYyzlRvNx1dFgsYZ9k3MK"><td data-page-node-id="RWYsL8eujCQBSBulQKRaCg">图8</td><td data-page-node-id="0Frr8jMqQkvyylBNDN8g50">避坑：别信「包过」，考官手里的卡最诚实</td><td data-page-node-id="OixKKOa9vYamwzKzskHH1o">白底黑字</td></tr>
+        <tr data-page-node-id="GKAW9O9vuOhYRjFjVN1qD7"><td data-page-node-id="7myYCHoYFEoyIb6IgWvPCf">图9</td><td data-page-node-id="oW1XKhXT4BqPmOhAMDMBeH">钩子：「你技能考挂过吗？」</td><td data-page-node-id="6Jg0IMKaRAS2tpWZPGYUiC">手写体</td></tr>
+      </table>
+      <button class="copy" onclick="copyPost(3)" data-page-node-id="IaN122F5kxJYOawjmxpnaO">复制本篇清单</button>
+    </div>
+
+    <!-- 篇4 -->
+    <div class="card" data-page-node-id="DfDiHZXfDovg5Q9WaVEzzV">
+      <h3 data-page-node-id="s8i9KfoUendWA2On7nookP"><span class="no" data-page-node-id="NQMWw5QcWVcVF1mHHQckRe">4</span>我差点交 5 万块智商税</h3>
+      <table data-page-node-id="6py7Ux7ei6BFYrFDjLnXGp">
+        <tr data-page-node-id="dio1G14BTKVCTXdBNyxeKS"><th style="width:74px" data-page-node-id="vHK56yxs2OHw6tPTmxZ5dp">图位</th><th data-page-node-id="i0pPFBDtGLm6ko1Ix476ew">内容</th><th data-page-node-id="08duEmZq6EQEKiazZ04AVY">拍法</th></tr>
+        <tr data-page-node-id="LeeIwDP309V0QZOXsQgMPB"><td data-page-node-id="L233lRfEmWwrqtxGNkUZCB">封面</td><td data-page-node-id="ELCffXfoQ3TTKvQ8B6TFAc">大字「5 万块，我差点交了」</td><td data-page-node-id="p3XeC3Hnob9wk5QtbsxTfH">生成器做</td></tr>
+        <tr data-page-node-id="m3NHyJtGW1kgEHFg5gIAKR"><td data-page-node-id="MKpf6wy36j22ks001oeXge">图2</td><td data-page-node-id="RGnH31w6KUBhqdjWBv74DH">结论：转行中医的坑，比教材还厚</td><td data-page-node-id="0mbfYUv2ohFOKy1ZgkQhDy">手写便签</td></tr>
+        <tr data-page-node-id="xoV0PYVr05DUiPJMD8Ojy3"><td data-page-node-id="HWYdBeviUZgEtc6ZDkjT2c">图3</td><td data-page-node-id="tsagJSO5GyRUH6FVKYk6tY">机构宣传单（打码，不点名）</td><td data-page-node-id="AltXAT3jTupzLE18pb6rwF">俯拍涂掉机构名</td></tr>
+        <tr data-page-node-id="Kqg5CJTzIBHZEkqaBdRqJX"><td data-page-node-id="p3allMDeFaBeZaia2tqiH4">图4</td><td data-page-node-id="AZU4rMThGGUUZaTGbiHCQ5">缴费记录（打码）</td><td data-page-node-id="r7N0aNt3CjFwZKF9m22e6O">实拍涂掉</td></tr>
+        <tr data-page-node-id="eBOdFepHeErmlQN0NC2XQE"><td data-page-node-id="2yV7J43vp2ChZcncr0DH1b">图5</td><td data-page-node-id="erQaJEeaV0zZCnuDvcJjQo">「为什么差点信」心理复盘</td><td data-page-node-id="5CvLFOKROHzEfgyUq29l6Z">手写</td></tr>
+        <tr data-page-node-id="D7Ng1KzySZPn9iA6WGRAuk"><td data-page-node-id="w5jycPOCg7rJtlbETVkoEm">图6</td><td data-page-node-id="VUkj9UlXRdXPVgaVLNKgUK">师姐引荐拜师的正路对比</td><td data-page-node-id="dNyEDxFZ36E51K26xAQgTX">手写</td></tr>
+        <tr data-page-node-id="ZXjpwBZX814cBq7l4xZiHk"><td data-page-node-id="WyPQktsOjdYfy1EX3DlarB">图7</td><td data-page-node-id="ewxzwItztJxLiVJ8kckg4u">干货：选师承机构的 4 个避坑点</td><td data-page-node-id="7rIDNEy37jTrgBevxvVtx2">白底黑字</td></tr>
+        <tr data-page-node-id="d8lLbdtFEY4i1nvAxN2SOL"><td data-page-node-id="ZTSMZB2j1q6Mjm95gtSz1E">图8</td><td data-page-node-id="SWl04SF4UDDuC46BT1Uf7I">避坑：公证备案才是真护身符</td><td data-page-node-id="qtz0D9wEeLvCVkcOj6mbtM">白底黑字</td></tr>
+        <tr data-page-node-id="X4tZvsc1hMRDlNkDa0H6IR"><td data-page-node-id="jtnIZb05xSxe8Nmg9uye9Y">图9</td><td data-page-node-id="kFxbaeJLXDZRk1xaCSP8B8">钩子：「你被机构坑过吗？」</td><td data-page-node-id="DfKIPfnRL6yEE0vuZidDxs">手写体</td></tr>
+      </table>
+      <button class="copy" onclick="copyPost(4)" data-page-node-id="8mzGAFG08FUEwh3JDvcF26">复制本篇清单</button>
+    </div>
+
+    <!-- 篇5 -->
+    <div class="card" data-page-node-id="3LxWELaTvfYFr2OOPmfCW9">
+      <h3 data-page-node-id="l55zGdJoaPf29XVb414yzV"><span class="no" data-page-node-id="fJjJviDbcYVhnYB9WjJiU7">5</span>从拜师到公证备案（52 号令）</h3>
+      <table data-page-node-id="uxZsj6dxok8eB1lFbktPNf">
+        <tr data-page-node-id="EfR9jFX8cUORMISlcd2M4a"><th style="width:74px" data-page-node-id="HJyUc15JdlE0pjFd9SZuC2">图位</th><th data-page-node-id="WVecnPioplH2WFvCAXTnHr">内容</th><th data-page-node-id="oNlKFlFrR9qnW7NFyELXTC">拍法</th></tr>
+        <tr data-page-node-id="BnWvv4vM9mozfFxC5iH1rG"><td data-page-node-id="caoamxyiQ5jc0letq61XQE">封面</td><td data-page-node-id="Pf3FFdUZpRTsSXLyjR1MaD">大字「跟师签约，52 号令模板」</td><td data-page-node-id="YhMEi4P0gjPkSmSdH4YgrW">生成器做</td></tr>
+        <tr data-page-node-id="GxE8L7EaEDSLPFi6HALBHa"><td data-page-node-id="oECaBgAjTNgd2r3a7sNxEl">图2</td><td data-page-node-id="fsVYut2yP6BP5H1mLAFCJh">结论：师承第一步不是背书，是公证备案</td><td data-page-node-id="mJbBOldoUVvIacjauKC5rY">手写便签</td></tr>
+        <tr data-page-node-id="HBhw2WJxEOFHNXTxEZnIOh"><td data-page-node-id="uPYo7LrBzWzEeulYRYshPY">图3</td><td data-page-node-id="gYyFv5FkMWC4jxotXkVNKA">52 号令模板封面（可拍，公开文件）</td><td data-page-node-id="oIU7AWnknqHTAjvG1ycaC2">俯拍</td></tr>
+        <tr data-page-node-id="TCt3kXoq2XKVdCHrGCD6th"><td data-page-node-id="uNqt8tjuwU5Trcd26036aj">图4</td><td data-page-node-id="uo3WNN5ZzjUEC4v3PXaWjm">公证书封面（打码，不露个人信息）</td><td data-page-node-id="SAUODxsFUARCRggzCjN2g9">实拍涂掉</td></tr>
+        <tr data-page-node-id="82HtbwP2MvrypFOy0S0V9f"><td data-page-node-id="WgjyzlMRd5hIQuFV7NJmkw">图5</td><td data-page-node-id="ksrJGndxzZrvUOcRS9jwMg">师父问《黄帝内经》《伤寒论》方子（手写记录，不配方）</td><td data-page-node-id="DB2jecZm27Ul3BkfDt5XAX">露手</td></tr>
+        <tr data-page-node-id="OalUdRnYb3WyRGbdT7EHpH"><td data-page-node-id="aDPpp6GfiinOZ0uRNzjGKY">图6</td><td data-page-node-id="fPTxGNVjnn9Q7dIghMwcAn">时间线：2023 拜师 → 公证 → 跟诊一年</td><td data-page-node-id="KrG2yOuAvJGLLDYbcZ1itP">手写便签</td></tr>
+        <tr data-page-node-id="wvwpYOhKZO9u37GjzKBfvX"><td data-page-node-id="FLeVy3JeEgb5nPKUjsALih">图7</td><td data-page-node-id="1IwUh7vZC6iBmyqfAne3Vh">干货：52 号令师承 vs 确有专长 怎么选</td><td data-page-node-id="IvXTG62iTSWNUe5IzBGnTD">白底黑字</td></tr>
+        <tr data-page-node-id="WPHozwANNc1EUG572HZWF2"><td data-page-node-id="4xnklxsu2iRvDrD88XQyNW">图8</td><td data-page-node-id="qCmrU8kWOQQXb7t53M0eS1">避坑：师徒关系可提，姓名方子不提</td><td data-page-node-id="I05c9dU13FqpXjKERrrfqb">白底黑字（合规）</td></tr>
+        <tr data-page-node-id="H06CbTfAeBhpXsWLSdNt51"><td data-page-node-id="dUAL5G90erzM7oEUiCTApC">图9</td><td data-page-node-id="EIgGfFYwhUCG59npLDW1ut">钩子：「你想拜师，第一步该做什么？」</td><td data-page-node-id="xW8xjztztTnp8mHRdE8i2b">手写体</td></tr>
+      </table>
+      <button class="copy" onclick="copyPost(5)" data-page-node-id="kjOF4cdyZPIMk1hYawtj25">复制本篇清单</button>
+    </div>
+  </section>
+
+  <!-- 素材库 -->
+  <section id="lib" data-page-node-id="BuiHRFPQlJCGjX2P30eKYY">
+    <h2 data-page-node-id="eVOj5TjEjil5svxHJR81wH">四、素材库 · 一次拍够<span class="en" data-page-node-id="RAufK2dWE603vZBWBmGsnG">5 篇通用，拍一次反复用</span></h2>
+    <p class="lead" data-page-node-id="mtkzJCeAgTEYV1kN0afQSm">下面这些素材拍一次，5 篇笔记都能当证据图 / 背景复用，不用每篇现拍。</p>
+    <div class="card" data-page-node-id="9aai0NVMONLBa9lTVocAbq">
+      <table data-page-node-id="W78l6yhtyCADPZGV56wXUq">
+        <tr data-page-node-id="VQzgbRDQjBrS5LGgfwLQcR"><th style="width:200px" data-page-node-id="4XGoeiYWTeGMPQuT5KVFN4">素材</th><th data-page-node-id="ON4YSEeAqAO8koENczuBGs">数量</th><th data-page-node-id="AIDbYNN8SSuKWAxg6hNqS9">用途</th></tr>
+        <tr data-page-node-id="RahoSoy1l613yp54xG46Rf"><td data-page-node-id="Xh4r3uxGaYs8AcEwCPiXhC">手写条文（不同笔体 / 纸张）</td><td data-page-node-id="hWcOe6YluICXS6HkvVeEeM">3-5 张</td><td data-page-node-id="6R4JWaunSZHHebebaAKLdg">证据图、干货图底纹复用</td></tr>
+        <tr data-page-node-id="LhNS9Kon7xeSPt7NGSLOYg"><td data-page-node-id="LO2IrFACijsjK11KBfoXft">桌面俯拍（书堆 / 茶 / 笔）</td><td data-page-node-id="dI7ZwDdTTFIbVyH3ovUJMn">2-3 张</td><td data-page-node-id="O3yJhQJ3L4J8cP6NCpHRRC">主页背景、各篇背景复用</td></tr>
+        <tr data-page-node-id="cw1E1uhfAVP1Nc80Nfch5q"><td data-page-node-id="gP7l4vPLHBejLZTnvKqOZ7">错题本 / 跟诊笔记特写</td><td data-page-node-id="SXOYGBZ6qxZl9Uhur2dFVn">4-5 张</td><td data-page-node-id="deO6AwQEQSKAsHaBH794pO">篇1、篇3、篇5 证据图</td></tr>
+        <tr data-page-node-id="N7E10gmDMVBdrFT4wn5402"><td data-page-node-id="ol7tccxaOag2t1od5Av9M1">时间线手写便签</td><td data-page-node-id="pjHEDC2YxZmsVzLYE1ScJC">1 套</td><td data-page-node-id="5nDhNxdJjFo3TIcjsQldrv">「2022初→2023拜师→2026专长→2028出师」</td></tr>
+      </table>
+      <div class="tip" data-page-node-id="hhoNpdq1gltpaeWXpXDww0">统一用同一只手、同一张书桌拍，视觉一致才像「一个人认真在做」，比精致网图更可信。</div>
+    </div>
+  </section>
+
+  <!-- 红线 -->
+  <section id="red" data-page-node-id="DCv0wJlXmRcUeioERkRChX">
+    <h2 data-page-node-id="cMtxS2VdYLYYdAUL5Z2TjL">五、图上绝对别踩的红线</h2>
+    <div class="danger" data-page-node-id="RX2kngdmhudh53G9p2pgVM">
+      <h3 data-page-node-id="EsGRwkpwrFP1bZHGtfuLWq">⚠ 这 5 条一旦上图，限流 / 违规 / 人设翻车</h3>
+      <ul data-page-node-id="PGGwFGVMstilIDHqsj4RCJ">
+        <li data-page-node-id="GZLKqvsZbMAx2FAN1dDVFd">任何联系方式（微信 / 手机号 / 二维码）——站内引流直接限流</li>
+        <li data-page-node-id="sEDVCWafYMcD6fTsJ9ais4">方子全文（第 2 篇只写「两块九」和药效，不写药味组成）</li>
+        <li data-page-node-id="cXLkXL0jwN6QcDSvpONmdA">师父姓名 / 医院名 / 科室（提「四川省名中医、师徒关系」即可）</li>
+        <li data-page-node-id="f60Cn5YZ1YSHLKpkZgGZFQ">「包过」「保过」字样</li>
+        <li data-page-node-id="wHBs9wnxoa4yVqaYET7ICF">真卷子 / 真成绩单原图（用还原版 / 手绘版代替）</li>
+      </ul>
+      <div class="tip" style="background:#fff;border-color:var(--red);color:var(--red)" data-page-node-id="lThDJPxPBKGhj7DJX0bUnd">原则：提关系不提人、提经历不配方、提方法不承诺结果。</div>
+    </div>
+  </section>
+
+  <!-- 拍摄进度勾选 -->
+  <section id="todo" data-page-node-id="hBT93un2oBcEbzadHtQbX9">
+    <h2 data-page-node-id="ePTmII8GogMkG9dl8OBEzK">六、拍摄进度勾选<span class="en" data-page-node-id="WMQDXTNVqrhTUJG9EEmZQ7">拍完一项打勾，刷新不丢</span></h2>
+    <p class="lead" data-page-node-id="U9joRFi1MsIgpaixbgsMmx">先把「门面 + 封面 + 素材库」这批一次性拍完，5 篇内容就能直接拼。打勾状态存在本机浏览器，关掉再开还在。</p>
+
+    <div class="card" data-page-node-id="Bu985FN6TPWJBv2zcGMjTE">
+      <h3 style="font-size:15px" data-page-node-id="o1lNzzTOHjowr75CE2LFHy">门面三件套</h3>
+      <label class="check" data-page-node-id="CS078YMOVf24ZluFSc3vLx"><input type="checkbox" data-t="门面·头像（手+书角俯拍）" data-page-node-id="XU1UzooqWNv1NTiNdEgEEF"><span data-page-node-id="Lh5p47duMpBXKjT38ZZGGq"><span class="txt" data-page-node-id="kwM47Yl5cuNxgQ7qsl3Lje">头像（手 + 书角俯拍）</span><br data-page-node-id="1oRf8pKQTfjIFAXeArta8Z"><span class="meta" data-page-node-id="Ck8JepBtGthhRFCtedhP0b">不拍脸，用同一只手</span></span></label>
+      <label class="check" data-page-node-id="caUf1IMdJGkhpzwReRGxRL"><input type="checkbox" data-t="门面·主页背景图（书桌全景横版16:9）" data-page-node-id="phAwrHxdiUGUuH3Tg64wI5"><span data-page-node-id="tWuvXxJhLTtL49EtzDeUry"><span class="txt" data-page-node-id="QT5YKl7Rhx6kolfk8Bqa8P">主页背景图（书桌全景横版 16:9）</span><br data-page-node-id="9O62xebW7NWVFQDQ9Ygfr5"><span class="meta" data-page-node-id="KgijCX5wx7cjkLkE3yLabo">留白多，别带姓名/LOGO/联系方式</span></span></label>
+      <label class="check" data-page-node-id="diySjdZwP3fdVEHAL9D0Re"><input type="checkbox" data-t="门面·置顶封面（第1篇，生成器做）" data-page-node-id="Wwz5sydLE2ZJHsy8iczu1L"><span data-page-node-id="zu6fC5mC0ORU0tdTExPbpL"><span class="txt" data-page-node-id="hzdEvT5B4qqX1l2NQORDgH">置顶封面（第 1 篇，用生成器做）</span><br data-page-node-id="pbhxm2LdzxvPg0XhygCKMD"><span class="meta" data-page-node-id="7ro4J26kBsHHXZ28sKawwN">门面担当，最抓眼</span></span></label>
+    </div>
+
+    <div class="card" data-page-node-id="wBUDRcL4J8pdE9Y0R4A7EW">
+      <h3 style="font-size:15px" data-page-node-id="TFb6XeSfGUQNaIhx6uMIUw">5 篇封面（生成器做）</h3>
+      <label class="check" data-page-node-id="JTPUZfx3JpNUWrwlYPgefz"><input type="checkbox" data-t="封面·第1篇（产品总监栽了）" data-page-node-id="7Hs3kQ5aTiF3dptMsG1RSh"><span data-page-node-id="jX2aTd0fU8pdgaofUthyPm"><span class="txt" data-page-node-id="09bzBIeoNZ3CSzCy7UpBGA">第 1 篇封面：产品总监栽了</span></span></label>
+      <label class="check" data-page-node-id="niIRoH6nS7qjOwfERuK2aH"><input type="checkbox" data-t="封面·第2篇（两块九）" data-page-node-id="aCg1ex6FU4h5Orcz95aRcQ"><span data-page-node-id="ZOmhbAlvrOmBc4FYHfN2aY"><span class="txt" data-page-node-id="CmBy6gKo4WMmBn2UmbFPcF">第 2 篇封面：两块九</span></span></label>
+      <label class="check" data-page-node-id="bIR88W5ez1B05WefBQopzd"><input type="checkbox" data-t="封面·第3篇（考官得分卡）" data-page-node-id="MOnpYpAkHxz8jdzBfd37KI"><span data-page-node-id="DgPUfYcEW4ylcZhblJHUKa"><span class="txt" data-page-node-id="wkEEGF7S2glPtxNGhbS2T8">第 3 篇封面：考官得分卡</span></span></label>
+      <label class="check" data-page-node-id="nhVErpVAvr7tSKEKe6Qx1Q"><input type="checkbox" data-t="封面·第4篇（5万智商税）" data-page-node-id="Bf8OSuadDJAwp54trR2IfF"><span data-page-node-id="DRocHWJmYP0rbNtDIxsqgv"><span class="txt" data-page-node-id="CnWIAdAYl6AG71kPJrRPAA">第 4 篇封面：5 万智商税</span></span></label>
+      <label class="check" data-page-node-id="hLHeawVSGeItcesmHrq5S0"><input type="checkbox" data-t="封面·第5篇（拜师公证）" data-page-node-id="8dUANszRxm3DtiVcp8rB3s"><span data-page-node-id="yg18s7G10OxOtSeDl49Hw7"><span class="txt" data-page-node-id="ysbsKu6AVKTLUFai9YNg77">第 5 篇封面：拜师公证</span></span></label>
+    </div>
+
+    <div class="card" data-page-node-id="6DPOwQMMiJnECJlDXJP7fu">
+      <h3 style="font-size:15px" data-page-node-id="YN6cN5g6BQ4gUGHGQYCwvO">素材库一次拍够</h3>
+      <label class="check" data-page-node-id="b9hGjhNEUQ2DFYFNQc4FjL"><input type="checkbox" data-t="素材·手写条文3-5张" data-page-node-id="f1XUy5nDALzSnnXIOn0FwO"><span data-page-node-id="ik4xEMCItiht73AHr3pFSr"><span class="txt" data-page-node-id="zQp8Gj018yEtEqJJnUM4uG">手写条文 3-5 张（不同笔体）</span></span></label>
+      <label class="check" data-page-node-id="O17Bmet8caiy5sCPZWdYEF"><input type="checkbox" data-t="素材·桌面俯拍2-3张" data-page-node-id="dBx69xZuyVkd1PPD7zyPQw"><span data-page-node-id="AjDIqN22TIiSvFqhyfEilB"><span class="txt" data-page-node-id="tFZiFfqEmZ6Hc9cVBaWI5X">桌面俯拍 2-3 张</span></span></label>
+      <label class="check" data-page-node-id="yBPJvoy0uax1Z4hifE5vdj"><input type="checkbox" data-t="素材·错题本/跟诊笔记4-5张" data-page-node-id="pC46IG7HRsuu9qXx7wH95N"><span data-page-node-id="atUTf8s4GD26FbUeZMgZEm"><span class="txt" data-page-node-id="iiwC5A3qerBGYiaOdWSPWe">错题本 / 跟诊笔记特写 4-5 张</span></span></label>
+      <label class="check" data-page-node-id="EFujLCqGCtkcKz86Y6LupQ"><input type="checkbox" data-t="素材·时间线手写便签" data-page-node-id="12lcEaessgZsKjKfxsMbGy"><span data-page-node-id="Gh3J8b2bWqA2OdkGkC7evO"><span class="txt" data-page-node-id="JMlSlWnzC3iCYNGVDoYLt9">时间线手写便签（2022初→2028出师）</span></span></label>
+    </div>
+  </section>
+
+  <div class="foot" data-page-node-id="VpUVogL8rpjqlg32tpg6rE">学中医的凯 · 配图拍摄清单 v1.0 · 双击离线可看 · 拍摄进度存于本机浏览器</div>
+</div>
+
+<script>
+  // 拍摄进度持久化
+  const KEY = 'xhs_shoot_v1';
+  function load(){ try{ return JSON.parse(localStorage.getItem(KEY)) || {}; }catch(e){ return {}; } }
+  function save(o){ localStorage.setItem(KEY, JSON.stringify(o)); }
+  const store = load();
+  const boxes = Array.from(document.querySelectorAll('.check input'));
+  function render(){
+    let done = 0;
+    boxes.forEach(b=>{
+      const t = b.dataset.t;
+      b.checked = !!store[t];
+      b.closest('.check').classList.toggle('done', b.checked);
+      if(b.checked) done++;
+    });
+    document.getElementById('pnum').textContent = done + '/' + boxes.length;
+    document.getElementById('pbar').style.width = (done/boxes.length*100) + '%';
+  }
+  boxes.forEach(b=>{
+    b.addEventListener('change', ()=>{
+      store[b.dataset.t] = b.checked;
+      save(store);
+      render();
+    });
+  });
+  function resetTodo(){
+    if(confirm('确定清空所有勾选？')){ localStorage.removeItem(KEY); boxes.forEach(b=>delete store[b.dataset.t]); render(); }
+  }
+  render();
+
+  // 复制某篇配图清单
+  const POSTS = {
+    1: `【第1篇·置顶】我，产品总监，在中医考试上栽了\n封面：大字「上市公司产品总监，栽在中医考试上」\n图2 结论：带7人过，我自己挂了——我在前面替你们探路\n图3 离职证明/工牌(打码)\n图4 考试倒计时手写(出师考核2028)\n图5 「带过7人全过」手写记录\n图6 挂科批语「无临床经验」手写还原(虚构非真卷)\n图7 干货：师承vs确有专长区别清单\n图8 干货：转行中医3条必经路\n图9 钩子：你也在纠结转行吗？聊聊`,
+    2: `【第2篇】两块九·口罩期间全家阳了的那副药\n封面：大字「两块九毛钱，全家烧退了」\n图2 结论：口罩期间药店被买空，找朋友开的方\n图3 药方手写特写——只写2.9元和口罩期间，不写方子组成\n图4 全家阳了当天日历圈\n图5 空药袋/饮片包装无字特写\n图6 时间线：下午喝→当晚退烧\n图7 干货：学中医第一课是先信中医\n图8 避坑：别自己照方抓药，辨证是底线\n图9 钩子：你家人阳了怎么扛过来的？`,
+    3: `【第3篇】考官得分卡，我是偷看到的\n封面：大字「考官的得分卡，我是偷看的」\n图2 结论：技能考试是面试，全程不动笔，考官持得分卡打分\n图3 手绘「得分卡」示意图(虚构不拍真卷)\n图4 面试流程：考官问→你答→打分(你看到不成绩)\n图5 志愿者引导出教室路上偷看得分卡(还原)\n图6 批语「无临床经验」手写还原\n图7 干货：技能考试考什么(六经辨证/方歌/临床问答)\n图8 避坑：别信包过，考官手里的卡最诚实\n图9 钩子：你技能考挂过吗？`,
+    4: `【第4篇】我差点交5万块智商税\n封面：大字「5万块，我差点交了」\n图2 结论：转行中医的坑比教材还厚\n图3 机构宣传单(打码不点名)\n图4 缴费记录(打码)\n图5 「为什么差点信」心理复盘\n图6 师姐引荐拜师正路对比\n图7 干货：选师承机构4个避坑点\n图8 避坑：公证备案才是真护身符\n图9 钩子：你被机构坑过吗？`,
+    5: `【第5篇】从拜师到公证备案(52号令)\n封面：大字「跟师签约，52号令模板」\n图2 结论：师承第一步不是背书，是公证备案\n图3 52号令模板封面(公开文件可拍)\n图4 公证书封面(打码不露个人信息)\n图5 师父问《黄帝内经》《伤寒论》方子(手写记录不配方)\n图6 时间线：2023拜师→公证→跟诊一年\n图7 干货：52号令师承vs确有专长怎么选\n图8 避坑：师徒关系可提，姓名方子不提\n图9 钩子：你想拜师第一步该做什么？`
+  };
+  function copyPost(n){
+    const txt = POSTS[n];
+    const btn = event.target;
+    const done = ()=>{ const o=btn.textContent; btn.textContent='已复制 ✓'; btn.classList.add('ok'); setTimeout(()=>{btn.textContent=o;btn.classList.remove('ok');},1500); };
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(txt).then(done).catch(()=>fallback(txt,done));
+    } else { fallback(txt,done); }
+  }
+  function fallback(txt,cb){
+    const ta=document.createElement('textarea'); ta.value=txt; ta.style.position='fixed'; ta.style.opacity='0';
+    document.body.appendChild(ta); ta.select();
+    try{ document.execCommand('copy'); cb(); }catch(e){ alert('复制失败，请手动选择'); }
+    document.body.removeChild(ta);
+  }
+</script>
+</body>
+</html>
