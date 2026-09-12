@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="i1sfJTPYH5JuIBnatCr9Nh">
+<head data-page-node-id="DEyMh4WFqU4qCATzxRnPX6">
+<meta charset="UTF-8" data-page-node-id="DnopCbvUtLBetdjtGQlFUn">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="MBC1ehCi3IezqdlomYY7kw">
+<title>小红书封面生成器 · 学中医的凯</title>
+<style>
+  :root{
+    --bg:#f2f0ec;
+    --panel:#ffffff;
+    --ink:#211d18;
+    --ink-2:#6b645a;
+    --ink-3:#9a9186;
+    --line:#e5e0d8;
+    --accent:#8b5e3c;
+    --accent-soft:#f3ece4;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+    background:var(--bg);color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+  }
+  .top{
+    background:#2c2622;color:#fff;padding:26px 20px;text-align:center;
+  }
+  .top h1{font-size:20px;font-weight:700;letter-spacing:.02em;}
+  .top p{font-size:13px;color:#c9b48f;margin-top:6px;}
+  .layout{
+    max-width:960px;margin:26px auto 60px;padding:0 20px;
+    display:grid;grid-template-columns:400px 1fr;gap:26px;align-items:start;
+  }
+  @media(max-width:860px){.layout{grid-template-columns:1fr;}}
+
+  /* ===== 左侧控制区 ===== */
+  .ctrl{
+    background:var(--panel);border:1px solid var(--line);border-radius:14px;
+    padding:20px;
+  }
+  .ctrl h2{font-size:14px;font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+  .ctrl h2::before{content:"";width:3px;height:13px;background:var(--accent);border-radius:2px;}
+  .field{margin-bottom:14px;}
+  .field label{display:block;font-size:12px;color:var(--ink-3);margin-bottom:5px;}
+  .field input[type=text]{
+    width:100%;border:1px solid var(--line);border-radius:9px;
+    padding:9px 12px;font-size:14px;color:var(--ink);background:#fbfaf8;
+    font-family:inherit;transition:border .15s;
+  }
+  .field input[type=text]:focus{outline:none;border-color:var(--accent);}
+  .presets{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;}
+  .presets button{
+    border:1px solid var(--line);background:#fbfaf8;border-radius:8px;
+    padding:7px 12px;font-size:12.5px;color:var(--ink-2);cursor:pointer;
+    font-family:inherit;transition:.15s;
+  }
+  .presets button:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-soft);}
+  .styles{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;}
+  .styles button{
+    border:1.5px solid var(--line);border-radius:9px;background:#fff;
+    padding:9px 8px;font-size:12.5px;color:var(--ink-2);cursor:pointer;
+    font-family:inherit;transition:.15s;text-align:left;
+  }
+  .styles button.on{border-color:var(--accent);color:var(--accent);background:var(--accent-soft);font-weight:600;}
+  .tip{
+    margin-top:16px;background:#fdf9f4;border:1px dashed #e0cdb4;border-radius:10px;
+    padding:11px 13px;font-size:12px;color:#8a6a45;line-height:1.7;
+  }
+
+  /* ===== 右侧预览区 ===== */
+  .preview-wrap{display:flex;flex-direction:column;gap:12px;}
+  .preview-bar{
+    display:flex;align-items:center;justify-content:space-between;
+    font-size:12.5px;color:var(--ink-3);
+  }
+  .canvas-shell{
+    background:var(--panel);border:1px solid var(--line);border-radius:14px;
+    padding:18px;display:grid;place-items:center;
+  }
+  /* 3:4 小红书封面比例 1242x1660 → 缩放为 420x560 */
+  #cover{
+    width:420px;height:560px;
+    display:flex;flex-direction:column;justify-content:space-between;
+    padding:44px 36px;position:relative;overflow:hidden;
+    border-radius:6px;box-shadow:0 10px 30px rgba(40,30,20,.14);
+  }
+  #cover .kicker{
+    font-size:15px;letter-spacing:.35em;color:rgba(0,0,0,.42);
+    font-weight:600;
+  }
+  #cover .main{
+    font-size:52px;line-height:1.32;font-weight:800;letter-spacing:.02em;
+    word-break:break-all;
+  }
+  #cover .sub{
+    font-size:20px;line-height:1.6;opacity:.78;font-weight:500;
+  }
+  #cover .foot{
+    display:flex;align-items:center;justify-content:space-between;
+    font-size:14px;opacity:.62;
+  }
+  #cover .foot .name{font-weight:700;letter-spacing:.08em;}
+  #cover .deco{
+    position:absolute;right:-34px;top:-34px;width:130px;height:130px;
+    border-radius:50%;opacity:.10;background:currentColor;
+  }
+  #cover .deco2{
+    position:absolute;left:-46px;bottom:-46px;width:180px;height:180px;
+    border-radius:50%;opacity:.06;background:currentColor;
+  }
+  .styles-note{font-size:12px;color:var(--ink-3);text-align:center;}
+  @media(max-width:500px){
+    #cover{width:330px;height:440px;padding:32px 26px;}
+    #cover .main{font-size:40px;}
+    #cover .sub{font-size:17px;}
+  }
+</style>
+</head>
+<body data-page-node-id="pDKKqmwm68Ig2rjzQPEo7X">
+
+<header class="top" data-page-node-id="Y8QYPRtebZNaTyUNqx3E8f">
+  <h1 data-page-node-id="Cp3lJhrsuwDZMGphhaV1cb">小红书封面生成器</h1>
+  <p data-page-node-id="SDdsx96SFkquWDRgAcCAbR">改文字 → 挑风格 → 截图即用 ｜ 尺寸 3:4（小红书封面标准比例）</p>
+</header>
+
+<div class="layout" data-page-node-id="AxbANJNBwpKDEwnPmAwSlY">
+
+  <!-- ===== 控制区 ===== -->
+  <div class="ctrl" data-page-node-id="C96jngGnwGrzg9wmmbFoPX">
+    <h2 data-page-node-id="3Ka4AJGTCLaarPxzcVZF2A">一键填入（5 篇文案的封面）</h2>
+    <div class="presets" data-page-node-id="G8lsdAlRRwatGuHg6z7Ary">
+      <button data-p="0" data-page-node-id="017hgGgYguvfaihNsUHlbs">① 人设总纲</button>
+      <button data-p="1" data-page-node-id="f4sgqps0iVN2su2pGVS5hD">② 两块九</button>
+      <button data-p="2" data-page-node-id="Ua8uzby3Lb4xj3yTYeW4dx">③ 成绩单批语</button>
+      <button data-p="3" data-page-node-id="Hx8BHg1Fg7FsvPYkcYlSXA">④ 机构避坑</button>
+      <button data-p="5" data-page-node-id="2o0XzX3TyJhzzhOsMV7BT3">⑤ 拜师流程</button>
+    </div>
+
+    <h2 data-page-node-id="F2z44x3WaqtCe0G2ypFrxR">封面文字</h2>
+    <div class="field" data-page-node-id="FAETnSZpxeTqY0SWSKR3jA">
+      <label data-page-node-id="g76lZYLUZEg1n0oy9aSjQR">顶部小字（kicker）</label>
+      <input type="text" id="kicker" value="转行中医实录" data-page-node-id="xtUPnfVH340JveTsXsnLH7">
+    </div>
+    <div class="field" data-page-node-id="rEMUJAmnyYDcEAg8WVvdp1">
+      <label data-page-node-id="Y9lGhDneEMOAPYxtlr6Ff0">主标题（建议 ≤ 12 字/行）</label>
+      <input type="text" id="main" value="产品总监→中医师承" data-page-node-id="sEqHVolNBLsgKM9wD23TDl">
+    </div>
+    <div class="field" data-page-node-id="097Dj2Cewhveh0TvALIkn9">
+      <label data-page-node-id="aD9pVeWH1u9dyu8JWUeS6X">副标题</label>
+      <input type="text" id="sub" value="笔试过了，挂在“没有临床经验”" data-page-node-id="lCAu115dEip82eVIZ7DIKr">
+    </div>
+    <div class="field" data-page-node-id="aqBSMmoeTUtbEroLerN4nt">
+      <label data-page-node-id="GHeDr8lqxH0wOmXhOBbcD2">署名</label>
+      <input type="text" id="name" value="学中医的凯" data-page-node-id="rC3dZWyQTu1U0TWga4a0Ta">
+    </div>
+
+    <h2 data-page-node-id="nD6Vu0CyOYBqfp7w52ZIp2">配色风格</h2>
+    <div class="styles" id="styles" data-page-node-id="1659sTGQC8YqUSKPAEmnYX"></div>
+
+    <div class="tip" data-page-node-id="pvUbCUMG1NFv9FB6cNtZEl">
+      使用方法：改完字后，右键预览图 → 截图（或用系统截图快捷键），裁掉白边即可发布。
+      首图建议字大、信息少；细节放正文里讲。
+    </div>
+  </div>
+
+  <!-- ===== 预览区 ===== -->
+  <div class="preview-wrap" data-page-node-id="2v5za1XBQAoEfvPdRkMkba">
+    <div class="preview-bar" data-page-node-id="0dXj13kAvsKwhk13CRFcXD">
+      <span data-page-node-id="6yJ0CZg83gPknPbEA47BKj">实时预览 · 3:4</span>
+      <span data-page-node-id="yCl8FaY7eI9BaHZpwNAaGG">1242 × 1660 输出建议</span>
+    </div>
+    <div class="canvas-shell" data-page-node-id="6OZr5x1goCuBRiAAkkcQK6">
+      <div id="cover" data-page-node-id="Oh1B69AFflj7vqf72RCGZe">
+        <div class="deco" data-page-node-id="p5Y2WAq0Apr6qorBBan9zc"></div>
+        <div class="deco2" data-page-node-id="vq4ArCrWINLqInukDNPeeB"></div>
+        <div class="kicker" id="v-kicker" data-page-node-id="TPtfeIewZUvgtlFABsRyYA"></div>
+        <div data-page-node-id="E2CIVAYMX6YbfTRH5GGFqJ">
+          <div class="main" id="v-main" data-page-node-id="fZcnQgvfZdGAGc0tZfFl8Y"></div>
+          <div class="sub" id="v-sub" data-page-node-id="ArzkCbQxUlWCRD7cEgwcOW"></div>
+        </div>
+        <div class="foot" data-page-node-id="0XaOHPsJT6goTm2qTNXoMp">
+          <span class="name" id="v-name" data-page-node-id="ZXIaXKCADUggMB4jcQJipZ"></span>
+          <span id="v-tag" data-page-node-id="FFQKHJVfk7ooIBUbURePmy">小红书 · 封面</span>
+        </div>
+      </div>
+    </div>
+    <div class="styles-note" data-page-node-id="Kz4FfsOgd5k8mDy3xFo5oa">建议每篇笔记的首图都用文字封面，后面跟 3-4 张实拍图（手写、桌面、书架）</div>
+  </div>
+
+</div>
+
+<script>
+  // ===== 配色风格 =====
+  var STYLES = [
+    {name:'宣纸米色', bg:'#f5efe3', ink:'#3a3026'},
+    {name:'墨绿药柜', bg:'#28402f', ink:'#f2ead8', kicker:'rgba(242,234,216,.55)'},
+    {name:'深棕咖啡', bg:'#3d3128', ink:'#efe6d8', kicker:'rgba(239,230,216,.55)'},
+    {name:'黑白极简', bg:'#1d1d1d', ink:'#f5f5f5', kicker:'rgba(245,245,245,.5)'},
+    {name:'浅青竹',   bg:'#e8efe9', ink:'#2f4a38'},
+    {name:'赭石暖',   bg:'#f0e2d4', ink:'#5a3c26'}
+  ];
+  var curStyle = 0;
+
+  // ===== 预置文案 =====
+  var PRESETS = [
+    {k:'转行中医实录 · 第1篇', m:'产品总监\n→中医师承', s:'笔试过了，挂在“没有临床经验”', st:1},
+    {k:'转行中医实录 · 第2篇', m:'两块九毛钱', s:'改变我人生的一副药', st:0},
+    {k:'转行中医实录 · 第3篇', m:'“该生没有\n临床经验”', s:'不予通过 —— 我把它裱起来了', st:3},
+    {k:'转行避坑 · 第4篇', m:'差点交 5 万', s:'中医机构话术拆解', st:2},
+    {k:'师承路径 · 第5篇', m:'拜师全流程', s:'52号令 · 公证 · 备案', st:4}
+  ];
+
+  var $ = function(id){return document.getElementById(id);};
+
+  function renderStyleButtons(){
+    var box = $('styles'); box.innerHTML='';
+    STYLES.forEach(function(st, i){
+      var b = document.createElement('button');
+      b.textContent = st.name;
+      b.className = (i===curStyle) ? 'on' : '';
+      b.onclick = function(){ curStyle=i; renderStyleButtons(); applyStyle(); };
+      box.appendChild(b);
+    });
+  }
+
+  function applyStyle(){
+    var st = STYLES[curStyle];
+    var c = $('cover');
+    c.style.background = st.bg;
+    c.style.color = st.ink;
+    $('v-kicker').style.color = st.kicker || 'rgba(0,0,0,.42)';
+  }
+
+  function applyText(){
+    $('v-kicker').textContent = $('kicker').value;
+    var m = $('main').value.split('\n').join('<br>');
+    $('v-main').innerHTML = m || '&nbsp;';
+    $('v-sub').textContent = $('sub').value;
+    $('v-name').textContent = $('name').value;
+  }
+
+  // 输入绑定
+  ['kicker','main','sub','name'].forEach(function(id){
+    $(id).addEventListener('input', applyText);
+  });
+
+  // 预置按钮
+  document.querySelectorAll('.presets button').forEach(function(b){
+    b.addEventListener('click', function(){
+      var p = PRESETS[+b.dataset.p];
+      $('kicker').value = p.k;
+      $('main').value = p.m;
+      $('sub').value = p.s;
+      curStyle = p.st;
+      renderStyleButtons(); applyStyle(); applyText();
+    });
+  });
+
+  renderStyleButtons();
+  applyStyle();
+  applyText();
+</script>
+
+</body>
+</html>
