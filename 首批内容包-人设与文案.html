@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="HHG41YxyYfF3a8lxa9Cuip">
+<head data-page-node-id="8zqkQJVrXjcnKNjeIU8fs0">
+<meta charset="UTF-8" data-page-node-id="1rH1hjuhNnITvbLIxmgHsy">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="4TZQ9Fpnpk1s61qYkbESNp">
+<title>首批内容包 · 人设档案 + 5 篇笔记文案</title>
+<style>
+  :root{
+    --bg:#f6f5f2; --panel:#fff; --ink:#1f1d1a; --ink-2:#5c5750; --ink-3:#8d867c;
+    --line:#e6e2da; --accent:#8b5e3c; --accent-soft:#f3ece4;
+    --green:#3f7d5c; --green-soft:#eaf4ee; --blue:#3d6b9e; --blue-soft:#eaf0f7;
+    --orange:#b06a1f; --orange-soft:#fbf1e2; --red:#b03a3a; --red-soft:#fbeceb;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",system-ui,sans-serif;
+    background:var(--bg);color:var(--ink);line-height:1.8;font-size:15px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .hero{
+    background:linear-gradient(150deg,#2c2622 0%,#4a3b30 55%,#6b5138 100%);
+    color:#fff;padding:54px 20px 46px;margin-bottom:34px;
+  }
+  .hero-inner{max-width:900px;margin:0 auto;}
+  .eyebrow{
+    display:inline-block;font-size:12px;letter-spacing:.22em;color:#c9b48f;
+    border:1px solid rgba(201,180,143,.45);padding:4px 12px;border-radius:999px;margin-bottom:20px;
+  }
+  .hero h1{font-size:30px;line-height:1.4;font-weight:700;margin-bottom:14px;}
+  .hero h1 .hl{color:#e0c48f;}
+  .hero .lead{font-size:15px;color:#cdc4b8;max-width:640px;line-height:1.85;}
+  .hero-tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px;}
+  .hero-tags span{
+    font-size:13px;padding:5px 13px;border-radius:999px;
+    background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.14);color:#e6ddd0;
+  }
+  .nav{
+    position:sticky;top:0;z-index:50;background:rgba(246,245,242,.93);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--line);margin-bottom:34px;
+  }
+  .nav-inner{
+    max-width:900px;margin:0 auto;padding:11px 20px;display:flex;gap:6px;
+    overflow-x:auto;scrollbar-width:none;
+  }
+  .nav-inner::-webkit-scrollbar{display:none;}
+  .nav a{
+    flex:0 0 auto;font-size:13px;color:var(--ink-2);text-decoration:none;
+    padding:6px 13px;border-radius:999px;white-space:nowrap;transition:.18s;
+  }
+  .nav a:hover{background:var(--accent-soft);color:var(--accent);}
+  .wrap{max-width:900px;margin:0 auto;padding:0 20px 80px;}
+  section{margin-bottom:46px;scroll-margin-top:70px;}
+  .sec-head{display:flex;align-items:baseline;gap:12px;margin-bottom:18px;}
+  .sec-num{
+    font-size:13px;font-weight:700;color:#fff;background:var(--accent);
+    width:26px;height:26px;border-radius:8px;display:grid;place-items:center;
+    flex:0 0 auto;font-family:ui-monospace,monospace;
+  }
+  .sec-head h2{font-size:21px;font-weight:700;}
+  .sec-head .sub{font-size:13px;color:var(--ink-3);margin-left:auto;}
+  .card{
+    background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px 24px;margin-bottom:16px;
+  }
+  .card-title{
+    font-size:15px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px;
+  }
+  .card-title::before{content:"";width:3px;height:14px;background:var(--accent);border-radius:2px;}
+  .card p{color:var(--ink-2);font-size:14px;margin-bottom:10px;}
+  .card p:last-child{margin-bottom:0;}
+  .quote{
+    background:var(--accent-soft);border-left:3px solid var(--accent);
+    border-radius:0 10px 10px 0;padding:18px 22px;margin:14px 0;
+  }
+  .quote p{font-size:14.5px;color:#5a4633;line-height:1.9;margin:0;}
+  .tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);margin-bottom:16px;}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:520px;}
+  th{
+    background:#faf9f7;text-align:left;font-weight:600;color:var(--ink);
+    padding:11px 14px;border-bottom:1px solid var(--line);white-space:nowrap;font-size:13px;
+  }
+  td{padding:11px 14px;border-bottom:1px solid #f1eee9;color:var(--ink-2);vertical-align:top;}
+  tr:last-child td{border-bottom:none;}
+  td strong{color:var(--ink);font-weight:600;}
+
+  /* ===== 笔记卡片 ===== */
+  .note{
+    background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+    padding:26px 28px;margin-bottom:26px;
+  }
+  .note-head{display:flex;align-items:center;gap:10px;margin-bottom:6px;flex-wrap:wrap;}
+  .note-no{
+    font-family:ui-monospace,monospace;font-size:13px;font-weight:700;color:#fff;
+    background:var(--accent);border-radius:8px;padding:2px 10px;
+  }
+  .note-use{font-size:12.5px;font-weight:600;padding:3px 10px;border-radius:999px;}
+  .u-trust{background:var(--green-soft);color:var(--green);}
+  .u-feel{background:var(--blue-soft);color:var(--blue);}
+  .u-clash{background:var(--red-soft);color:var(--red);}
+  .u-save{background:var(--orange-soft);color:var(--orange);}
+  .u-path{background:var(--accent-soft);color:var(--accent);}
+  .note h3{font-size:17px;font-weight:700;margin:8px 0 16px;}
+  .field-block{margin-bottom:14px;}
+  .field-block .lbl{
+    font-size:11.5px;color:var(--ink-3);letter-spacing:.08em;margin-bottom:5px;display:block;
+  }
+  .title-line{
+    display:flex;align-items:flex-start;gap:10px;background:#fbfaf8;
+    border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin-bottom:8px;
+  }
+  .title-line .t{flex:1;font-size:14px;color:var(--ink);}
+  .title-line .tag{font-size:11px;color:var(--ink-3);flex:0 0 auto;padding-top:2px;font-weight:700;}
+  .cover-box{
+    background:#f7f3ec;border:1px dashed #ddcdb6;border-radius:10px;padding:11px 14px;
+    font-size:13px;color:#6b5138;line-height:1.8;
+  }
+  .note-body{
+    background:#fbfaf8;border:1px solid var(--line);border-radius:10px;
+    padding:20px 22px;font-size:14.5px;line-height:2.0;color:#33302b;
+    white-space:pre-wrap;
+  }
+  .note-body b{color:var(--ink);}
+  .tagline{
+    margin-top:14px;font-size:13px;color:var(--blue);
+    background:var(--blue-soft);border-radius:9px;padding:9px 14px;line-height:1.9;
+  }
+  .btn-row{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap;}
+  .btn{
+    border:none;cursor:pointer;font-family:inherit;font-size:13.5px;font-weight:600;
+    border-radius:9px;padding:10px 18px;transition:.15s;
+  }
+  .btn-main{background:var(--accent);color:#fff;}
+  .btn-main:hover{background:#744d30;}
+  .btn-ghost{background:#fff;color:var(--accent);border:1px solid #d9c6ae;}
+  .btn-ghost:hover{background:var(--accent-soft);}
+  .btn.ok{background:var(--green) !important;color:#fff !important;}
+
+  /* ===== 红线区 ===== */
+  .redline{
+    background:var(--red-soft);border:1px solid #f0d5d3;border-radius:var(--radius);
+    padding:20px 22px;
+  }
+  .redline h3{font-size:14.5px;color:var(--red);margin-bottom:12px;}
+  .redline ul{list-style:none;}
+  .redline li{
+    display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:#7a4340;
+    padding:6px 0;border-bottom:1px dashed #f0d9d7;
+  }
+  .redline li:last-child{border-bottom:none;}
+  .redline li::before{content:"✕";color:var(--red);font-weight:700;flex:0 0 auto;font-size:12px;padding-top:2px;}
+  .footer{
+    text-align:center;color:var(--ink-3);font-size:12.5px;
+    padding:28px 20px;border-top:1px solid var(--line);margin-top:10px;
+  }
+  @media(max-width:640px){
+    .hero{padding:40px 18px 34px;}
+    .hero h1{font-size:23px;}
+    .note{padding:20px 18px;}
+    .note-body{padding:16px;}
+  }
+</style>
+</head>
+<body data-page-node-id="1aeO819wt9yJvXkzJ0BHbL">
+
+<header class="hero" data-page-node-id="cfLRVa2DG1V7eNzqS1dx3V">
+  <div class="hero-inner" data-page-node-id="jVBTIKAr0Op2ZykUX5azUW">
+    <div class="eyebrow" data-page-node-id="Vegc6PCidalTgZcDp3nbmb">首批内容包 · v1.1</div>
+    <h1 data-page-node-id="t72zFtRinp2uR0EEGm3AYP">人设档案 + <span class="hl" data-page-node-id="7skqDFEpogZbiOnYQcPKeR">5 篇笔记文案</span></h1>
+    <p class="lead" data-page-node-id="Pq4GMoAFT5AoF3zB4oCFu2">文案基于凯哥真实经历定制，每篇均可一键复制后直接发布。发布顺序即编号顺序，第 1 篇发完设为置顶。</p>
+    <div class="hero-tags" data-page-node-id="ec4DJd6iLhsqS9UeDOD4yp">
+      <span data-page-node-id="RkcPGzJams01X9jOcRuVdA">账号：学中医的凯</span>
+      <span data-page-node-id="C34CC3xNehcCw8OLBaScEw">全部细节已对齐真实经历</span>
+      <span data-page-node-id="MBzbsbMsWHgF2ueR5W5Rzf">配套：封面生成器.html</span>
+    </div>
+  </div>
+</header>
+
+<nav class="nav" data-page-node-id="OX1bcLn7FMWufAL2xn5nDx">
+  <div class="nav-inner" data-page-node-id="mCcVvaFv7IAZcxPcGIOY5l">
+    <a href="#persona" data-page-node-id="uSIE5F4zEfYjA5WPvDWdbi">01 人设档案</a>
+    <a href="#note1" data-page-node-id="Hr0BdR99DbOimWJxnFJkC3">② 人设总纲</a>
+    <a href="#note2" data-page-node-id="1XolQG0ALImP93SnDomZOK">③ 两块九</a>
+    <a href="#note3" data-page-node-id="JD0zGH56U31a86FfnKMOmT">④ 考官批语</a>
+    <a href="#note4" data-page-node-id="u4xeQ83hmMswcxq1XLAzPd">⑤ 机构避坑</a>
+    <a href="#note5" data-page-node-id="TbwNaoLfATzpnFsTwUpJjw">⑥ 拜师流程</a>
+    <a href="#shoot" data-page-node-id="paVFm5vL30uXjPULmmyVvM">07 拍摄清单</a>
+    <a href="#rhythm" data-page-node-id="mKrdiUBexnptyW4BLLfvpE">08 发布节奏</a>
+  </div>
+</nav>
+
+<div class="wrap" data-page-node-id="HzVb72SGqOGmFcJb7uPPFK">
+
+  <!-- ===== 01 人设档案 ===== -->
+  <section id="persona" data-page-node-id="apB7ipBMjrQGqmWW5lXvqg">
+    <div class="sec-head" data-page-node-id="vnLgx8hvS6FdCCHuHFkkaZ">
+      <div class="sec-num" data-page-node-id="btxFSD5fIFLvV9hHzSKQPV">01</div>
+      <h2 data-page-node-id="4YAxoGByrvlzTB09uGc99E">人设档案卡</h2>
+      <div class="sub" data-page-node-id="d7GB7mfFLz4M5CwhY5Q0uu">所有内容的总纲</div>
+    </div>
+
+    <div class="card" data-page-node-id="R8ffG5G64yy1GfD9FkmSBp">
+      <div class="card-title" data-page-node-id="32kxtFgD3hZF2ygbIWtsny">一句话人设</div>
+      <div class="quote" data-page-node-id="02lBBzsMwVhtoc7ndY3Mre">
+        <p data-page-node-id="uABrFoCogDSEaR9kH3o6g0">「<strong data-page-node-id="fnqybYroMVyCdOnAYwn5JK">上市公司产品总监，转行学中医。挂在技能"没有临床经验"，连笔试资格都没捞着。明年再战。</strong>」</p>
+      </div>
+      <p data-page-node-id="jB8SChzYhXxzmNTU9qg8zA">底层叙事：小时候在诊所打点滴的小孩，长大后自己走进了中医的门。</p>
+    </div>
+
+    <div class="tbl-wrap" data-page-node-id="6ayF4k76JlNIN3GbzaVvqY">
+      <table data-page-node-id="aVEEpQGj0yt6hPdV5Ik0On">
+        <thead data-page-node-id="pu5syDBKrGG2T9G1l87rB6"><tr data-page-node-id="NYHXEf0dNXOGgmvFyA0Irt"><th data-page-node-id="pO9elDFLvRB9xAFR29KXf4">层</th><th data-page-node-id="PaaG3qBIMJVexleVzEo5HL">内容</th><th data-page-node-id="v6Xgc0MuYJAfqwXPT8sYHB">素材来源</th></tr></thead>
+        <tbody data-page-node-id="LSKnbACexUEJkYCZUwwmG3">
+          <tr data-page-node-id="4SbrAe6X95P2LLM8U0sD4K"><td data-page-node-id="ocwNbi7cIdI3FaHtQkdRWp"><strong data-page-node-id="rJNzHUuIIeYujwimYnXca5">表层（抓人）</strong></td><td data-page-node-id="eGIiYRTHCuX52QJyLMvoZU">10 年产品总监 → 上市公司 → 转中医</td><td data-page-node-id="W62MARj0WAhjvDDLeAjQ0a">反差：拆解一切的人，被"临床经验"四个字拦住</td></tr>
+          <tr data-page-node-id="r1NiHfD4V9WPtCBz0a4YeF"><td data-page-node-id="wFUIe0zvwcOKhcwxliDIPF"><strong data-page-node-id="hy1KGCd1VTEYCsDZ44D1Qj">中层（可信）</strong></td><td data-page-node-id="JU7AqxmFfIdMISZcm5bHgZ">卫生部 52 号令师承，已公证备案；师承出师考核 2028 年；今年走确有专长短线</td><td data-page-node-id="xXsMB851AdhGuHbGODpaDk">双线备考是科普富矿，全小红书没几个人双线都走过</td></tr>
+          <tr data-page-node-id="X33SmekkzEIR3zGBb9GALp"><td data-page-node-id="oosRjhVBQF4gfpODpebJ1r"><strong data-page-node-id="x5EBICF1pJif2jP4xsl7sD">核心（变现）</strong></td><td data-page-node-id="XABEzogU9CGx7DAiGe104r">确有专长技能考核挂在最后一题（考官批语"没有临床经验"），笔试无资格参加；脱产跟诊一年 → 回互联网上班（在职备考）；带 7 个同学备考全过，自己挂技能</td><td data-page-node-id="OxLxYLQWlWz1BUBQA99WxW">"在职备考的过来人"——跟 40 岁社会考生受众同频</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grid2" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;" data-page-node-id="3e3yQ0XrCBLrWJ7jJvXJOO">
+      <div class="card" style="margin-bottom:0;" data-page-node-id="CE7KsCYpFXqhqcDJ2uPpwC">
+        <div class="card-title" data-page-node-id="83g7DibTrhngfoNUR6yGvm">说话风格指南</div>
+        <p data-page-node-id="83ETIN2wBqvXhXO6pDytjz"><strong data-page-node-id="t7uAFBt40R3G8PsMDQH4OY">自嘲但不自贬</strong>：挂科大方讲，但永远带"为什么挂"的拆解。</p>
+        <p data-page-node-id="DImFIq8EoWX4QaGz9Fxcvg"><strong data-page-node-id="g78IzjDijvntRicUfXCWSi">产品黑话适度用</strong>：拆解、复盘、checklist——是辨识度，每篇最多一两处。</p>
+        <p data-page-node-id="P6OHV1XSKA0d43eHLMckBp"><strong data-page-node-id="VupcriFTXQO1JHkcfhW5mL">数字要具体</strong>：2 块 9、10 年、一年、7 个人、52 号令。</p>
+        <p data-page-node-id="637TnZ9igKkqbixz3nGrH0"><strong data-page-node-id="hOjGVH21UMtBRuSQJTePvr">不装老师</strong>：永远"同学"不是"学员"。</p>
+        <p data-page-node-id="Iz3rXEfyusmNeHFBCUA3it"><strong data-page-node-id="MwfS9BWbS7xmOS0XzkV20a">情绪克制</strong>：最动情的地方收着写，读者会替你激动。</p>
+      </div>
+      <div class="card" style="margin-bottom:0;" data-page-node-id="yDfFbVOIQvJOmeJG6tZugq">
+        <div class="card-title" data-page-node-id="yZtk2xzceK8kNdlwvwuG33">视觉风格（不露脸期）</div>
+        <p data-page-node-id="hv6I16Fv04Vb3bURi1EyPt"><strong data-page-node-id="5AHIvrX94MXs11sf0SHtRf">出镜度</strong>：只露手和桌面。</p>
+        <p data-page-node-id="JyuHcgN92ej0s9UuiKIeW4"><strong data-page-node-id="BduHV2BFvxjk2QCuXMUhWi">色调</strong>：米色（宣纸感）、墨绿、深棕——避开花红柳绿养生风。</p>
+        <p data-page-node-id="21H8bUZ5Lwzbp5l4dM94KK"><strong data-page-node-id="HjzBnCIUDBWbbw8Ht8Cuiq">视觉签名</strong>：一只固定的茶杯或一方镇纸出现在每张桌面图里。</p>
+        <p data-page-node-id="1scESDnGVgDqWnZOcAJ7Qj"><strong data-page-node-id="dC5KqohvFNV112TrN9tFsu">人设暗线</strong>：童年诊所 → 师父抄方桌。只在关键节点放（置顶首篇、里程碑、明年考前），别滥用。</p>
+      </div>
+    </div>
+
+    <div class="redline" style="margin-top:16px;" data-page-node-id="v8D6IXXP6keViLbddOYSOf">
+      <h3 data-page-node-id="m6FoMOC2kuQGHKuvbnnFDY">每篇发前过一遍 · 禁区</h3>
+      <ul data-page-node-id="xmL96Y7IfuHAg8Lu2iUl2m">
+        <li data-page-node-id="gGcGDuw4yGozuIcBDswVIu">师父姓名、医院名称、具体方子组成</li>
+        <li data-page-node-id="8238Io4rj7XJbsG1C6pDrj">患者任何信息（跟诊只写"我看到了什么"，不写"谁、什么病、什么方"）</li>
+        <li data-page-node-id="2zGYDKwwr7H0FxrBBJOSG0">疗效承诺（"这副药治好了 XX"→ 改成个人经历陈述："我们家的烧退了"）</li>
+        <li data-page-node-id="CVg3eg6nr4i1zQycgqKasJ">任何机构点名（写"某类机构""我遇到过的"）</li>
+        <li data-page-node-id="5kuSjZ9XCHGPHFaYhaY7UQ">联系方式出现在任何公开位置</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== 笔记 1 ===== -->
+  <section id="note1" data-page-node-id="4Wfs2HLAYkycYD3uaUQZ26">
+    <div class="sec-head" data-page-node-id="C1U9wCneRAkoeXGQ1xhNkP">
+      <div class="sec-num" data-page-node-id="Me8afR3gNLjANpIug51Pax">02</div>
+      <h2 data-page-node-id="PShJkVrm2sEhL6lrmdVq0c">第 1 篇（置顶）· 人设总纲</h2>
+      <div class="sub" data-page-node-id="L3ohqECxC2aSCJtSgeCq9b">D1 发布</div>
+    </div>
+
+    <div class="note" data-page-node-id="GotqPeGFg800omuy7DS6j3">
+      <div class="note-head" data-page-node-id="f82Gtf8bBJST1nv53dmc9W">
+        <span class="note-no" data-page-node-id="eDqNiWHtS3H0cOF7YM7EEy">NOTE 01</span>
+        <span class="note-use u-trust" data-page-node-id="vZARvOSmjN90wDbsdskjKS">人设总纲 · 立住账号</span>
+      </div>
+      <h3 data-page-node-id="grDtDTvWpBL2TbjUXBhbBE">我，上市公司产品总监，在中医考试上栽了</h3>
+
+      <div class="field-block" data-page-node-id="sNBz58KQTbQvKJhB7gcm9h">
+        <span class="lbl" data-page-node-id="G0fzBsugM7s8T2nmx6HVAY">标题（二选一）</span>
+        <div class="title-line" data-page-node-id="NoXyxAIeYjIi5xIA7yPeT7"><span class="tag" data-page-node-id="LBcN0ckbKH0GdfFyX7pGCq">A</span><span class="t" data-page-node-id="rnmOGYRejTwsOMcu75XmJ1">我，上市公司产品总监，在中医考试上栽了</span></div>
+        <div class="title-line" data-page-node-id="MARpefYLsSB4pfi5HDFpKN"><span class="tag" data-page-node-id="HGRU79yxwqlnzFMRBzfLu0">B</span><span class="t" data-page-node-id="GgxheX5tQJtqHB2AFz1PWV">做了 10 年产品，我决定去学中医</span></div>
+      </div>
+
+      <div class="field-block" data-page-node-id="pi6WEstmjsfGujuAB5xq7b">
+        <span class="lbl" data-page-node-id="oz1hZGyekF9Zb3w83GVcH1">封面文字（用封面生成器做）</span>
+        <div class="cover-box" data-page-node-id="IG1gSXvRh0ykOgzMtQRbfx">主标题：产品总监→中医师承 ｜ 副标题：技能挂了，笔试资格都没有</div>
+      </div>
+
+      <div class="field-block" data-page-node-id="CDxspvz6g9Cud3Biu2BZrI">
+        <span class="lbl" data-page-node-id="GRc4eZVbh0AwONQuvGshF8">正文</span>
+        <div class="note-body" id="body1" data-page-node-id="uYHqZeEoxqEAUHfAxlDpxT">四川的确有专长，先考技能。技能挂了，两个星期后的笔试，连资格都没有。
+
+今年技能考核，走出考场我心里是有底的。
+前 9 道题我都答了，不敢说满分，过线没问题。
+
+很多人不知道：技能考核是面试，全程不用动笔，考官拿着你的得分卡打分，考生从头到尾看不到自己的成绩。
+
+考完，志愿者拿着成绩单送我出教室。就在那段路上，我偷偷瞄到了得分卡上的那行字：
+
+"该生没有临床经验，不予通过。"
+
+我挂在技能，笔试连进考场的资格都没有。
+
+有意思的是——考试前，我刚脱产跟诊了整整一年。
+
+我是做产品的，在互联网干了 10 年，做到过上市公司的产品总监。口罩期间全家都阳了，药店被买空，实在没办法，找了一个学过中医的朋友开了副药，两块九毛钱。下午喝的药，当天晚上，我们家的烧全退了。
+
+我盯着那个数字看了很久。做了十年产品，我一直以为价值是要标价的。那天我第一次见到，两块九的东西，解决了一家人最怕的事。
+
+当晚我下单了《黄帝内经》。
+
+之后的事：白天上班晚上啃书 → 亲自考察机构（差点交 5 万智商税）→ 经师姐引荐拜了师（卫生部 52 号令，公证备案，师父考了我《内经》《伤寒》和六经辨证）→ 脱产跟诊一年 → 今年又回互联网上班了，毕竟我也要吃饭。
+
+今年考试，跟我的 7 个同学，我都带过他们复习。他们全过了。就我挂了——最后一题问临床经验，我觉得前面 9 题够及格了，随便答了答。
+
+我把一年的跟诊，一个字都没写上去。
+
+这是我这十年里最产品经理的一次失误：我相信了 checklist，60 分万岁。但中医的考试逻辑不是及格，是你敢不敢对患者负责。
+
+明年再战。这次，最后一题我会把那一年讲出来。
+
+这个账号会记录我补上"临床经验"这块拼图的全过程——一个产品经理，怎么学做中医。</div>
+      </div>
+
+      <div class="tagline" id="tags1" data-page-node-id="3lYCd60FxpHqFViU9rdD4Z">#中医师承 #确有专长 #转行中医 #产品经理 #中医学习 #师承考试 #中年转行</div>
+
+      <div class="btn-row" data-page-node-id="mVlxoUlF4qiY99IBY7WQ3r">
+        <button class="btn btn-main" onclick="copyNote(1)" data-page-node-id="5EwyMb1dMypyk5O86CsPHx">一键复制（正文 + 标签）</button>
+        <button class="btn btn-ghost" onclick="copyBody(1)" data-page-node-id="8eeMs1RckVqxs7Fjkp11CX">仅复制正文</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 笔记 2 ===== -->
+  <section id="note2" data-page-node-id="mC1oBEt29523tn4YXA8lrm">
+    <div class="sec-head" data-page-node-id="45k70yzpXCa3adYBUWK92v">
+      <div class="sec-num" data-page-node-id="myBkmTSSIrJLbn0684CnvK">03</div>
+      <h2 data-page-node-id="32srYJ9hII6MdSBOdmwx75">第 2 篇 · 两块九</h2>
+      <div class="sub" data-page-node-id="dpz5uSwJevH71GGcwEVEl7">D3 发布 · 情绪最强</div>
+    </div>
+
+    <div class="note" data-page-node-id="JFJsOSRrZLQgKkvCICFH5f">
+      <div class="note-head" data-page-node-id="b7UXXqwTqmliXg2btKBqOt">
+        <span class="note-no" data-page-node-id="SsmBrXOs0OKa5GsMIpYKqQ">NOTE 02</span>
+        <span class="note-use u-feel" data-page-node-id="tz2ZAXIctebifbgjPhY5Zx">情绪牌 · 命运转折点</span>
+      </div>
+      <h3 data-page-node-id="hmfERWEzhIGwYZK01Gdw3Y">两块九</h3>
+
+      <div class="field-block" data-page-node-id="tDjId4X65j9KBP88kdj5Ze">
+        <span class="lbl" data-page-node-id="g9qJ21TsyYXcFp7LuAulnl">标题（二选一）</span>
+        <div class="title-line" data-page-node-id="H1XqTFyyqjkHdxxBJS4y4h"><span class="tag" data-page-node-id="6L8vEJbYYjQ9zGz6YrOwih">A</span><span class="t" data-page-node-id="rLVJ8OhGAOBvPD0EzWpnvw">两块九</span></div>
+        <div class="title-line" data-page-node-id="mPkxaZ7wFZVvs2nVrE4Mr7"><span class="tag" data-page-node-id="tQfjCeBvzCYbkDxYrloDcW">B</span><span class="t" data-page-node-id="5O9i4kzopex11jAS5wN99l">改变我人生的那副药，两块九毛钱</span></div>
+      </div>
+
+      <div class="field-block" data-page-node-id="DmrLyTBHEZbuTIear36A0Z">
+        <span class="lbl" data-page-node-id="hROnM3IskYGCJlrq7qNoLo">封面文字（用封面生成器做）</span>
+        <div class="cover-box" data-page-node-id="BxWgom8EWzBXkd2gvvBOzz">主标题：两块九毛钱 ｜ 副标题：改变我人生的一副药</div>
+      </div>
+
+      <div class="field-block" data-page-node-id="IAZwcprDRkyqRFLO3V5YVq">
+        <span class="lbl" data-page-node-id="6iKuHnl46Y0rdykgDYjHD2">正文</span>
+        <div class="note-body" id="body2" data-page-node-id="JnsJw3ZDK4TSBpGfBP5Z16">口罩期间，我们全家都阳了，线下药店的退烧药早就被买空了。
+
+家里老人烧到 39 度，我拿着手机刷遍所有购物软件，全是"预售 15 天"。实在没办法，找了一个学过中医的朋友。他问了几个情况，开了一副药。我去药店抓药，收银台说：两块九毛钱。
+
+说实话我是不信的。我那个年纪，从小到大生病的记忆全是打点滴——我小时候体弱，基本上每个月都要病一场，童年的大部分记忆是村诊所里消毒水的味道。西药在我身上一直是那个模式：打着有效，一停就复发。
+
+那副两块九的药煮出来，下午，我们全家喝了。
+
+当天晚上，烧全退了。
+
+我没跟任何人说过那天晚上我在想什么。
+
+我做了十年产品，做到产品总监，见过太多标着价格的东西：五位数的企业服务、六位数的广告投放，都解决不了一家人的慌张。而两块九的一副药做到了。
+
+那晚我下了单《黄帝内经》。白天上班，晚上看书，看到两点。后来是《伤寒论》《神农本草经》《针灸甲乙经》。再后来，我拜了师，跟了诊，考了试，挂了科，明年再战。
+
+朋友到现在都不知道那副药对我意味着什么。
+
+有些转折不讲道理：改变你一生的人，往往不知道自己改变过你。</div>
+      </div>
+
+      <div class="tagline" id="tags2" data-page-node-id="SEjeBhCvX8NTmnRz804S3y">#中医 #自学中医 #转行中医 #黄帝内经 #伤寒论 #人生转折</div>
+
+      <div class="btn-row" data-page-node-id="wyVSFrOMfT62sheA3JsIuk">
+        <button class="btn btn-main" onclick="copyNote(2)" data-page-node-id="cR5SUDZ3EqrTMwsqK2wRsU">一键复制（正文 + 标签）</button>
+        <button class="btn btn-ghost" onclick="copyBody(2)" data-page-node-id="uXvTYRN9SXoxRr5E445i0q">仅复制正文</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 笔记 3 ===== -->
+  <section id="note3" data-page-node-id="DHx82SFYCYWmF0eAo5CGoU">
+    <div class="sec-head" data-page-node-id="Yehwiu0Bob894Dt4lFcOor">
+      <div class="sec-num" data-page-node-id="Mkjsc0Vx4SdFcpFZYAmCY2">04</div>
+      <h2 data-page-node-id="gQWYQLxW9uz3AnreL0BHEg">第 3 篇 · 考官批语</h2>
+      <div class="sub" data-page-node-id="FQreycgEASEaYEIDQj8Fd7">D5 发布 · 冲突最强</div>
+    </div>
+
+    <div class="note" data-page-node-id="H8Y3gUQmGhCeAPkite0guY">
+      <div class="note-head" data-page-node-id="o3ht0WrfoddMHPEv2f9TR0">
+        <span class="note-no" data-page-node-id="0X8oW1H1gv7x0CkxF9P7w6">NOTE 03</span>
+        <span class="note-use u-clash" data-page-node-id="7iCeUNYNKUZpoIpjxrKDuY">冲突牌 · 失败复盘</span>
+      </div>
+      <h3 data-page-node-id="jRRw7CNrkrPUW8jabAidmb">考官在我卷子上写了一句话，我是偷偷看到的</h3>
+
+      <div class="field-block" data-page-node-id="PHT9iGCi1cmPkYzoQxPdRj">
+        <span class="lbl" data-page-node-id="dsKZGzOLddkFEwkycTG1ft">标题（二选一）</span>
+        <div class="title-line" data-page-node-id="pX9CC6R8UoksJjKbc3SzrZ"><span class="tag" data-page-node-id="SoIBJBD8rULYoHlaZoFpwN">A</span><span class="t" data-page-node-id="ppVet6mvfyGbVTqpewbu3v">考官在我卷子上写了一句话，我是偷偷看到的</span></div>
+        <div class="title-line" data-page-node-id="5HApUtDau2Yto27mXjxoB9"><span class="tag" data-page-node-id="snS5yLUiWCXTd0F6njjW9z">B</span><span class="t" data-page-node-id="hFrK9lawgcCNjrYJ5pRUcL">中医考试挂在了最讽刺的地方，我连笔试都没资格进</span></div>
+      </div>
+
+      <div class="field-block" data-page-node-id="T9BRzwzwCy8FLYJaH7T46A">
+        <span class="lbl" data-page-node-id="BlCLPeHUtPrc7cdnhc7inE">封面文字（用封面生成器做）</span>
+        <div class="cover-box" data-page-node-id="cxrOYYlPELS4CDHVHiCpyA">主标题："该生没有临床经验" ｜ 副标题：不予通过 ｜ 偷偷看到的评语</div>
+      </div>
+
+      <div class="field-block" data-page-node-id="7B7TfWtT0ZQSbdeBpXNI1o">
+        <span class="lbl" data-page-node-id="CFEOPijQFIxrEVBZns9Sfn">正文</span>
+        <div class="note-body" id="body3" data-page-node-id="jsBI1gppOOnCry5ffMuEpK">四川的确有专长，先考技能。技能挂了，两个星期后的笔试，连资格都没有。
+
+今年的技能考核现场，考官最后一题问的是专长，其实问的就是临床经验。
+
+我前面 9 道题都答了。走出考场我还在想，稳了。
+
+很多人不知道：技能考核是面试形式，全程不动笔。考官手里拿着你的得分卡打分，你从头到尾看不到自己的成绩。
+
+考完，志愿者拿着成绩单送我出教室。就在那段路上，我偏头偷偷瞄了一眼得分卡——
+
+该生没有临床经验，不予通过。
+
+那一刻我才知道挂的代价不只是挂：笔试，我连进的资格都没有了。
+
+最讽刺的是什么？
+
+考试之前，我刚脱产跟诊了一整年。抄方、跟诊、看老师怎么问诊怎么加减，素材我箱底里全都有。
+
+我只是觉得：前面 9 题都答完了，及格稳了，最后一题随便写写吧。
+
+写的时候，我一年跟诊的东西，一个字都没写上去。
+
+做产品的人应该秒懂这个错误：我们把考试当成了需求评审，以为答满 checklist 就能过。但临床考试的逻辑完全不同——它不是在问"你背了多少"，是在问"这个人站你面前，你敢不敢管"。
+
+我用一次不及格，买到了这十年最贵的一次认知升级。
+
+就那一眼，一个字不差地记到了今天。就当是考官给我明年写的学习重点。
+
+明年再战。最后一题，我会把那 365 天，一天一天讲出来。</div>
+      </div>
+
+      <div class="tagline" id="tags3" data-page-node-id="DhRWEAUZx0UUXTzCHv1Upn">#确有专长 #中医师承 #考试复盘 #中年转行 #中医学习 #产品经理</div>
+
+      <div class="btn-row" data-page-node-id="quro4ogs1YdWx8DnrMqRDm">
+        <button class="btn btn-main" onclick="copyNote(3)" data-page-node-id="HFgN9pAu7GlCHU0HgWqjoR">一键复制（正文 + 标签）</button>
+        <button class="btn btn-ghost" onclick="copyBody(3)" data-page-node-id="4zMifpCGFFbxQaVAGsNHLP">仅复制正文</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 笔记 4 ===== -->
+  <section id="note4" data-page-node-id="khAP3N3lHzycGOvQk0ArT6">
+    <div class="sec-head" data-page-node-id="d4eFCRjIyKVWhOtHSwY1pH">
+      <div class="sec-num" data-page-node-id="V0OlNmVT6loyuALvuYwFT1">05</div>
+      <h2 data-page-node-id="jCXUvuDsDTeFUVUUlTjmbl">第 4 篇 · 机构避坑</h2>
+      <div class="sub" data-page-node-id="LXoWHKBYn0lTB3yAYrfjrD">D7 发布 · 收藏向主力</div>
+    </div>
+
+    <div class="note" data-page-node-id="BCgWjGrbuFBdkjKDgSIAB7">
+      <div class="note-head" data-page-node-id="hlmRYyUHetAFYEsXGw37BO">
+        <span class="note-no" data-page-node-id="7HGL5FkgG2jO7Ch3huxSZc">NOTE 04</span>
+        <span class="note-use u-save" data-page-node-id="Rzq5h8MqXhcCPZ0P0ca92j">避坑收藏型 · 涨粉主力</span>
+      </div>
+      <h3 data-page-node-id="aFI2599WlA4HoSRS0ULU9r">我差点交 5 万块智商税：中医机构话术拆解</h3>
+
+      <div class="field-block" data-page-node-id="XDWaOTSMBclT6Camk6ph2f">
+        <span class="lbl" data-page-node-id="jxpyOfydQh9knmi6t9liqR">标题（二选一）</span>
+        <div class="title-line" data-page-node-id="m67X512CGhLwC6j59fbotB"><span class="tag" data-page-node-id="GPUYBQ2eSE0WC4ZBWUR3oo">A</span><span class="t" data-page-node-id="fRvojSqc84vrAwbWvcVWmM">想转中医的人，报机构前先看这篇</span></div>
+        <div class="title-line" data-page-node-id="HO2c4A2Rcx7qp5hNc4mRT1"><span class="tag" data-page-node-id="ygzeR5UZ1m10sOXy4bLRHM">B</span><span class="t" data-page-node-id="zWfS1geI0qjSjJNJHNL55P">我差点交 5 万块智商税：中医机构话术拆解</span></div>
+      </div>
+
+      <div class="field-block" data-page-node-id="wPJiZuE12zXxrNz5eURzKB">
+        <span class="lbl" data-page-node-id="PkgYeADJriAzgneoB2YuBT">封面文字（用封面生成器做）</span>
+        <div class="cover-box" data-page-node-id="ee62FFrxUGyBR7YeXfDXdB">主标题：差点交 5 万 ｜ 副标题：中医机构话术拆解</div>
+      </div>
+
+      <div class="field-block" data-page-node-id="spGAdJ0HqSEjoybiE7wmHR">
+        <span class="lbl" data-page-node-id="w13pNZTqN7niXX6GkTzzBp">正文</span>
+        <div class="note-body" id="body4" data-page-node-id="tn9peKH9CHT11wVmL9FgI4">2022 年我想转中医的时候，刷到的广告全是："零基础转中医""师承专长一站式服务"。
+
+我差点就交了。后来亲自考察了一圈机构，把话术拆解给你们——我产品经理的职业病，看什么都是需求文档。
+
+话术一："包报名"
+我第一年报的机构，承诺给报上名，结果没报上。外行根本不知道，确有专长报名需要医疗机构签字盖章，这一步没有"包"，只有渠道和运气。签合同前问清楚：报不上名，全额退吗？写进合同吗？
+
+话术二："内部资源"
+报名是省级卫健部门组织的公开流程，不存在"内部"。凡是暗示花钱能走的捷径，都在赌你不会去官网查文件。
+
+话术三："名师授课"
+直接问：授课老师自己考过吗？带出过几个通过的学员？能看成绩单吗？我后来线下上课才发现，线上课讲得有多浅。
+
+我的真实花费供参考：
+机构学费：小几万（现在想想，值的部分不到一半）
+拜师：签的卫生部 52 号令模板，公证备案，加拜师礼——远低于 5 万。我师父不缺钱，他看我像块能学的料，收的是礼，不是价。
+
+真正该花的钱：师父、公证、跟诊、书。不是中间商。
+
+收藏这篇，能帮你省下一年时间和几万块。具体流程下一篇写。</div>
+      </div>
+
+      <div class="tagline" id="tags4" data-page-node-id="aASwAsLVWMlGVqm1CgpI2G">#中医师承 #确有专长 #转行避坑 #中医机构 #中年转行 #中医学习</div>
+
+      <div class="btn-row" data-page-node-id="txkjXpVH7z5eTYgveNoSar">
+        <button class="btn btn-main" onclick="copyNote(4)" data-page-node-id="0p9eGIyYvJnGKaEA0lWRDM">一键复制（正文 + 标签）</button>
+        <button class="btn btn-ghost" onclick="copyBody(4)" data-page-node-id="XDHFBSiUAO83pESvWojHCa">仅复制正文</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 笔记 5 ===== -->
+  <section id="note5" data-page-node-id="WNS5leW5ehUxrAiVRr4PaT">
+    <div class="sec-head" data-page-node-id="RxAp7GGXsTN1Y9keJ2Th7u">
+      <div class="sec-num" data-page-node-id="C771vvq5IDBIKrLtNNG8rT">06</div>
+      <h2 data-page-node-id="4H03bvmuV88KnojCR8hBxf">第 5 篇 · 拜师流程</h2>
+      <div class="sub" data-page-node-id="tHTh4H1lHfnFUDjkXBFzAw">D10 发布 · 路径图型</div>
+    </div>
+
+    <div class="note" data-page-node-id="RrW420gX4PFxnHhxseV9CS">
+      <div class="note-head" data-page-node-id="mVPXJlJHe5VBba82JgwK43">
+        <span class="note-no" data-page-node-id="HLhqqeQLqcP4o4o4gPOyWr">NOTE 05</span>
+        <span class="note-use u-path" data-page-node-id="eQ1yrFcyDhgkcuzo29J6iV">路径图 · 承接私域</span>
+      </div>
+      <h3 data-page-node-id="CPLNnfjWoKYitFwKiUo72j">从拜师到公证备案，我的全部流程和花费</h3>
+
+      <div class="field-block" data-page-node-id="q93gjqVCTzhIO1tATVX4qA">
+        <span class="lbl" data-page-node-id="aBTWm6ISxtzyO3unefuTfg">标题（二选一）</span>
+        <div class="title-line" data-page-node-id="JFwr7LGYYLiFNgTAcZuy5f"><span class="tag" data-page-node-id="3YW4eUBHHDN2CLVh5SNfaa">A</span><span class="t" data-page-node-id="qClkjLOEY2JpUtgM4tbHf4">从拜师到公证备案，我的全部流程和花费</span></div>
+        <div class="title-line" data-page-node-id="9QEBsdQNVt149hd4lnzSiX"><span class="tag" data-page-node-id="czvuBgCmEC5b3HxfrW5IoY">B</span><span class="t" data-page-node-id="hBBo5Reia9HU0XjuqXxkq2">拜中医师父，比你想的简单，也比你想的严肃</span></div>
+      </div>
+
+      <div class="field-block" data-page-node-id="qG6gYOPxqaEmqymbpD5PbK">
+        <span class="lbl" data-page-node-id="kerDRkOfu5l7t1j6voC9Ww">封面文字（用封面生成器做）</span>
+        <div class="cover-box" data-page-node-id="1yqy62M698Nhip60awUwKF">主标题：拜师全流程 ｜ 副标题：52号令 · 公证 · 备案</div>
+      </div>
+
+      <div class="field-block" data-page-node-id="jN19m8rkChK6b8U0QHcEQj">
+        <span class="lbl" data-page-node-id="eA06BsyzoPXv5R16NNjT7H">正文</span>
+        <div class="note-body" id="body5" data-page-node-id="j17OmJzz1wR3JwDhcynRRM">上篇说了机构的坑，这篇写我自己怎么走的师承。先说清楚：师承和确有专长是两条线，我两条都走了，后面细讲。
+
+第一步：找师父
+52 号令要求师父是执业医师、从业达到规定年限。我师父是经师姐引荐的——注意，拜师大概率是圈子内推，别指望公开渠道广撒网。
+
+第二步：师父考我
+不是交钱就收。师父问了我《黄帝内经》的条文、《伤寒论》的方子、六经辨证。我答上了一半。师父说：还可以。
+那半天我特别紧张，比产品过审还紧张。
+
+第三步：签协议
+用的卫生部 52 号令的师承关系合同模板，写得清清楚楚：跟学几年、学什么、双方责任。
+
+第四步：公证 + 备案
+合同到公证处公证，然后到卫健部门备案。流程材料几百块搞定。
+
+费用实报：拜师礼+公证费，加起来远低于机构报价的零头。师父收的是心意，不是标价——遇到上来谈价格的"名师"，先想想他教你的是什么。
+
+时间线提醒：
+师承备案满 3 年才能考出师考核，我的出师考核在 2028 年。
+等不及的话，确有专长那条线不用等 3 年，但要医疗机构签字盖章——我今年走的就是这条，流程和坑下一篇写。
+
+有问题评论区问，看到都会回。</div>
+      </div>
+
+      <div class="tagline" id="tags5" data-page-node-id="6qV0VGb9whnvIJigV1bFxU">#中医师承 #拜师 #确有专长 #52号令 #公证备案 #转行中医</div>
+
+      <div class="btn-row" data-page-node-id="6963ZFUFAfNv1grRn4SicG">
+        <button class="btn btn-main" onclick="copyNote(5)" data-page-node-id="nW69aDAKBu16TYJwxv3ucp">一键复制（正文 + 标签）</button>
+        <button class="btn btn-ghost" onclick="copyBody(5)" data-page-node-id="PPgcjXQroUATYsxIFWCfXz">仅复制正文</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 07 拍摄清单 ===== -->
+  <section id="shoot" data-page-node-id="lI7ejzd2yY0zh1ZwZAYSja">
+    <div class="sec-head" data-page-node-id="6fKrXO8EAMIFhLkJvEmnMi">
+      <div class="sec-num" data-page-node-id="LoIdsOCsJDOQTfWEgPR6Vb">07</div>
+      <h2 data-page-node-id="TGrEOmnQ5mQKdn25rhovRD">拍摄清单</h2>
+      <div class="sub" data-page-node-id="Nd5bcpDy9YTAqwvDxVgokF">手机拍即可，重点是有"人味"</div>
+    </div>
+
+    <div class="tbl-wrap" data-page-node-id="qSiVDX5z0L6u9MypyKB8ul">
+      <table data-page-node-id="VRHZxAhIF3SJAELcaHAoP3">
+        <thead data-page-node-id="K9Gz6pRsn9PSqUXIwr9ixJ"><tr data-page-node-id="b88G0in5O2dTdWAm03AW8D"><th data-page-node-id="49euIoLYKTFntHiW7fdvvX">素材</th><th data-page-node-id="ZPhsEmVPoCiJi4wv26o7WH">拍法</th><th data-page-node-id="22vyGg3HoDChCHe4RvJwQb">用在哪</th></tr></thead>
+        <tbody data-page-node-id="UD3UYcaPq5e1QPTiqw8TPw">
+          <tr data-page-node-id="17HP2DzqDNsk4SQXKZEBCq"><td data-page-node-id="7JajbiGATSwZZxeFOMnCaR"><strong data-page-node-id="U706uWIXtaVl1zkNULMBFA">手写《伤寒论》条文</strong></td><td data-page-node-id="cfddEUGRBxDWBudMW6CNnF">手 + 毛笔/钢笔特写，旁边一茶杯</td><td data-page-node-id="0ZowXgHLljkGjizdAQRyAJ">第 2 篇</td></tr>
+          <tr data-page-node-id="rkaPAjKbIIPwSHtUKDjd9Y"><td data-page-node-id="xQWges9rlWlsEgU7q9u8bG"><strong data-page-node-id="BOcSE3FB3T2WIlcQv6i6SM">摊开的笔记 + 眼镜</strong></td><td data-page-node-id="UuxswrzBwFTayMikPYUBwh">桌面俯拍，暖光</td><td data-page-node-id="PEL59MMA4hjYQiJu8yAYkr">第 1 篇</td></tr>
+          <tr data-page-node-id="e6FAfFdCWpxaXLeiGreCpC"><td data-page-node-id="tVJrN3QjAL93OjQyybuzlC"><strong data-page-node-id="XwBecROWUVM672PzhMzNaX">书架一角</strong></td><td data-page-node-id="YlblVppOkQCClnPPfMMqyX">中医书和互联网书同框（这张图就是人设本身）</td><td data-page-node-id="fZlmTr7pbOqA9MdUHobrBk">第 1 篇 / 主页背景</td></tr>
+          <tr data-page-node-id="qseaFE9jyNpvYgqYoUyxqa"><td data-page-node-id="8srOMY0sInqdXTM2PSB8a0"><strong data-page-node-id="0b1M5G712YBJCEG8X5hpVj">错题本 / 备考表</strong></td><td data-page-node-id="6MySSXwMyEHTxhISKP3CcW">拆解工具实拍，适度打码私人信息</td><td data-page-node-id="fkoaZL0HU1AhxWQVyf43FC">第 3 篇 / 方法论篇</td></tr>
+          <tr data-page-node-id="Bvo83ytqVvxOSmvACkH8fs"><td data-page-node-id="egURWBKYTf73hXqDvbiLSD"><strong data-page-node-id="5BUTvqEv3Xpm3MmQzROLJR">茶杯固定出镜</strong></td><td data-page-node-id="Fs7HkXdTKaa6XOh3xzKlC3">每张桌面图都在，视觉签名</td><td data-page-node-id="o50Xh2vrYJoxJxIC7icaNX">全部</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card" data-page-node-id="sIvOMioFxhnwWDFtpfFrTP">
+      <p data-page-node-id="iZ6qz80drjqwuWo6lD26pN"><strong data-page-node-id="Z7TVAK1gnWrxC99kgXF6f0">配图建议</strong>：首图用封面生成器做的文字封面（信息流里字大才抓人），后 3-4 张用实拍素材。</p>
+    </div>
+  </section>
+
+  <!-- ===== 08 发布节奏 ===== -->
+  <section id="rhythm" data-page-node-id="teBrGMwffjowJmRFmjXO80">
+    <div class="sec-head" data-page-node-id="3gW9ZMsnJtJ4Opq8Ry3fpB">
+      <div class="sec-num" data-page-node-id="WgNrxvQRxmlxwyJqBHjK8x">08</div>
+      <h2 data-page-node-id="z9invXLJFxO3Dr7mVLUTdw">发布节奏（首批两周）</h2>
+      <div class="sub" data-page-node-id="FsZXxQCSiB9IFvgNXbOtZG">按数据调整，不按灵感</div>
+    </div>
+
+    <div class="tbl-wrap" data-page-node-id="FA1BqR5tkeNSBmoWWRVEbb">
+      <table data-page-node-id="weUfOr3rosT263QSM3XboP">
+        <thead data-page-node-id="TqVIThvmKDdzS0WxXgICvQ"><tr data-page-node-id="92jsgNWWjRbT6ecKlueHGE"><th data-page-node-id="t2YSZ3un9cY892lz61HX4O">天数</th><th data-page-node-id="2EOJq6iBmOO8VnbV58p7Zu">动作</th></tr></thead>
+        <tbody data-page-node-id="iRxPvNme1MAodHXgYFWuHB">
+          <tr data-page-node-id="iXmwIGNnrQyWwBPJxHOwjy"><td data-page-node-id="A2sbc5LwvetCckUDqs4uWQ"><strong data-page-node-id="r9MspochLLThlYBExCd39T">D1</strong></td><td data-page-node-id="KJVdH5BMdBxcQDxO9lKY0k">发第 1 篇（人设总纲），发完设置顶</td></tr>
+          <tr data-page-node-id="Yn9I4ytpN8whkC9WFKyw0n"><td data-page-node-id="xgkC98hhRdsplZUYfDbILP"><strong data-page-node-id="Oglm30QGESmH6DHAbgo2lC">D3</strong></td><td data-page-node-id="SJWNZvFYCcGPmjjYj4J8uM">发第 2 篇（两块九）</td></tr>
+          <tr data-page-node-id="8AukOYD9vykvyfA5Mmb3Hq"><td data-page-node-id="rnEqZUCX0pO4vs4q1KRjPZ"><strong data-page-node-id="dWcDj8J3TdXF8wmsRJCpcg">D5</strong></td><td data-page-node-id="9D6FgBxbrz0gGm6wAt4qkP">发第 3 篇（考官批语）</td></tr>
+          <tr data-page-node-id="TtiBJpMrDmmMKy24cTcMJE"><td data-page-node-id="m6DY7fd5wGTuNLuOnTCKa7"><strong data-page-node-id="2oWo2j5GUSRWc87XblNL4M">D7</strong></td><td data-page-node-id="3a91GFHHcRX8VzWMIPk3aX">发第 4 篇（避坑）——预期收藏最高</td></tr>
+          <tr data-page-node-id="FCV9DXgxdxhS2geo7ihNQX"><td data-page-node-id="bYZjRdHn1Om2ZRPA5asTn4"><strong data-page-node-id="AYYUXQhJw4t3zLAeXpvAGp">D10</strong></td><td data-page-node-id="aH5pS92wWQ5ZGTftrCNf3t">发第 5 篇（拜师流程）</td></tr>
+          <tr data-page-node-id="dGi2KLyHIzODCgikjB7iqe"><td data-page-node-id="MCAFBpNZGJwIcaq6fNAosP"><strong data-page-node-id="Y0q9pqUAO3MwhSKYzQyVZI">D12+</strong></td><td data-page-node-id="dZU4zQ4eVAg4gOIZMdhnNr">看数据：哪篇爆了往那个方向加更；评论区问题攒起来做问答篇</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card" data-page-node-id="9XIzp2fyVaWY9mgrRovQEq">
+      <p data-page-node-id="X9eIT7pDHU4GYEjDWbfGAp"><strong data-page-node-id="59hCChD5tIKZhG4nCSaa6H">冷启动注意</strong>：新号前 5 篇数据波动大是正常的，别看单篇数据下结论，看 5 篇的相对表现。</p>
+    </div>
+  </section>
+
+</div>
+
+<footer class="footer" data-page-node-id="IaL4GAE3YIagzaVurztrSI">
+  首批内容包 v1.1 ｜ 学中医的凯 ｜ 所有细节已对齐真实经历 ｜ 配套：封面生成器.html · 小红书运营方案.html
+</footer>
+
+<script>
+  function doCopy(text, btn){
+    function ok(){ 
+      var old = btn.textContent;
+      btn.textContent = '已复制 ✓';
+      btn.classList.add('ok');
+      setTimeout(function(){ btn.textContent = old; btn.classList.remove('ok'); }, 1600);
+    }
+    if(navigator.clipboard && window.isSecureContext){
+      navigator.clipboard.writeText(text).then(ok).catch(function(){ fallback(); });
+    } else { fallback(); }
+    function fallback(){
+      var ta = document.createElement('textarea');
+      ta.value = text; ta.style.position='fixed'; ta.style.opacity='0';
+      document.body.appendChild(ta); ta.select();
+      try{ document.execCommand('copy'); ok(); }catch(e){ alert('复制失败，请手动选择文本'); }
+      document.body.removeChild(ta);
+    }
+  }
+  function copyNote(n){
+    var btn = event.currentTarget;
+    var text = document.getElementById('body'+n).innerText.trim()
+             + '\n\n' + document.getElementById('tags'+n).innerText.trim();
+    doCopy(text, btn);
+  }
+  function copyBody(n){
+    var btn = event.currentTarget;
+    doCopy(document.getElementById('body'+n).innerText.trim(), btn);
+  }
+  document.querySelectorAll('.nav a').forEach(function(a){
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      var t = document.querySelector(this.getAttribute('href'));
+      if(t){ t.scrollIntoView({behavior:'smooth', block:'start'}); }
+    });
+  });
+</script>
+
+</body>
+</html>
