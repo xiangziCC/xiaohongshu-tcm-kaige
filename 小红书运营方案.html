@@ -243,6 +243,10 @@
     .sec-head h2{font-size:18px;}
     .card{padding:18px;}
   }
+
+  /* 主页简介用词审查表：风险列窄，禁止折行 */
+  table.audit td:nth-child(2){white-space:nowrap;text-align:center}
+
 </style>
 </head>
 <body data-page-node-id="x0AtXt3R5EMH38HSRo1pbI">
@@ -611,6 +615,31 @@
           <li data-page-node-id="mKzedPANYAIYpNIy1jPw5D">自己的心路、失败复盘</li>
           <li data-page-node-id="pSTe10IhNKInhYD5jNS0eN">7 人过关这件事（微信截图必须打码姓名和头像）</li>
         </ul>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:16px;">
+      <div class="card-title">主页简介 · 用词审查表（老号踩坑复盘）</div>
+      <p style="font-size:13.5px;color:var(--ink-3);margin-bottom:12px;">上一版简介是照着一个"看起来很专业"的模板抄的，老号就栽在这上面。这一版逐词过筛，判定依据一并留档——以后改简介、写标题、做封面，都按这张表自查。</p>
+      <div class="tbl-wrap">
+        <table class="audit">
+          <thead><tr><th>表述</th><th style="width:76px;">风险</th><th>判定依据</th><th style="width:168px;">处理</th></tr></thead>
+          <tbody>
+            <tr><td><strong>学中医的凯</strong></td><td>🟢 安全</td><td>垂类身份词，描述"在学"，不是医疗行为</td><td>保留</td></tr>
+            <tr><td>「不做诊疗建议」「不接诊」「不诊断」「不看病」</td><td>🔴 高危</td><td>医疗词<strong>整词命中</strong>，前面加"不"照样触发</td><td>全部删除，划界改正向说法</td></tr>
+            <tr><td>「四川省名中医门下弟子」</td><td>🔴 高危</td><td>强医疗背书 + 违反"不提师父姓名/科室"口径</td><td>删除（内容里可提师徒关系，简介不写）</td></tr>
+            <tr><td>「脱产跟诊 1 年」「没有临床经验」当资质陈述</td><td>🔴 高危</td><td>跟诊 / 临床是医疗行为词；2028 才出师，无资质写出来等于自认医疗内容</td><td>简介内删除；经历只在正文叙事里讲</td></tr>
+            <tr><td>「师承备案」</td><td>🟡 中危</td><td>「师承 + 中医」组合触发垂类资质审核</td><td>改成「转行学中医」</td></tr>
+            <tr><td>「带 7 人考过」</td><td>🟡 中危</td><td>接近培训 / 知识付费营销表述</td><td>保留但弱化：改「带 7 个同窗考过」</td></tr>
+            <tr><td>「10 年产品总监」</td><td>🟡 中危</td><td>高管 title + 转行 = "来卖课的"观感</td><td>简介改「互联网干了 10 年」；正文叙事里可提"做到过上市公司的产品总监"</td></tr>
+            <tr><td>微信 / QQ / 手机号 / 二维码</td><td>🔴 高危</td><td>站外引流，直接限流</td><td>任何公开位置都不出现</td></tr>
+            <tr><td>「课程」「资料」</td><td>🟡 中危</td><td>营销类词，新号阶段易被判导流</td><td>简介先不放，账号稳了再软性提</td></tr>
+            <tr><td>「聊备考踩坑」「明年再战」</td><td>🟢 安全</td><td>学习分享 / 个人叙事，非医疗行为</td><td>保留，作为简介主线</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="quote" style="margin-top:14px;">
+        <p>改完简介自查三步：<strong>① 有没有医疗动词</strong>（诊断 / 接诊 / 看病 / 开方 / 临床）→ <strong>② 有没有站外联系方式</strong> → <strong>③ 有没有资质背书暗示</strong>（"师承""备案""我有资格"）。三步都干净，才算过关。</p>
       </div>
     </div>
   </section>
