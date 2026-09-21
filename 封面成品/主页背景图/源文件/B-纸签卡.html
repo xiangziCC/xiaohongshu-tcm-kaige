@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1125px;height:633px;overflow:hidden;background:#f2ece0}
+  .bg{width:1125px;height:633px;background:#f4efe2;position:relative;overflow:hidden;
+      font-family:"Microsoft YaHei","PingFang SC",sans-serif;color:#16342a}
+  .paper{position:absolute;inset:0;opacity:.5;
+    background-image:
+      repeating-linear-gradient(90deg,rgba(120,105,80,.05) 0 1px,transparent 1px 7px),
+      repeating-linear-gradient(0deg,rgba(120,105,80,.045) 0 1px,transparent 1px 9px);
+  }
+  .blot1{position:absolute;right:-200px;top:-230px;width:680px;height:680px;border-radius:50%;background:radial-gradient(circle,rgba(45,95,79,.075) 0%,rgba(45,95,79,.03) 45%,rgba(45,95,79,0) 72%)}
+  .blot2{position:absolute;left:-240px;bottom:-280px;width:580px;height:580px;border-radius:50%;background:radial-gradient(circle,rgba(178,58,47,.065) 0%,rgba(178,58,47,.026) 45%,rgba(178,58,47,0) 72%)}
+  .card{position:absolute;left:50%;top:166px;transform:translateX(-50%);
+    width:668px;padding:44px 0 38px;background:rgba(255,252,245,.74);
+    border:2px solid rgba(178,58,47,.46);border-radius:10px;text-align:center;z-index:2;
+    box-shadow:0 12px 34px rgba(120,105,80,.13)}
+  .card .n{font-size:60px;font-weight:800;letter-spacing:.2em;color:#16342a;text-indent:.2em}
+  .card .r{width:66px;height:4px;background:#b23a2f;margin:24px auto 0}
+  .card .t{margin-top:24px;font-size:31px;letter-spacing:.16em;color:rgba(22,52,42,.62);text-indent:.16em}
+  .card .t2{margin-top:14px;font-size:26px;letter-spacing:.16em;color:rgba(22,52,42,.4);text-indent:.16em}
+  .seal{position:absolute;right:98px;top:392px;width:86px;height:86px;background:#b23a2f;border-radius:8px;
+    color:#f7ece0;display:flex;align-items:center;justify-content:center;
+    font-size:46px;font-weight:800;transform:rotate(-6deg);z-index:3;opacity:.9;
+    box-shadow:0 7px 18px rgba(178,58,47,.2)}
+</style>
+</head>
+<body>
+  <div class="bg">
+    <div class="paper"></div><div class="blot1"></div><div class="blot2"></div>
+    <div class="card">
+      <div class="n">学中医的凯</div>
+      <div class="r"></div>
+      <div class="t">互联网 10 年 · 转行学中医</div>
+      <div class="t2">聊备考踩坑｜明年再战</div>
+    </div>
+    <div class="seal">凯</div>
+  </div>
+</body>
+</html>
