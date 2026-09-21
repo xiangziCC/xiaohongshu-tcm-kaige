@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1125px;height:633px;overflow:hidden;background:#f2ece0}
+  .bg{width:1125px;height:633px;background:#f4efe2;position:relative;overflow:hidden;
+      font-family:"Microsoft YaHei","PingFang SC",sans-serif;color:#16342a}
+  .paper{position:absolute;inset:0;opacity:.5;
+    background-image:
+      repeating-linear-gradient(90deg,rgba(120,105,80,.05) 0 1px,transparent 1px 7px),
+      repeating-linear-gradient(0deg,rgba(120,105,80,.045) 0 1px,transparent 1px 9px);
+  }
+  .blot1{position:absolute;right:-200px;top:-230px;width:680px;height:680px;border-radius:50%;background:radial-gradient(circle,rgba(45,95,79,.075) 0%,rgba(45,95,79,.03) 45%,rgba(45,95,79,0) 72%)}
+  .blot2{position:absolute;left:-240px;bottom:-280px;width:580px;height:580px;border-radius:50%;background:radial-gradient(circle,rgba(178,58,47,.07) 0%,rgba(178,58,47,.028) 45%,rgba(178,58,47,0) 72%)}
+  .row{position:absolute;left:0;right:0;top:156px;z-index:2;display:flex;align-items:center;justify-content:center;gap:52px}
+  .line{width:190px;height:2px;background:rgba(22,52,42,.2)}
+  .sealbig{width:216px;height:216px;background:#b23a2f;border-radius:14px;
+    color:#f7ece0;display:flex;align-items:center;justify-content:center;text-align:center;
+    font-size:78px;font-weight:800;letter-spacing:.06em;line-height:1.06;
+    transform:rotate(-3.5deg);box-shadow:0 12px 30px rgba(178,58,47,.25)}
+  .drop{position:absolute;left:0;right:0;top:406px;text-align:center;z-index:2}
+  .drop .k{font-size:34px;font-weight:700;letter-spacing:.38em;color:#2d5f4f;text-indent:.38em}
+  .drop .s{margin-top:20px;font-size:24px;letter-spacing:.26em;color:rgba(22,52,42,.4);text-indent:.26em}
+</style>
+</head>
+<body>
+  <div class="bg">
+    <div class="paper"></div><div class="blot1"></div><div class="blot2"></div>
+    <div class="row">
+      <div class="line"></div>
+      <div class="sealbig">转行</div>
+      <div class="line"></div>
+    </div>
+    <div class="drop">
+      <div class="k">中医师承备考实录</div>
+      <div class="s">互联网 10 年 · 带 7 个同窗考过</div>
+    </div>
+  </div>
+</body>
+</html>
