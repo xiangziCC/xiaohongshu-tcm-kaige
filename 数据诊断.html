@@ -66,6 +66,9 @@
   .p-orange{background:var(--orange-soft);color:var(--orange);}
   .p-red{background:var(--red-soft);color:var(--red);}
   .p-gray{background:#f0eeea;color:var(--ink-3);}
+  .up{color:var(--green);font-weight:600;white-space:nowrap;}
+  .down{color:var(--red);font-weight:600;white-space:nowrap;}
+  .flat{color:var(--orange);font-weight:600;white-space:nowrap;}
 
   /* Funnel */
   .funnel{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:24px;margin-bottom:16px;}
@@ -134,18 +137,19 @@
 
 <div class="hero">
   <div class="hero-inner">
-    <div class="eyebrow">Data Review · Week 01</div>
-    <h1>第 1 周数据诊断<br><span class="hl">封面标题有效，互动是唯一断点</span></h1>
+    <div class="eyebrow">Data Review · Snapshot 01 → 02</div>
+    <h1>数据追踪 · 两次快照<br><span class="hl">流量在涨，互动没动</span></h1>
     <div class="lead">
-      统计区间 2026-09-12 ~ 09-19，3 篇累计。数据来源：小红书创作中心「数据概览 + 笔记数据」。
-      这份文档的用途不是"看一次"，而是<b>下周拉新数据后直接对照</b>——环比才有意义。
+      第 1 次快照 2026-09-12 ~ 09-19（3 篇）→ 第 2 次快照 09-14 ~ 09-20（4 篇，滚动 7 日窗口）。
+      数据来源：小红书创作中心「数据中心」。用途不是"看一次"，而是<b>每次拉新数据后直接对照</b>——环比才有意义。
     </div>
     <div class="hero-tags">
-      <span>曝光 711</span>
-      <span>观看 85</span>
-      <span>点击率 12.0%</span>
-      <span>互动 3</span>
-      <span>涨粉 1</span>
+      <span>曝光 906（+27%）</span>
+      <span>观看 118（+39%）</span>
+      <span>点击率 12.9%</span>
+      <span>互动 4</span>
+      <span>涨粉 2</span>
+      <span>主页访客 39（+50%）</span>
     </div>
   </div>
 </div>
@@ -157,7 +161,7 @@
     <a href="#source">观看来源</a>
     <a href="#diag">诊断结论</a>
     <a href="#todo">本周动作</a>
-    <a href="#next">下周对照</a>
+    <a href="#next">快照对照</a>
     <a href="#how">取数口径</a>
     <a href="#fix">判断修正</a>
   </div>
@@ -251,39 +255,41 @@
 
     <div class="tbl-wrap">
       <table>
-        <thead><tr><th>笔记</th><th>发布时间</th><th>观看</th><th>占总观看</th><th>评论</th><th>标题类型</th></tr></thead>
+        <thead><tr><th>笔记</th><th>快照 ① 观看</th><th>快照 ② 观看</th><th>快照 ② 评论</th><th>标题类型</th></tr></thead>
         <tbody>
           <tr>
             <td><strong>该生没有临床经验，不予通过</strong></td>
-            <td>09-12 12:34</td>
             <td class="num">36</td>
-            <td class="num">42.4%</td>
-            <td class="num">2</td>
+            <td class="num">47</td>
+            <td class="num">4</td>
             <td><span class="pill p-gray">结论句</span></td>
           </tr>
           <tr>
             <td>互联网人 → 中医师承 / 专长<br><span style="font-size:12.5px;color:var(--ink-3);">（人设总纲 · 置顶）</span></td>
-            <td>09-16 10:04</td>
             <td class="num">25</td>
-            <td class="num">29.4%</td>
+            <td class="num">30</td>
             <td class="num">0</td>
             <td><span class="pill p-gray">身份陈述</span></td>
           </tr>
           <tr>
             <td>改变我人生的那副药，两块九毛钱</td>
-            <td>09-18 15:02</td>
             <td class="num">24</td>
-            <td class="num">28.2%</td>
+            <td class="num">27</td>
             <td class="num">0</td>
             <td><span class="pill p-gray">故事句</span></td>
           </tr>
         </tbody>
       </table>
     </div>
+    <p style="font-size:12.5px;color:var(--ink-3);margin:-6px 0 16px;">
+      口径：两次快照各自"近 7 日"窗口内的新增观看，窗口有重叠，所以两列不是简单相加关系，看趋势即可。
+      第 4 篇（机构避坑）若已在 09-20 发布，它的数据要等下一次快照才读得到。
+    </p>
 
     <div class="callout good">
-      <b>唯一有评论的是「考官批语」那一篇，而且它的观看最高（36，占 42%）。</b>
-      两件事可能有关：那篇留了一个<b>没被解决的悬念</b>（挂了 / 明年再战），读者有"想安慰一句、想追问一句"的冲动；
+      <b>「考官批语」是唯一有评论的一篇，观看持续最高（47），评论已涨到 4 条。</b>
+      注意一个反常信号：它<b>点赞 0、评论 4</b>——读者不是"觉得好"，是"想说点什么"。
+      这类情绪（委屈 / 不服 / 想问清楚）比点赞值钱得多，因为评论的权重远高于点赞。
       另两篇结尾都是把话说完了的收束句，读者没有开口的理由。
     </div>
   </section>
@@ -325,6 +331,15 @@
       一篇吃搜索的笔记能连续几个月带人进来。<strong>这是下一阶段最值得修的一项。</strong></p>
       <p><strong>主页占 17% 是好事但别高兴太早。</strong>目前基数小（26 人），比例容易虚高。
       等单篇曝光上千了再看这个比例，才有参考价值。</p>
+    </div>
+
+    <div class="card">
+      <div class="card-title">平台自己给的两条信号（快照 ②）</div>
+      <p><strong>「你的主页访客为 39，超过 95% 同类创作者。」</strong>——这是平台原话。
+      人设的吸引力在同赛道里排进前 5%，这是目前最强的一张牌。</p>
+      <p><strong>观看时段峰值集中在 19~22 点</strong>（后台时段分布图）。
+      这条把"晚上 7~10 点发"从经验变成了数据结论。以后所有笔记默认排这个时段。</p>
+      <p style="font-size:13px;color:var(--ink-3);">另：平台还提示要"设置清楚的头像、简介和背景图"。头像目前还是空的——这是零成本的一步，建议这周补上。</p>
     </div>
   </section>
 
@@ -413,27 +428,41 @@
   <section id="next">
     <div class="sec-head">
       <div class="sec-num">06</div>
-      <h2>下周对照表</h2>
-      <div class="sub">空着等你填 —— 环比才是最有用的数</div>
+      <h2>快照对照表</h2>
+      <div class="sub">每次拉新数据往里加一列 —— 环比才是最有用的数</div>
     </div>
 
     <div class="tbl-wrap">
       <table>
-        <thead><tr><th>指标</th><th>第 1 周（09-12~19）</th><th>第 2 周（__/__~__/__）</th><th>环比</th></tr></thead>
+        <thead><tr><th>指标</th><th>快照 ①<br><span style="font-weight:400;color:var(--ink-3);">09-12~19 · 3 篇</span></th><th>快照 ②<br><span style="font-weight:400;color:var(--ink-3);">09-14~20 · 4 篇</span></th><th>环比</th></tr></thead>
         <tbody>
-          <tr><td>累计曝光</td><td class="num">711</td><td class="fill">—</td><td class="fill">—</td></tr>
-          <tr><td>累计观看</td><td class="num">85</td><td class="fill">—</td><td class="fill">—</td></tr>
-          <tr><td>封面点击率</td><td class="num">12.0%</td><td class="fill">—</td><td class="fill">—</td></tr>
-          <tr><td>互动数（赞+藏+评）</td><td class="num">3</td><td class="fill">—</td><td class="fill">—</td></tr>
-          <tr><td>互动率（按曝光）</td><td class="num">0.42%</td><td class="fill">—</td><td class="fill">—</td></tr>
-          <tr><td>评论数</td><td class="num">2</td><td class="fill">—</td><td class="fill">—</td></tr>
-          <tr><td>平均观看时长</td><td class="num">30.3 秒</td><td class="fill">—</td><td class="fill">—</td></tr>
-          <tr><td>涨粉数</td><td class="num">1</td><td class="fill">—</td><td class="fill">—</td></tr>
-          <tr><td>主页访客</td><td class="num">26</td><td class="fill">—</td><td class="fill">—</td></tr>
-          <tr><td>搜索流量占比</td><td class="num">10%</td><td class="fill">—</td><td class="fill">—</td></tr>
-          <tr><td>发布篇数</td><td class="num">3</td><td class="fill">—</td><td class="fill">—</td></tr>
+          <tr><td>曝光</td><td class="num">711</td><td class="num">906</td><td><span class="up">+27%</span></td></tr>
+          <tr><td>观看</td><td class="num">85</td><td class="num">118</td><td><span class="up">+39%</span></td></tr>
+          <tr><td>封面点击率</td><td class="num">12.0%</td><td class="num">12.9%</td><td><span class="up">+0.9pt</span></td></tr>
+          <tr><td>互动数（赞+藏+评）</td><td class="num">3</td><td class="num">4</td><td><span class="flat">+1，但率没动</span></td></tr>
+          <tr><td>互动率（按曝光）</td><td class="num">0.42%</td><td class="num">0.44%</td><td><span class="flat">≈ 持平</span></td></tr>
+          <tr><td>评论数</td><td class="num">2</td><td class="num">4</td><td><span class="up">+2</span></td></tr>
+          <tr><td>平均观看时长</td><td class="num">30.3 秒</td><td class="num">27.6 秒</td><td><span class="down">-2.7 秒</span></td></tr>
+          <tr><td>涨粉数</td><td class="num">1</td><td class="num">2</td><td><span class="up">+1</span></td></tr>
+          <tr><td>主页访客</td><td class="num">26</td><td class="num">39</td><td><span class="up">+50%</span></td></tr>
+          <tr><td>搜索流量占比</td><td class="num">10%</td><td class="num">9%</td><td><span class="down">-1pt</span></td></tr>
+          <tr><td>主页来源占比</td><td class="num">17%</td><td class="num">23%</td><td><span class="up">+6pt</span></td></tr>
+          <tr><td>推荐来源占比</td><td class="num">69%</td><td class="num">61%</td><td><span class="down">-8pt</span></td></tr>
+          <tr><td>发布篇数</td><td class="num">3</td><td class="num">4</td><td><span class="up">+1</span></td></tr>
         </tbody>
       </table>
+    </div>
+
+    <div class="card">
+      <div class="card-title">两次快照读出来的四件事</div>
+      <p><strong>① 封面体系是有效资产，别动。</strong>曝光 +27%、观看 +39%、点击率 12.0% → 12.9%，三连涨。纸感朱印这套封面继续用，不用再纠结。</p>
+      <p><strong>② 互动率几乎没动（0.42% → 0.44%）——这是最该警惕的信号。</strong>
+      说明「只在结尾加钩子」这一招目前没起效。两种可能：读者根本没读到结尾，或者钩子力度不够。
+      → <b>结论：钩子要往前提，提到开头第 2、3 句。</b></p>
+      <p><strong>③ 平均观看时长掉了 2.7 秒（30.3 → 27.6）。</strong>这是唯一变差的指标。
+      可能是新读者变多被稀释，也可能是某篇开头没抓住人。继续盯——跌到 20 秒以下，就要拆文章结构了。</p>
+      <p><strong>④ 搜索占比 10% → 9%，还在原地。</strong>搜索靠的是标题和正文里的关键词密度。
+      → 下一篇的标题要带足搜索词，这是最直接的干预手段。</p>
     </div>
 
     <div class="card">
@@ -486,8 +515,10 @@
           </tr>
           <tr>
             <td>"标题 B 是结论句，所以表现差"</td>
-            <td>「该生没有临床经验，不予通过」<strong>观看最高</strong>（36），且唯一的 2 条评论出在它身上</td>
-            <td>3 篇样本不足以下"标题类型"的结论。悬念句 / 结论句的优劣，<strong>至少攒到 8~10 篇再看</strong>。</td>
+            <td>「该生没有临床经验，不予通过」<strong>两次快照都是观看最高</strong>（36 → 47），
+            也是唯一有评论的（4 条），而且<b>点赞 0</b>——全是评论</td>
+            <td>样本仍只有 4 篇，但趋势连续两次一致。悬念句 / 结论句的优劣，<strong>攒到 8~10 篇再定论</strong>。
+            目前可用的临时口径：<b>标题里带"原话引用 + 具体数字"的，点击和评论都更好</b>。</td>
           </tr>
         </tbody>
       </table>
