@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>长尾词矩阵 · 第 6~10 篇排产</title>
+<style>
+  :root{
+    --bg:#f6f5f2; --panel:#fff; --ink:#1f1d1a; --ink-2:#5c5750; --ink-3:#8d867c;
+    --line:#e6e2da; --accent:#8b5e3c; --accent-soft:#f3ece4;
+    --green:#3f7d5c; --green-soft:#eaf4ee; --blue:#3d6b9e; --blue-soft:#eaf0f7;
+    --orange:#b06a1f; --orange-soft:#fbf1e2; --red:#b03a3a; --red-soft:#fbeceb;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",system-ui,sans-serif;
+    background:var(--bg);color:var(--ink);line-height:1.8;font-size:15px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .hero{
+    background:linear-gradient(150deg,#2c2622 0%,#4a3b30 55%,#6b5138 100%);
+    color:#fff;padding:54px 20px 46px;margin-bottom:34px;
+  }
+  .hero-inner{max-width:900px;margin:0 auto;}
+  .eyebrow{
+    display:inline-block;font-size:12px;letter-spacing:.22em;color:#c9b48f;
+    border:1px solid rgba(201,180,143,.45);padding:4px 12px;border-radius:999px;margin-bottom:20px;
+  }
+  .hero h1{font-size:30px;line-height:1.4;font-weight:700;margin-bottom:14px;}
+  .hero h1 .hl{color:#e0c48f;}
+  .hero .lead{font-size:15px;color:#cdc4b8;max-width:660px;line-height:1.85;}
+  .hero-tags{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px;}
+  .hero-tags span{
+    font-size:13px;padding:5px 13px;border-radius:999px;
+    background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.14);color:#e6ddd0;
+  }
+  .nav{
+    position:sticky;top:0;z-index:50;background:rgba(246,245,242,.93);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--line);margin-bottom:34px;
+  }
+  .nav-inner{
+    max-width:900px;margin:0 auto;padding:11px 20px;display:flex;gap:6px;
+    overflow-x:auto;scrollbar-width:none;
+  }
+  .nav-inner::-webkit-scrollbar{display:none;}
+  .nav a{
+    flex:0 0 auto;font-size:13px;color:var(--ink-2);text-decoration:none;
+    padding:6px 13px;border-radius:999px;white-space:nowrap;transition:.18s;
+  }
+  .nav a:hover{background:var(--accent-soft);color:var(--accent);}
+  .wrap{max-width:900px;margin:0 auto;padding:0 20px 80px;}
+  section{margin-bottom:46px;scroll-margin-top:70px;}
+  .sec-head{display:flex;align-items:baseline;gap:12px;margin-bottom:18px;}
+  .sec-num{
+    font-size:13px;font-weight:700;color:#fff;background:var(--accent);
+    width:26px;height:26px;border-radius:8px;display:grid;place-items:center;
+    flex:0 0 auto;font-family:ui-monospace,monospace;
+  }
+  .sec-head h2{font-size:21px;font-weight:700;}
+  .sec-head .sub{font-size:13px;color:var(--ink-3);margin-left:auto;text-align:right;}
+  .card{
+    background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px 24px;margin-bottom:16px;
+  }
+  .card-title{
+    font-size:15px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px;
+  }
+  .card-title::before{content:"";width:3px;height:14px;background:var(--accent);border-radius:2px;}
+  .card p{color:var(--ink-2);font-size:14px;margin-bottom:10px;}
+  .card p:last-child{margin-bottom:0;}
+  .callout{
+    background:var(--accent-soft);border-left:3px solid var(--accent);
+    border-radius:0 10px 10px 0;padding:16px 20px;margin:14px 0;
+    font-size:14px;color:#5a4633;line-height:1.9;
+  }
+  .callout.warn{background:var(--red-soft);border-color:var(--red);color:#7a4340;}
+  .callout.good{background:var(--green-soft);border-color:var(--green);color:#2f5f47;}
+
+  /* ===== 时间线 ===== */
+  .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px;}
+  .flow .st{
+    background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 14px 15px;
+    position:relative;overflow:hidden;
+  }
+  .flow .st::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--accent);}
+  .flow .st .n{font-family:ui-monospace,monospace;font-size:11.5px;color:var(--ink-3);letter-spacing:.08em;}
+  .flow .st .t{font-size:14px;font-weight:700;margin:3px 0 4px;}
+  .flow .st .d{font-size:12px;color:var(--ink-3);line-height:1.7;}
+  @media(max-width:680px){.flow{grid-template-columns:repeat(2,1fr);}}
+
+  /* ===== 矩阵表 ===== */
+  .tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);margin-bottom:16px;}
+  table{width:100%;border-collapse:collapse;font-size:13px;min-width:700px;}
+  th{
+    background:#faf9f7;text-align:left;font-weight:600;color:var(--ink);
+    padding:11px 13px;border-bottom:1px solid var(--line);white-space:nowrap;font-size:12.5px;
+  }
+  td{padding:11px 13px;border-bottom:1px solid #f1eee9;color:var(--ink-2);vertical-align:top;line-height:1.75;}
+  tr:last-child td{border-bottom:none;}
+  td strong{color:var(--ink);font-weight:600;}
+  .rowh{background:#faf9f7;font-weight:600;color:var(--ink);white-space:nowrap;font-size:12.5px;}
+  .rowh .rw{display:block;font-size:11px;color:var(--ink-3);font-weight:400;margin-top:2px;}
+  .w{display:block;padding:2px 0;}
+  .w::before{content:"· ";color:var(--ink-3);}
+  .kw{color:var(--ink);}
+  .ok-mark{color:var(--green);font-weight:700;}
+  .no-mark{color:var(--red);font-weight:700;}
+
+  .pill{display:inline-block;font-size:11px;font-weight:600;padding:2px 8px;border-radius:999px;margin-right:4px;white-space:nowrap;}
+  .p-go{background:var(--green-soft);color:var(--green);}
+  .p-hold{background:var(--orange-soft);color:var(--orange);}
+  .p-no{background:var(--red-soft);color:var(--red);}
+
+  /* ===== 篇目卡 ===== */
+  .note{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;margin-bottom:18px;}
+  .note-head{display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap;}
+  .note-no{font-family:ui-monospace,monospace;font-size:13px;font-weight:700;color:#fff;background:var(--accent);border-radius:8px;padding:2px 10px;}
+  .note-use{font-size:12px;font-weight:600;padding:3px 10px;border-radius:999px;background:var(--green-soft);color:var(--green);}
+  .note-use.em{background:var(--blue-soft);color:var(--blue);}
+  .note h3{font-size:16.5px;font-weight:700;margin:6px 0 12px;}
+  .title-line{
+    display:flex;align-items:flex-start;gap:10px;background:#fbfaf8;
+    border:1px solid var(--line);border-radius:10px;padding:10px 13px;margin-bottom:8px;
+  }
+  .title-line .t{flex:1;font-size:14px;color:var(--ink);line-height:1.7;}
+  .title-line .tag{font-size:11px;color:var(--ink-3);flex:0 0 auto;padding-top:3px;font-weight:700;}
+  .mini-copy{
+    border:none;cursor:pointer;font-family:inherit;font-size:11.5px;font-weight:600;
+    background:#fff;color:var(--accent);border:1px solid #d9c6ae;border-radius:7px;
+    padding:4px 10px;flex:0 0 auto;transition:.15s;
+  }
+  .mini-copy:hover{background:var(--accent-soft);}
+  .mini-copy.ok{background:var(--green)!important;color:#fff!important;border-color:var(--green)!important;}
+  .meta{font-size:12.5px;color:var(--ink-3);line-height:1.9;margin-top:8px;}
+  .meta b{color:var(--ink-2);font-weight:600;}
+
+  .btn-row{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap;}
+  .btn{border:none;cursor:pointer;font-family:inherit;font-size:13.5px;font-weight:600;border-radius:9px;padding:10px 18px;transition:.15s;}
+  .btn-main{background:var(--accent);color:#fff;}
+  .btn-main:hover{background:#744d30;}
+  .btn.ok{background:var(--green)!important;color:#fff!important;}
+
+  .tagpool{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;}
+  .tagpool span{
+    font-size:13px;padding:6px 13px;border-radius:999px;background:var(--panel);
+    border:1px solid var(--line);color:var(--ink-2);
+  }
+  .tagpool span.core{background:var(--accent-soft);border-color:#e0d0bd;color:#6b5138;font-weight:600;}
+  ul.plain{list-style:none;}
+  ul.plain li{padding:7px 0 7px 18px;position:relative;font-size:14px;color:var(--ink-2);border-bottom:1px dashed #f0ece6;}
+  ul.plain li:last-child{border-bottom:none;}
+  ul.plain li::before{content:"";position:absolute;left:4px;top:16px;width:5px;height:5px;border-radius:50%;background:var(--accent);}
+  .footer{padding:30px 20px 60px;text-align:center;color:var(--ink-3);font-size:12.5px;line-height:1.9;}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">长尾词矩阵 · v1</span>
+    <h1>别抢大词：<span class="hl">四川 × 环节</span><br>那才是新号的搜索位</h1>
+    <p class="lead">
+      头部博主写「中医师承」，我们写「四川中医师承去哪公证」。同一个赛道，不同的格子——
+      头部那几万粉丝的盘子不屑于写这么窄的题，而搜这些词的人，正是一年里真要掏几万块报名的人。
+    </p>
+    <div class="hero-tags">
+      <span>4 个环节 × 3 个地域层级</span>
+      <span>第 6~10 篇排产</span>
+      <span>标题全部带搜索词</span>
+      <span>标签与话题池</span>
+    </div>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#why">01 为什么打长尾</a>
+    <a href="#map">02 关键词地图</a>
+    <a href="#bank">03 词库分档</a>
+    <a href="#plan">04 第 6~10 篇排产</a>
+    <a href="#tags">05 标签池</a>
+    <a href="#rule">06 执行纪律</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <!-- ===== 01 ===== -->
+  <section id="why">
+    <div class="sec-head">
+      <div class="sec-num">01</div>
+      <h2>为什么只打长尾</h2>
+      <div class="sub">一句话：抢不到的不抢</div>
+    </div>
+
+    <div class="card">
+      <p><strong>大词不是"更难"，是"打不进去"。</strong>「中医师承」这个词下面堆着几十万粉丝的账号，
+      新号发同一题，平台没有理由把你排在前面——它按的是账号权重和粉丝基础。我们 2 个粉丝，进去就是垫底。</p>
+      <p><strong>窄词不是"流量小"，是"人准"。</strong>搜「成都师承公证要带什么材料」的人，
+      已经在办事的路上。这种词一天可能只有几十次搜索，但每一次都值钱——他们是要卖课的人，不是一个刷到就划走的围观者。</p>
+      <p><strong>而且窄词有复利。</strong>搜索型笔记不看发布时的热度，看的是长期能不能被搜到。
+      三个月后你写第 20 篇，第 6 篇还在每天带人进来——这是爆款做不到的事。</p>
+    </div>
+
+    <div class="callout warn">
+      <b>但要先把 KPI 换掉。</b>这类内容不能拿"浏览多少"衡量，否则你一定会被「这篇才 200 浏览」打击到。
+      该看的是：<b>搜索占比、收藏数、主页访客</b>——收藏说明"以后要用"，主页访客说明"这人值得再看看"，
+      这两个才是准备期的信号。
+    </div>
+  </section>
+
+  <!-- ===== 02 ===== -->
+  <section id="map">
+    <div class="sec-head">
+      <div class="sec-num">02</div>
+      <h2>关键词地图</h2>
+      <div class="sub">按报考的时间顺序排，不是按热度</div>
+    </div>
+
+    <p style="font-size:14px;color:var(--ink-2);margin-bottom:14px;">
+      一个真实的报考者，搜索是分四个阶段发生的。我们按他搜的顺序布置内容，
+      这样不管他从哪个环节进来，都能在合集里撞见另外三篇。
+    </p>
+
+    <div class="flow">
+      <div class="st">
+        <div class="n">STEP 01</div>
+        <div class="t">想考，先找师父</div>
+        <div class="d">「师承怎么找师父」「带教老师什么条件」</div>
+      </div>
+      <div class="st">
+        <div class="n">STEP 02</div>
+        <div class="t">拜了师，办公证备案</div>
+        <div class="d">「师承公证材料」「备案去哪个部门」</div>
+      </div>
+      <div class="st">
+        <div class="n">STEP 03</div>
+        <div class="t">报名，交材料</div>
+        <div class="d">「报名条件」「材料清单」「报名时间」</div>
+      </div>
+      <div class="st">
+        <div class="n">STEP 04</div>
+        <div class="t">上考场</div>
+        <div class="d">「技能考核考什么」「出师考核流程」</div>
+      </div>
+    </div>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>环节</th>
+            <th>全国通用词（红海）</th>
+            <th>四川专有词（我们的位）</th>
+            <th>能不能打</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="rowh">找师父<span class="rw">STEP 01</span></td>
+            <td>
+              <span class="w">中医师承怎么找师父</span>
+              <span class="w">跟师学习年限要求</span>
+              <span class="w">跟师笔记怎么写</span>
+            </td>
+            <td>
+              <span class="w kw">四川中医师承拜师</span>
+              <span class="w kw">四川找中医师父</span>
+              <span class="w kw">成都中医师承带教老师</span>
+            </td>
+            <td><span class="pill p-go">可打</span>写"怎么判断这个师父靠不靠谱"，不讲人情只讲条件</td>
+          </tr>
+          <tr>
+            <td class="rowh">公证备案<span class="rw">STEP 02</span></td>
+            <td>
+              <span class="w">师承公证需要什么材料</span>
+              <span class="w">师承合同公证流程</span>
+              <span class="w">师承备案去哪个部门</span>
+            </td>
+            <td>
+              <span class="w kw">四川中医师承公证</span>
+              <span class="w kw">成都师承公证处</span>
+              <span class="w kw">四川中医师承备案流程</span>
+            </td>
+            <td><span class="pill p-go">可打（优先）</span>搜索意图最硬——人已经在办事桌前了</td>
+          </tr>
+          <tr>
+            <td class="rowh">报名<span class="rw">STEP 03</span></td>
+            <td>
+              <span class="w">中医师承报名条件</span>
+              <span class="w">师承报名材料清单</span>
+              <span class="w">师承和确有专长的区别</span>
+            </td>
+            <td>
+              <span class="w kw">四川中医师承报名</span>
+              <span class="w kw">四川确有专长报名条件</span>
+              <span class="w kw">四川中医师承报名时间</span>
+            </td>
+            <td><span class="pill p-go">可打（优先）</span>「四川」+「报名」是我们最该占的一格</td>
+          </tr>
+          <tr>
+            <td class="rowh">考试<span class="rw">STEP 04</span></td>
+            <td>
+              <span class="w">确有专长技能考核考什么</span>
+              <span class="w">确有专长面试流程</span>
+              <span class="w">师承出师考核</span>
+            </td>
+            <td>
+              <span class="w kw">四川确有专长技能考核</span>
+              <span class="w kw">四川师承出师考核</span>
+              <span class="w kw">成都中医专长考试</span>
+            </td>
+            <td><span class="pill p-go">可打</span>只有我们真挂过这一场——现场感是别人编不出来的</td>
+          </tr>
+          <tr>
+            <td class="rowh">大词<span class="rw">—</span></td>
+            <td>
+              <span class="w">中医师承</span>
+              <span class="w">中医师承考试</span>
+              <span class="w">中医确有专长</span>
+            </td>
+            <td><span class="w" style="color:var(--ink-3);">（没有地域变体，就是硬碰硬）</span></td>
+            <td><span class="pill p-no">别打</span>只当标签用，不做主标题</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout good">
+      <b>看这张表的读法：</b>中间那一列（四川）和右列（成都）是空的——头部博主没占。
+      我们不需要比他们写得好，只需要写他们不会写的那一格。
+    </div>
+  </section>
+
+  <!-- ===== 03 ===== -->
+  <section id="bank">
+    <div class="sec-head">
+      <div class="sec-num">03</div>
+      <h2>词库分档</h2>
+      <div class="sub">每档怎么用，用在哪</div>
+    </div>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr><th>档位</th><th>词</th><th>用在哪</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="rowh">A 档<br><span class="rw">主攻</span></td>
+            <td>四川中医师承报名 · 四川确有专长报名条件 · 四川中医师承公证 · 成都师承公证 · 四川中医师承备案 · 四川确有专长技能考核</td>
+            <td><strong>标题 + 首句 + 标签</strong>三处都出现。一篇只占 1~2 个 A 档词，别贪多</td>
+          </tr>
+          <tr>
+            <td class="rowh">B 档<br><span class="rw">补位</span></td>
+            <td>师承公证需要什么材料 · 师承怎么找师父 · 跟师笔记怎么写 · 确有专长技能考核考什么 · 师承和确有专长的区别</td>
+            <td>正文小标题里自然带出，吃全国长尾。竞争比大词小得多，但比 A 档难</td>
+          </tr>
+          <tr>
+            <td class="rowh">C 档<br><span class="rw">标签用</span></td>
+            <td>中医师承 · 中医确有专长 · 转行学中医</td>
+            <td><strong>只做标签</strong>，绝不进标题——进去就是给头部当分母</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="card-title">一个容易漏的动作：同一个词要说四五遍</div>
+      <p>新号的搜索权重低，不是因为你写得不好，是平台还没"确认"你跟这个词有关系。
+      确认的方式是<b>反复在你的内容里看到同一个词</b>——标题、正文首句、正文小标题、标签、话题，全都对上。</p>
+      <p><b>所以第 6~10 篇不要每篇换一个新词。</b>「四川中医师承」这个词，前四篇里出现三次以上，
+      比四个不同的词各出现一次，效果好得多。这是这一批最核心的执行纪律。</p>
+    </div>
+  </section>
+
+  <!-- ===== 04 ===== -->
+  <section id="plan">
+    <div class="sec-head">
+      <div class="sec-num">04</div>
+      <h2>第 6~10 篇排产</h2>
+      <div class="sub">标题都可一键复制</div>
+    </div>
+
+    <div class="callout">
+      <b>先说节奏。</b>第 5 篇要跑到 <b>09-24</b> 才满 72 小时（我们第一次同时改三个变量：钩子提前 / 标题带搜索词 / 19:30 定时）。
+      在那之前开新篇，两篇窗口重叠，这批数据就白跑了。<b>所以第 6 篇的建议时点是 09-24（周四）晚 19:30</b>，
+      若到时数据已经很清楚，可提前到 09-23。
+    </div>
+
+    <div class="note">
+      <div class="note-head">
+        <span class="note-no">第 6 篇</span>
+        <span class="note-use">工具 · 问答型</span>
+        <span style="font-size:12px;color:var(--ink-3);">09-24 晚 19:30 ✅ 已定稿</span>
+      </div>
+      <h3>师承公证篇 · 吃「四川中医师承公证」——搜索意图最硬的一格</h3>
+      <div class="title-line">
+        <span class="t" id="t6a">四川师承公证，到底区一级还是市一级？</span>
+        <span class="tag">A</span>
+        <button class="mini-copy" onclick="cp('t6a',this)">复制</button>
+      </div>
+      <div class="title-line">
+        <span class="t" id="t6b">师承公证去哪办？我翻了法规原文才明白</span>
+        <span class="tag">B</span>
+        <button class="mini-copy" onclick="cp('t6b',this)">复制</button>
+      </div>
+      <div class="meta">
+        <b>搜索词</b>：四川中医师承公证 · 成都师承公证 · 师承公证在哪办 · 师承公证 县级以上<br>
+        <b>写法</b>：开头痛点（办之前问了一圈没人给准话）→ 52 号令第九条原文 → 对照第十八条看出规律 → 我的实际选择（去了市级）
+        → 收尾反问"你办的是哪一级"。<br>
+        <b>已核实的事实</b>：公证书是<strong>市级</strong>办的；公证费一千多；公证处 + 卫健委各跑一趟。正文与封面已出（NOTE 06）
+      </div>
+    </div>
+
+    <div class="note">
+      <div class="note-head">
+        <span class="note-no">第 7 篇</span>
+        <span class="note-use">工具 · 收藏型</span>
+        <span style="font-size:12px;color:var(--ink-3);">建议 09-26 ✅ 正文已出</span>
+      </div>
+      <h3>报名材料篇 · 吃「师承报名 / 报名要交什么」</h3>
+      <div class="title-line">
+        <span class="t" id="t7a">四川报中医师承/确有专长，报名要交哪些材料？</span>
+        <span class="tag">A</span>
+        <button class="mini-copy" onclick="cp('t7a',this)">复制</button>
+      </div>
+      <div class="title-line">
+        <span class="t" id="t7b">报名材料那一栏，我照着 52 号令原文一项项对</span>
+        <span class="tag">B</span>
+        <button class="mini-copy" onclick="cp('t7b',this)">复制</button>
+      </div>
+      <div class="meta">
+        <b>搜索词</b>：四川中医师承报名 · 师承报名材料 · 确有专长报名要什么材料<br>
+        <b>为什么它可能最稳</b>：清单类内容是"要存下来照着办"的，收藏率天然高。
+        我们互动短板卡在"看完不说话"，而收藏是唯一不需要读者开口的互动——<strong>这一篇是冲着收藏去的</strong>。<br>
+        <b>口径纪律</b>：只列 52 号令第十四条（师承 7 项）与第二十二条（专长 5 项）的<strong>全国统一要求</strong>；
+        <strong>份数、装订、窗口名称一律不写</strong>——各市自定，写了就是假信息。正文已出（NOTE 07）
+      </div>
+    </div>
+
+    <div class="note">
+      <div class="note-head">
+        <span class="note-no">第 8 篇</span>
+        <span class="note-use">工具 + 一点故事</span>
+        <span style="font-size:12px;color:var(--ink-3);">建议 09-28</span>
+      </div>
+      <h3>找师父篇 · 吃「怎么找师父 / 带教老师条件」</h3>
+      <div class="title-line">
+        <span class="t" id="t8a">找中医师父，我劝你先问清楚这三个问题</span>
+        <span class="tag">A</span>
+        <button class="mini-copy" onclick="cp('t8a',this)">复制</button>
+      </div>
+      <div class="title-line">
+        <span class="t" id="t8b">拜师不是磕头就完事：师承带教老师要满足什么条件</span>
+        <span class="tag">B</span>
+        <button class="mini-copy" onclick="cp('t8b',this)">复制</button>
+      </div>
+      <div class="meta">
+        <b>搜索词</b>：四川中医师承拜师 · 中医师承怎么找师父 · 成都中医师承带教老师<br>
+        <b>红线</b>：可以提"我师父是四川省名中医"（已定的口径），<b>不提姓名、医院、科室</b>。
+        全文只讲条件和方法，不讲人情关系。
+      </div>
+    </div>
+
+    <div class="note">
+      <div class="note-head">
+        <span class="note-no">第 9 篇</span>
+        <span class="note-use">工具 · 亲历</span>
+        <span style="font-size:12px;color:var(--ink-3);">建议 09-30 ✅ 正文已出</span>
+      </div>
+      <h3>技能考核篇 · 吃「技能考核考什么」——这题别人写不了</h3>
+      <div class="title-line">
+        <span class="t" id="t9a">确有专长技能考核挂了，笔试连资格都没有</span>
+        <span class="tag">A</span>
+        <button class="mini-copy" onclick="cp('t9a',this)">复制</button>
+      </div>
+      <div class="title-line">
+        <span class="t" id="t9b">四川确有专长技能考核，我是怎么栽的</span>
+        <span class="tag">B</span>
+        <button class="mini-copy" onclick="cp('t9b',this)">复制</button>
+      </div>
+      <div class="meta">
+        <b>搜索词</b>：四川确有专长技能考核 · 确有专长技能考核考什么 · 确有专长面试流程<br>
+        <b>口径提醒</b>：写"挂了"必须点明是<b>确有专长技能考核</b>这一场（师承出师要 2028 才考），
+        笼统写"考试没过"会造成误导。这也是全站最有辨识度的一篇——真实的失败现场，头部博主写不出来。
+      </div>
+    </div>
+
+    <div class="note">
+      <div class="note-head">
+        <span class="note-no">第 10 篇</span>
+        <span class="note-use em">情绪 · 互动型</span>
+        <span style="font-size:12px;color:var(--ink-3);">建议 10-02 ✅ 正文已出</span>
+      </div>
+      <h3>从评论区长出来的那篇 · 专门冲评论</h3>
+      <div class="title-line">
+        <span class="t" id="t10a">有人跟我说"会成功的"，我没敢回那句话</span>
+        <span class="tag">A</span>
+        <button class="mini-copy" onclick="cp('t10a',this)">复制</button>
+      </div>
+      <div class="title-line">
+        <span class="t" id="t10b">我不打算靠"一定会成功"走过去</span>
+        <span class="tag">B</span>
+        <button class="mini-copy" onclick="cp('t10b',this)">复制</button>
+      </div>
+      <div class="meta">
+        <b>为什么插一篇情绪的</b>：前四篇都是工具型，读者是"来查资料的"，看完就走。
+        这一篇是<b>专门制造说话的动机</b>——留言那个人（江苏，"会成功的"）大概率会回来认领。
+        工具型拉搜索，情绪型拉评论，两类交替排，账号才不瘸。
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn btn-main" onclick="cpAll(this)">复制全部标题（10 条）</button>
+    </div>
+  </section>
+
+  <!-- ===== 05 ===== -->
+  <section id="tags">
+    <div class="sec-head">
+      <div class="sec-num">05</div>
+      <h2>标签与话题池</h2>
+      <div class="sub">每篇 6~9 个，别堆</div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">必带（每篇都有）</div>
+      <div class="tagpool">
+        <span class="core" id="tag1">#中医师承</span>
+        <span class="core">#转行学中医</span>
+        <span class="core">#中医备考</span>
+      </div>
+      <button class="btn btn-main" style="margin-top:6px;" onclick="cpText('#中医师承 #转行学中医 #中医备考',this)">复制必带标签</button>
+    </div>
+
+    <div class="card">
+      <div class="card-title">地域标签（这次新增，吃本地搜索）</div>
+      <div class="tagpool">
+        <span class="core">#四川中医</span>
+        <span class="core">#成都</span>
+        <span class="core">#四川中医师承</span>
+      </div>
+      <p style="margin-top:10px;">这三个词是从评论区长出来的（"你是四川哪的哇"）。
+      加上它们，本地流量池才有可能把我们收进去——这是目前搜索占比卡在 9% 最直接的对策。</p>
+    </div>
+
+    <div class="card">
+      <div class="card-title">按篇选配</div>
+      <div class="tagpool">
+        <span>#师承公证</span>
+        <span>#师承备案</span>
+        <span>#中医确有专长</span>
+        <span>#师承出师考核</span>
+        <span>#中医专长医师</span>
+        <span>#互联网转行</span>
+        <span>#大龄转行</span>
+        <span>#备考日记</span>
+      </div>
+      <p style="margin-top:10px;"><b>用法</b>：必带 3 个 + 地域 1~2 个 + 按篇选配 3~4 个 = 7~9 个。
+      不要为了凑数把大词也塞进去，标签堆太多反而稀释。</p>
+    </div>
+  </section>
+
+  <!-- ===== 06 ===== -->
+  <section id="rule">
+    <div class="sec-head">
+      <div class="sec-num">06</div>
+      <h2>执行纪律</h2>
+      <div class="sub">三条，比选题更重要</div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">① 一次只动一个变量</div>
+      <ul class="plain">
+        <li>第 5 篇同时改了三个（钩子位置 / 标题策略 / 发布时段），所以必须跑满 72 小时才能归因。</li>
+        <li>第 6 篇起：<b>只在"选题方向"上换新</b>（四川本地），钩子写法、发布时段、标签结构都沿用第 5 篇的。这样才知道是"地域选题"起没起效。</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">② 09-24 拉数时只看三个数</div>
+      <ul class="plain">
+        <li><b>搜索占比</b>——有没有从 9% 往上走。动了 = 搜索路径成立，长尾策略加码；没动 = 瓶颈在账号搜索权重，对策是"同一个词反复用 + 提高发布密度"，不是换选题。</li>
+        <li><b>收藏数</b>——工具型内容的真指标，比点赞重要。</li>
+        <li><b>读者评论数</b>（不是后台显示的那个"评论数"，那个含你自己的回复）。</li>
+      </ul>
+    </div>
+
+    <div class="callout warn">
+      <b>③ 政策细节我不替你编。</b>这份矩阵给的是<b>词、选题方向、标题写法</b>——
+      至于四川各市州的报名时间、材料份数、公证费用、窗口名称，我不写。
+      我手上没有官方来源，编出来的是假信息，发出去会害了真在办事的人。<br><br>
+      两个办法取其一：<b>（a）</b>你把自己实际办过的细节说给我，我帮你组织成内容；
+      <b>（b）</b>我去查四川省中医药管理局和各市州卫健委的官方公告，查到的原文给你过目，你确认后再写进正文。
+      你选哪个都行。
+    </div>
+
+    <div class="callout">
+      <b>一句话总结这一批的打法：</b>用「四川 × 环节」的窄词当入口，
+      用一个词重复四五遍去喂搜索权重，用工具型内容换收藏、用情绪型内容换评论。
+      <b>要盯的不是哪篇爆，是三个月后搜索进人稳不稳。</b>
+    </div>
+  </section>
+
+</div>
+
+<footer class="footer">
+  长尾词矩阵 v1 ｜ 学中医的凯 ｜ 配套：数据诊断.html · 首批内容包-人设与文案.html<br>
+  词与选题方向为运营建议；政策细节须以官方公告为准
+</footer>
+
+<script>
+  function cp(id, btn){
+    var t = document.getElementById(id).innerText.trim();
+    copyText(t, btn);
+  }
+  function cpText(t, btn){ copyText(t, btn); }
+  function cpAll(btn){
+    var ids = ['t6a','t6b','t7a','t7b','t8a','t8b','t9a','t9b','t10a','t10b'];
+    var out = ids.map(function(id, i){
+      return String(i+1) + '. ' + document.getElementById(id).innerText.trim();
+    }).join('\n');
+    copyText(out, btn);
+  }
+  function copyText(text, btn){
+    function ok(){
+      btn.classList.add('ok');
+      if(btn.dataset.plain === undefined){ btn.dataset.plain = btn.textContent; }
+      btn.textContent = '已复制';
+      setTimeout(function(){ btn.textContent = btn.dataset.plain; btn.classList.remove('ok'); delete btn.dataset.plain; }, 1600);
+    }
+    function fallback(){
+      var ta = document.createElement('textarea');
+      ta.value = text; ta.style.position='fixed'; ta.style.opacity='0';
+      document.body.appendChild(ta); ta.select();
+      try{ document.execCommand('copy'); ok(); }catch(e){ alert('复制失败，请手动选择'); }
+      document.body.removeChild(ta);
+    }
+    if(navigator.clipboard && window.isSecureContext){
+      navigator.clipboard.writeText(text).then(ok).catch(fallback);
+    } else { fallback(); }
+  }
+</script>
+
+</body>
+</html>
