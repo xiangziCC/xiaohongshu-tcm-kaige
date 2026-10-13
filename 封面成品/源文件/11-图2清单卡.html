@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1242px;height:1660px;overflow:hidden;background:#f2ece0}
+  .card{
+    width:1242px;height:1660px;background:#f4efe2;color:#16342a;
+    font-family:"Microsoft YaHei","PingFang SC",sans-serif;
+    padding:96px 92px;display:flex;flex-direction:column;position:relative;overflow:hidden;
+  }
+  .paper{position:absolute;inset:0;opacity:.5;
+    background-image:
+      repeating-linear-gradient(90deg,rgba(120,105,80,.05) 0 1px,transparent 1px 7px),
+      repeating-linear-gradient(0deg,rgba(120,105,80,.045) 0 1px,transparent 1px 9px);
+  }
+  .blot{position:absolute;left:-180px;bottom:-200px;width:620px;height:620px;border-radius:50%;background:rgba(45,95,79,.05)}
+  .kicker{font-size:38px;letter-spacing:.32em;font-weight:700;color:#2d5f4f;position:relative;z-index:2}
+  .krule{width:120px;height:6px;background:#b23a2f;margin-top:24px;position:relative;z-index:2}
+
+  .head{margin-top:52px;position:relative;z-index:2}
+  .head h1{font-size:74px;font-weight:900;line-height:1.22;letter-spacing:.01em;color:#16342a}
+  .head .sub{font-size:34px;font-weight:600;color:rgba(22,52,42,.52);margin-top:20px;letter-spacing:.03em}
+
+  .items{margin-top:56px;display:flex;flex-direction:column;gap:44px;position:relative;z-index:2}
+  .it{display:flex;gap:28px;align-items:flex-start}
+  .num{
+    flex:0 0 92px;height:92px;border-radius:50%;background:#b23a2f;color:#f7ece0;
+    display:flex;align-items:center;justify-content:center;
+    font-size:50px;font-weight:900;line-height:1;
+  }
+  .txt{padding-top:2px}
+  .txt .t{font-size:48px;font-weight:800;line-height:1.3;letter-spacing:.01em}
+  .txt .d{font-size:35px;font-weight:500;color:rgba(22,52,42,.6);line-height:1.5;margin-top:12px}
+
+  .quote{
+    margin-top:auto;position:relative;z-index:2;
+    background:rgba(45,95,79,.07);border-left:10px solid #2d5f4f;
+    padding:38px 40px;border-radius:6px;
+  }
+  .quote p{font-size:40px;font-weight:700;line-height:1.55;color:#16342a;letter-spacing:.01em}
+  .quote p .hl{color:#b23a2f}
+
+  .foot{display:flex;align-items:center;font-size:34px;color:rgba(22,52,42,.5);margin-top:44px;position:relative;z-index:2}
+  .foot .name{font-weight:800;letter-spacing:.14em;color:#16342a}
+  .foot .rule{flex:1;height:2px;background:rgba(22,52,42,.16);margin:0 26px}
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="paper"></div><div class="blot"></div>
+
+    <div class="kicker">转行中医实录</div>
+    <div class="krule"></div>
+
+    <div class="head">
+      <h1>签字这件事<br>我踩了坑才明白的三条</h1>
+      <div class="sub">老专长报名 · 推荐医shi那一栏</div>
+    </div>
+
+    <div class="items">
+      <div class="it">
+        <div class="num">1</div>
+        <div class="txt">
+          <div class="t">先交钱、只答应你一句口头话的，留凭证</div>
+          <div class="d">合同、收据、聊天记录，能留就留。我一样都没有。</div>
+        </div>
+      </div>
+      <div class="it">
+        <div class="num">2</div>
+        <div class="txt">
+          <div class="t">退钱要找对人，不是讲道理</div>
+          <div class="d">主管跟我东拉西扯，就是不给退；我换了个人找销售，7 天全退。</div>
+        </div>
+      </div>
+      <div class="it">
+        <div class="num">3</div>
+        <div class="txt">
+          <div class="t">机构替不了你「找人」这一环</div>
+          <div class="d">那两栏签字，说白了是熟人关系，钱买不来。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="quote">
+      <p>你要找的不是懂这一行的人，<br>是<span class="hl">有执业医shi证、又肯给你签字的人</span>——<br>因为真的会有人上门问他。</p>
+    </div>
+
+    <div class="foot">
+      <span class="name">学中医的凯</span>
+      <span class="rule"></span>
+    </div>
+  </div>
+</body>
+</html>
