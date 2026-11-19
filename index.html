@@ -30,10 +30,45 @@
   a.cv .hint{margin-top:3px;text-align:center;font-size:11.5px;color:#8a8276}
   .bggrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,340px));gap:14px}
   .foot{margin-top:30px;text-align:center;color:#8a8276;font-size:12px}
+  .latest{margin-bottom:28px;background:#fff;border:2px solid var(--gold);border-radius:16px;padding:22px}
+  .latest h2{margin:0 0 18px}
+  .latest-list{display:grid;gap:14px}
+  .latest-article{display:flex;align-items:center;gap:16px}
+  .latest-article img{display:block;width:84px;height:auto;border-radius:6px}
+  .latest-article h3{font-size:16px;line-height:1.6;margin-bottom:8px;color:var(--green-d)}
+  .latest-article .links{display:flex;gap:14px;flex-wrap:wrap;font-size:14px}
+  .latest a{color:var(--green-d);text-underline-offset:3px}
+  @media(max-width:480px){.latest{padding:18px}.latest-article{gap:12px}.latest-article img{width:70px}}
 </style>
 </head>
 <body>
 <div class="wrap">
+  <section class="latest" id="new-stories" aria-labelledby="latest-title">
+    <h2 id="latest-title">最新三篇 · 跟师学中医</h2>
+    <div class="latest-list">
+      <article class="latest-article">
+        <a href="follow-study.html#story-1"><img src="follow-study-01.png" width="1242" height="1660" alt="辞职跟诊封面"></a>
+        <div>
+          <h3>辞职跟诊一年，师父让我回去上班</h3>
+          <div class="links"><a href="follow-study.html#story-1">正文和标签</a><a href="follow-study-01.png" download>下载封面</a></div>
+        </div>
+      </article>
+      <article class="latest-article">
+        <a href="follow-study.html#story-2"><img src="follow-study-02.png" width="1242" height="1660" alt="伤寒论跟诊封面"></a>
+        <div>
+          <h3>《伤寒论》背过了，跟诊时我还是没认出来</h3>
+          <div class="links"><a href="follow-study.html#story-2">正文和标签</a><a href="follow-study-02.png" download>下载封面</a></div>
+        </div>
+      </article>
+      <article class="latest-article">
+        <a href="follow-study.html#story-3"><img src="follow-study-03.png" width="1242" height="1660" alt="第一次跟诊封面"></a>
+        <div>
+          <h3>第一次跟诊，师父就在考虑能不能收你</h3>
+          <div class="links"><a href="follow-study.html#story-3">正文和标签</a><a href="follow-study-03.png" download>下载封面</a></div>
+        </div>
+      </article>
+    </div>
+  </section>
   <div class="hero">
     <h1>小红书 · 中医师承运营方案</h1>
     <div class="sub">账号「学中医的凯」｜从互联网人转行中医师承的全心路历程</div>
@@ -44,7 +79,6 @@
     </div>
   </div>
 
-  <p><a href="follow-study.html">跟师学中医 · 前三篇｜正文、标签与封面下载 →</a></p>
   <h2>交付物导航</h2>
   <div class="grid">
     <a class="card" href="小红书运营方案.html">
