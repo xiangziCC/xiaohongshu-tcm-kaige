@@ -1,293 +1,291 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>小红书·中医师承运营方案｜学中医的凯</title>
-<style>
-  :root{--bg:#faf8f3;--ink:#2c2c2a;--green:#2d5f4f;--green-d:#1f4438;--gold:#b5893f;--line:#e3ddd0;}
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--ink);line-height:1.75;padding:40px 22px 70px}
-  .wrap{max-width:760px;margin:0 auto}
-  .hero{background:linear-gradient(135deg,var(--green-d),var(--green));color:#fff;border-radius:16px;padding:30px 28px}
-  .hero h1{font-size:23px;letter-spacing:1px}
-  .hero .sub{margin-top:8px;color:#d8e6df;font-size:14px}
-  .hero .tags{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
-  .hero .tags span{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);padding:4px 10px;border-radius:20px;font-size:12.5px}
-  h2{font-size:18px;color:var(--green-d);border-left:5px solid var(--gold);padding-left:12px;margin:32px 0 14px}
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
-  a.card{display:block;text-decoration:none;background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 20px;transition:.15s}
-  a.card:hover{border-color:var(--gold);box-shadow:0 4px 14px rgba(0,0,0,.06);transform:translateY(-2px)}
-  a.card .t{font-size:16px;font-weight:600;color:var(--green-d)}
-  a.card .d{margin-top:6px;font-size:13px;color:#8a8276}
-  a.card .go{margin-top:10px;font-size:12.5px;color:var(--gold);font-weight:600}
-  .note{margin-top:28px;background:#f3efe6;border-left:4px solid var(--gold);padding:12px 16px;border-radius:0 8px 8px 0;font-size:13px;color:var(--green-d)}
-  .covergrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,300px));gap:14px}
-  a.cv{display:block;text-decoration:none;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px;transition:.15s}
-  a.cv:hover{border-color:var(--gold);box-shadow:0 4px 14px rgba(0,0,0,.06);transform:translateY(-2px)}
-  a.cv img{width:100%;display:block;border-radius:8px}
-  a.cv .cap{margin-top:9px;text-align:center;font-size:13.5px;font-weight:600;color:var(--green-d)}
-  a.cv .hint{margin-top:3px;text-align:center;font-size:11.5px;color:#8a8276}
-  .bggrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,340px));gap:14px}
-  .foot{margin-top:30px;text-align:center;color:#8a8276;font-size:12px}
-  .stories{margin-bottom:36px}
-  .stories > h2{margin:0 0 20px}
-  .stories article{margin:0 0 24px;padding:26px;background:#fff;border:1px solid var(--line);border-radius:14px;scroll-margin-top:18px}
-  .stories article h2{margin:0 0 20px;padding:0;border:0;font-size:23px;line-height:1.5;color:var(--green-d)}
-  .stories article > p{font-size:17px;line-height:1.9;margin:0 0 18px;overflow-wrap:break-word}
-  .stories .cover{margin:0 0 26px;width:min(100%,320px)}
-  .stories .cover img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:8px}
-  .stories .cover figcaption{margin-top:8px;font-size:14px}
-  .stories .tags{font-size:15px;line-height:1.9;color:var(--green);margin:22px 0 16px;overflow-wrap:break-word}
-  .stories a{color:var(--green-d);text-underline-offset:3px}
-  .stories .actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-  .stories button{border:1px solid var(--green);background:var(--green-d);color:#fff;border-radius:8px;padding:10px 14px;font:inherit;font-size:14px;cursor:pointer}
-  .stories a:focus-visible,.stories button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
-  .stories .copy-status{font-size:14px;color:var(--green)}
-  @media(max-width:480px){body{padding:24px 16px 48px}.stories article{padding:20px}.stories article h2{font-size:22px}.stories article > p{font-size:16px}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>学中医的凯 · 最新五篇 · 拜师与学医</title>
+  <link rel="icon" href="data:,">
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f4efe5;
+      --sheet: #fffdf8;
+      --ink: #233b31;
+      --muted: #6c7166;
+      --line: #dfd8c9;
+      --red: #b23a2f;
+      --green: #21483a;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-padding-top: 90px; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.85 "Microsoft YaHei","PingFang SC",sans-serif; }
+    a { color: inherit; text-underline-offset: 4px; }
+    button,a { -webkit-tap-highlight-color: transparent; }
+    button { cursor: pointer; font: inherit; }
+    a:focus-visible,button:focus-visible { outline: 3px solid var(--red); outline-offset: 4px; }
+    .page-header { max-width: 1160px; margin: 0 auto; padding: 44px 24px 28px; }
+    .account { color: var(--green); font-weight: 700; margin: 0 0 8px; font-size: 15px; }
+    h1 { font-size: clamp(28px,4vw,40px); line-height: 1.4; margin: 0 0 12px; letter-spacing: -.025em; }
+    .intro { color: var(--muted); margin: 0; max-width: 720px; font-size: 14px; }
+    .navigation { position: sticky; top: 0; z-index: 10; background: #f4efe5f5; backdrop-filter: blur(12px); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .nav-links { display: flex; gap: 8px; overflow-x: auto; max-width: 1160px; margin: 0 auto; padding: 12px 24px; }
+    .nav-links a { white-space: nowrap; text-decoration: none; padding: 7px 16px; border: 1px solid transparent; border-radius: 24px; font-size: 14px; }
+    .nav-links a:hover { border-color: var(--line); background: var(--sheet); }
+    .nav-links a[aria-current="true"] { background: var(--green); color: #fff; }
+    main { width: min(100% - 48px,1112px); margin: 28px auto 64px; }
+    .post { display: grid; grid-template-columns: 280px minmax(0,1fr); gap: 40px; background: var(--sheet); border: 1px solid var(--line); border-radius: 16px; padding: 32px; margin: 0 0 26px; scroll-margin-top: 90px; }
+    figure { margin: 0; }
+    figure > a { display: block; }
+    figure img { display: block; width: 100%; height: auto; border-radius: 9px; border: 1px solid var(--line); }
+    figcaption { margin-top: 13px; }
+    .image-download { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 12px; font-size: 13px; color: var(--green); text-decoration: none; }
+    .image-download span { color: var(--muted); font-size: 12px; }
+    .topic { margin: 0 0 8px; color: var(--red); font-size: 13px; font-weight: 700; }
+    .topic span { color: var(--muted); font-weight: 400; }
+    h2 { font-size: clamp(23px,2.6vw,29px); line-height: 1.5; margin: 0; letter-spacing: -.02em; }
+    .post-header { padding-bottom: 23px; margin-bottom: 25px; border-bottom: 1px solid var(--line); }
+    .copy-title { border: 0; border-bottom: 1px solid var(--line); border-radius: 0; background: none; color: var(--muted); padding: 6px 0 1px; font-size: 13px; margin-top: 7px; }
+    .post-body { font-size: 17px; line-height: 1.95; color: #303a32; overflow-wrap: anywhere; }
+    .post-body p { margin: 0 0 18px; }
+    .post-body p:last-child { margin-bottom: 0; }
+    .review-note { background: #f4eee0; border-left: 3px solid #b5893f; color: #665c43; padding: 10px 13px; margin: 0 0 23px; font-size: 13px; }
+    .post-tags { margin: 24px 0 18px; font-size: 14px; line-height: 1.9; color: var(--green); overflow-wrap: anywhere; }
+    .source { font-size: 12px; color: var(--muted); margin: 0 0 18px; }
+    .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding-top: 18px; border-top: 1px solid var(--line); }
+    .primary,.secondary { display: inline-block; border-radius: 7px; padding: 10px 15px; font-size: 14px; line-height: 1.5; text-decoration: none; }
+    .primary { color: #fff; background: var(--green); border: 1px solid var(--green); }
+    .secondary { color: var(--green); background: transparent; border: 1px solid var(--line); }
+    .copy-status { color: var(--muted); font-size: 13px; }
+    @media(min-width:901px) { .cover-column figure { position: sticky; top: 98px; } }
+    @media(max-width:900px) {
+      .post { grid-template-columns: 220px minmax(0,1fr); gap: 26px; padding: 25px; }
+    }
+    @media(max-width:680px) {
+      html { scroll-padding-top: 76px; }
+      .page-header { padding: 25px 18px 22px; }
+      .nav-links { padding: 10px 12px; gap: 2px; }
+      .nav-links a { padding: 6px 12px; font-size: 13px; }
+      main { width: calc(100% - 24px); margin-top: 18px; }
+      .post { display: flex; flex-direction: column; gap: 22px; padding: 20px; border-radius: 12px; scroll-margin-top: 80px; }
+      .cover-column { width: min(100%,320px); }
+      .post-body { font-size: 16px; }
+      .post-header { padding-bottom: 20px; margin-bottom: 22px; }
+      .actions { gap: 10px; }
+    }
+    @media(prefers-reduced-motion:reduce) { html { scroll-behavior: auto; } }
+  </style>
 </head>
 <body>
-<div class="wrap">
-  <section class="stories" id="new-stories" aria-labelledby="latest-title">
-    <h2 id="latest-title">最新三篇 · 跟师学中医</h2>
-<article id="story-3" aria-labelledby="title-3">
-    <h2 id="title-3">第一次跟诊，师父就在考虑能不能收你</h2>
-    <figure class="cover">
-      <img src="follow-study-03-20261123.png" width="1242" height="1660" alt="第一次跟诊，师父就在考虑能不能收你" loading="eager">
-      <figcaption><a href="follow-study-03-20261123.png" download>下载封面 PNG</a></figcaption>
-    </figure>
-    <p>第一次去诊室跟诊，我还不知道，师父已经在考我了。</p>
-    <p>我跟师父是通过一位师姐认识的。第一次见面，他问我：“看过哪些中医书？”</p>
-    <p>我就把自己读过的几本说了一遍。师父听完，说：“我明天坐诊，你来嘛。”</p>
-    <p>我问他几点去。他说医院八点上班，他自己七点左右就到了。我一想，总不能让师父先到，我再慢慢悠悠地过去吧。第二天早上五点，我就起来了。⏰</p>
-    <p>到了诊室，我坐在师父左边。病人一个接一个，我就在旁边听着、看着。</p>
-    <p>看着看着，师父突然转过头来问我：“你说，我为什么这么讲？”</p>
-    <p>他问的就是刚才跟病人说的那句话。正好跟我读过的《黄帝内经》有关，我就把自己知道的说了出来。师父“嗯”了一声，又接着看诊。</p>
-    <p>那一上午，师父就这么一边看诊，一边陆陆续续问了我好几个问题。有的我能答上来，有的就卡住了。😅</p>
-    <p>后来想想，他听我说看过那些书，总得看看我是不是真的读过，读进去多少。到了诊室，眼前就有病人，顺着刚才说的话、开的方子问一问，我知道多少，他也就清楚了。</p>
-    <p>那半天跟下来，师父决定收下我。看完诊已经是中午了，他叫我一起去吃饭，还把大师姐也叫来了。</p>
-    <p>我们师门里，新收了哪个徒弟，大师姐都要知道，以后有什么事也找她。就这样，我开始跟着师父学医了。</p>
-    <div class="tags" aria-label="小红书标签">#中医师承 #中医拜师 #拜师学艺 #第一次跟诊 #转行学中医 #学中医的凯</div>
-    <div class="actions">
-      <button type="button" data-action="copy">复制正文和标签</button>
-      <button type="button" data-action="download">下载文案 TXT</button>
-      <span class="copy-status" role="status"></span>
-    </div>
-  </article>
+  <header class="page-header">
+    <p class="account">学中医的凯</p>
+    <h1>最新五篇 · 拜师与学医</h1>
+    <p class="intro">封面、正文与标签直接查看，文案和图片均可复制或下载。</p>
+  <p style="margin-top:16px;font-size:16px"><a href="archive-before-20261126.html" style="color:inherit;text-underline-offset:4px">往期文章与运营资料</a></p></header>
+  <nav class="navigation" aria-label="文章目录">
+    <div class="nav-links"><a href="#post-1" aria-current="true">推荐师父</a><a href="#post-2">收费</a><a href="#post-3">带学</a><a href="#post-4">师承路径</a><a href="#post-5">自学踩坑</a></div>
+  </nav>
+  <main>
+    <article class="post" id="post-1" aria-labelledby="post-1-title">
+      <div class="cover-column">
+        <figure>
+          <a href="20261126-cover-1.png" aria-label="打开《我是真的服气了》封面原图"><img src="20261126-cover-1.png" width="1242" height="1660" alt="求求了，别一上来就让我，给你推荐师父"></a>
+          <figcaption><a class="image-download" href="20261126-cover-1.png" download>下载封面 PNG <span>1242 × 1660</span></a></figcaption>
+        </figure>
+      </div>
+      <div class="copy-column">
+        <header class="post-header">
+          <p class="topic">推荐师父 <span>· 正文 445 字</span></p>
+          <h2 id="post-1-title">我是真的服气了</h2>
+          <button class="copy-title" type="button" data-copy="title">复制标题</button>
+        </header>
+        
+        <div class="post-body"><p>“你能帮我介绍师父吗？”</p>
+<p>“你能帮我推荐师父吗？”</p>
+<p>后台经常收到这种私信。上来就一句，自己的情况一点没说。我连你是谁、学过什么都不知道，这个口怎么开？😅</p>
+<p>我理解你们的处境，毕竟我当年也是这么过来的。想学中医，找不到师父，也不知道找谁问，像个没头苍蝇一样到处撞。</p>
+<p>在拜师之前，我已经自学了三年，看倪海厦的讲课视频，自己读四大经典。</p>
+<p>后来是师姐引荐，我才有机会见到师父。可见了面，师父照样问我读过什么书，叫我去跟诊，看我知道多少，才决定收不收。</p>
+<p>所以你来找我，至少先把这些讲清楚吧。</p>
+<p>你为什么想学？看过哪些书？现在学到哪了？平时还要上班吗，能不能抽出时间跟诊？</p>
+<p>有些人说自己真心想学，我一问做过什么准备，书没看，基础没学，就先到处找人介绍师父了。你说真心想学，总得让我看到一点吧？</p>
+<p>师父看我的面子，抽时间见你，你一问三不知，我怎么解释？下次真碰到一个认真学的人，我再去引荐，他还信不信我？</p>
+<p>你一句“帮我介绍一下”，我就得替一个完全不了解的人去张这个嘴？🤷</p>
+<p>把你已经做过的事讲出来，先让我了解你，我才知道这忙能不能帮。</p></div>
+        <p class="post-tags">#中医师承 #中医拜师 #转行学中医 #拜师学艺 #学中医的凯</p>
+        
+        <div class="actions">
+          <button class="primary" type="button" data-copy="body">复制正文和标签</button>
+          <a class="secondary" href="20261126-article-1.txt" download>下载文案 TXT</a>
+          <span class="copy-status" role="status" aria-live="polite"></span>
+        </div>
+      </div>
+    </article>
 
-  <article id="story-1" aria-labelledby="title-1">
-    <h2 id="title-1">辞职跟诊一年，师父让我回去上班</h2>
-    <figure class="cover">
-      <img src="follow-study-01.png" width="1242" height="1660" alt="辞职跟诊一年，师父让我回去上班">
-      <figcaption><a href="follow-study-01.png" download>下载封面 PNG</a></figcaption>
-    </figure>
-    <p>快过年了，那天师父看完最后一个病人，已经是中午了。我问他，过完年什么时候开始出诊？他问我明年怎么打算，我说，我想接着跟您。</p>
-    <p>他说：“别跟了你，回去上班吧，先把证考下来。”</p>
-    <p>我当时心里一下就沉下去了。脑子里就一个念头：师父是不是不想让我再跟了？😟</p>
-    <p>他又补了一句：“等你考完证，还可以回来。上班这段时间有啥不懂的，微信上问我。”</p>
-    <p>那一年，我辞了职，在医院旁边租了个房子。师父出诊我就去，他不出诊，我就在出租屋里看四大经典，背《伤寒论》条文。每天早上他到了要换衣服、泡茶，我就卡着那几分钟，把昨晚没想明白的条文拿去问他。要是病人来得早，我就留到第二天问。</p>
-    <p>我原来是想这么跟三年的。其实自己也知道，手里那点钱，撑不了三年。</p>
-    <p>我跟家里打电话说这事。我妈一听就说：“你好不容易遇到这么好的师父，你就跟嘛。家里砸锅卖铁也供你。”我爸在旁边就说了一个字：“对！”🥹</p>
-    <p>后来有一次跟师父通电话，他还问我钱够不够花，说缺钱就跟他说，他给我拿。再想起那句“别跟了你”，我才听出来，他也在替我算日子。</p>
-    <div class="tags" aria-label="小红书标签">#转行学中医 #中医师承 #跟诊日常 #辞职学中医 #中医学习 #学中医的凯</div>
-    <div class="actions">
-      <button type="button" data-action="copy">复制正文和标签</button>
-      <button type="button" data-action="download">下载文案 TXT</button>
-      <span class="copy-status" role="status"></span>
-    </div>
-  </article>
+    <article class="post" id="post-2" aria-labelledby="post-2-title">
+      <div class="cover-column">
+        <figure>
+          <a href="20261126-cover-2.png" aria-label="打开《让你推荐个师父，还要收钱？》封面原图"><img src="20261126-cover-2.png" width="1242" height="1660" alt="拜托，宁哪位？"></a>
+          <figcaption><a class="image-download" href="20261126-cover-2.png" download>下载封面 PNG <span>1242 × 1660</span></a></figcaption>
+        </figure>
+      </div>
+      <div class="copy-column">
+        <header class="post-header">
+          <p class="topic">收费 <span>· 正文 339 字</span></p>
+          <h2 id="post-2-title">让你推荐个师父，还要收钱？</h2>
+          <button class="copy-title" type="button" data-copy="title">复制标题</button>
+        </header>
+        <aside class="review-note">收费服务的范围、内容和价格待确认。</aside>
+        <div class="post-body"><p>让我介绍师父，有些人想的可能就是，发个微信，问一句话，多大点事？</p>
+<p>可我连你学到哪一步都不知道，怎么替你去问？</p>
+<p>我得先了解你想学什么、做过哪些准备，再考虑有没有合适的老师。即使老师愿意见面，最后收不收，也得人家自己决定。</p>
+<p>这些都要花时间。</p>
+<p>还有师父对我的信任。</p>
+<p>我两位师父都很关心我。工作怎么样，钱够不够花，女朋友找了没有，他们都会问。有合适的姑娘，还想着给我介绍。😂</p>
+<p>师兄师姐出去开馆，师父也会帮着介绍患者。</p>
+<p>我很珍惜这样的关系。所以有人让我推荐，我得想清楚，自己带过去的是个什么样的人。</p>
+<p>你觉得我问一句就完了，可人家为什么愿意见你？多少也看着我的面子。</p>
+<p>如果要我花时间了解你的情况、帮着梳理学习方向，服务内容和费用可以提前说清楚，觉得合适再聊。</p>
+<p>可不能你一句“帮我个忙”，我就得把这些全安排好吧？</p></div>
+        <p class="post-tags">#中医师承 #中医拜师 #转行学中医 #跟师学医 #学中医的凯</p>
+        
+        <div class="actions">
+          <button class="primary" type="button" data-copy="body">复制正文和标签</button>
+          <a class="secondary" href="20261126-article-2.txt" download>下载文案 TXT</a>
+          <span class="copy-status" role="status" aria-live="polite"></span>
+        </div>
+      </div>
+    </article>
 
-  <article id="story-2" aria-labelledby="title-2">
-    <h2 id="title-2">《伤寒论》背过了，跟诊时我还是没认出来</h2>
-    <figure class="cover">
-      <img src="follow-study-02.png" width="1242" height="1660" alt="《伤寒论》背过了，到了诊室我还是没认出来" loading="lazy">
-      <figcaption><a href="follow-study-02.png" download>下载封面 PNG</a></figcaption>
-    </figure>
-    <p>有次跟诊，我问师父：“四逆散，您是不是开得挺少的？”</p>
-    <p>他说：“我开得不少啊。”</p>
-    <p>我心想，我天天坐您旁边，怎么一次都没认出来？🤔 我又问，那四逆散证到底是什么样的？</p>
-    <p>师父说：“你跟着看吧。”</p>
-    <p>后来有一天，一位老人来看诊，穿得挺讲究。等他走了，师父才跟我说起他以前的情况。大夏天，他手脚冷得厉害，出门还得往脚底贴暖宝宝。</p>
-    <p>师父说：“他就是四逆散证。”</p>
-    <p>我当时就想，哦，原来如此！原来这就是我之前问的那个。要是师父不指给我看，我可能自己背一辈子，也想不明白这条在看诊时是什么样。</p>
-    <p>我第一遍背《伤寒论》，有些条文背得挺顺，但我没见过书里说的情况。后来跟诊碰上了，又只想得起来“哎，书上好像有这么一条”，具体怎么说已经忘了。</p>
-    <p>回去把书翻开，再背一遍。📖 有时候就读到那么几个字，脑子里突然想起白天坐在师父对面的那个人。</p>
-    <p>这就是我说的“常背常新”。那位大夏天还得贴暖宝宝的老人，我到现在还记得。</p>
-    <div class="tags" aria-label="小红书标签">#伤寒论 #中医经典 #中医师承 #跟诊日常 #中医学习 #学中医的凯</div>
-    <div class="actions">
-      <button type="button" data-action="copy">复制正文和标签</button>
-      <button type="button" data-action="download">下载文案 TXT</button>
-      <span class="copy-status" role="status"></span>
-    </div>
-  </article>
-  </section>
-  <div class="hero">
-    <h1>小红书 · 中医师承运营方案</h1>
-    <div class="sub">账号「学中医的凯」｜从互联网人转行中医师承的全心路历程</div>
-    <div class="tags">
-      <span>不露脸 · 只露手和桌面</span>
-      <span>涨粉变现 · 卖课程</span>
-      <span>心路历程是包装，通关方法论是货</span>
-    </div>
-  </div>
+    <article class="post" id="post-3" aria-labelledby="post-3-title">
+      <div class="cover-column">
+        <figure>
+          <a href="20261126-cover-3.png" aria-label="打开《穴位学过，足三里却答不上来》封面原图"><img src="20261126-cover-3.png" width="1242" height="1660" alt="说自己都学过，我问一句就卡了"></a>
+          <figcaption><a class="image-download" href="20261126-cover-3.png" download>下载封面 PNG <span>1242 × 1660</span></a></figcaption>
+        </figure>
+      </div>
+      <div class="copy-column">
+        <header class="post-header">
+          <p class="topic">带学 <span>· 正文 354 字</span></p>
+          <h2 id="post-3-title">穴位学过，足三里却答不上来</h2>
+          <button class="copy-title" type="button" data-copy="title">复制标题</button>
+        </header>
+        <aside class="review-note">带学安排写为筹备中，具体交付和价格待确认。</aside>
+        <div class="post-body"><p>有人跟我说，四大经典看过，针灸穴位也学过。</p>
+<p>我就问了一句：“足三里怎么定位？”</p>
+<p>没答上来。</p>
+<p>我也没卡着他，非得一字不差背我学过的答案。按自己学过的说，能讲清楚就行。但这个问题，他确实没答出来。</p>
+<p>来找我聊的人，很多都想学针灸。你说学过，我总得问问你现在学到哪一步吧？😅</p>
+<p>我自己也自学过。视频看过，书也翻过，碰到熟悉的内容，就觉得“这个我知道”。</p>
+<p>真让自己讲出来，又卡住了。</p>
+<p>所以我现在想做带学，先把这些基础上的问题弄清楚。尤其是已经签了师承，资料买了一堆，却一直不知道怎么学下去的人。</p>
+<p>先聊聊你之前怎么学的，再看看哪些记住了，哪些还没弄明白，后面才知道从哪里补。</p>
+<p>我在整理面向2027年备考的带学安排。计划在成都准备师承、专长考核的，可以先把自己的学习情况讲清楚，再聊适不适合一起学。</p>
+<p>具体怎么带、包含哪些内容，我整理好会说清楚。</p></div>
+        <p class="post-tags">#中医学习 #中医师承 #针灸学习 #师承备考 #学中医的凯</p>
+        
+        <div class="actions">
+          <button class="primary" type="button" data-copy="body">复制正文和标签</button>
+          <a class="secondary" href="20261126-article-3.txt" download>下载文案 TXT</a>
+          <span class="copy-status" role="status" aria-live="polite"></span>
+        </div>
+      </div>
+    </article>
 
-  <h2>交付物导航</h2>
-  <div class="grid">
-    <a class="card" href="小红书运营方案.html">
-      <div class="t">① 总运营方案</div>
-      <div class="d">账号定位 / 人设 / 30选题 / 产品阶梯 / 变现 / 红线 / 日历</div>
-      <div class="go">打开看板 →</div>
-    </a>
-    <a class="card" href="首批内容包-人设与文案.html">
-      <div class="t">② 首批内容包</div>
-      <div class="d">人设档案 + <b>11 篇</b>完整文案 ｜ <b>最新一篇已置顶到页面最上方</b>，配图 + 正文 + 一键复制在同一屏，打开就能发</div>
-      <div class="go">打开文案 →</div>
-    </a>
-    <a class="card" href="封面生成器.html">
-      <div class="t">③ 封面生成器</div>
-      <div class="d">3:4 交互封面，改字换色截图即用</div>
-      <div class="go">打开工具 →</div>
-    </a>
-    <a class="card" href="配图拍摄清单.html">
-      <div class="t">④ 配图拍摄清单</div>
-      <div class="d">门面三件套 + 9图模板 + 5篇配图 + 素材库 + 红线 + 拍摄勾选</div>
-      <div class="go">打开清单 →</div>
-    </a>
-    <a class="card" href="数据诊断.html">
-      <div class="t">⑤ 数据诊断</div>
-      <div class="d"><b>三次快照对照</b>（曝光 1,617 / 观看 213 / 时长 39.7 秒）｜ 断点定位 + 平台五维排位 + 取数口径 + 评论区</div>
-      <div class="go">打开诊断 →</div>
-    </a>
-    <a class="card" href="长尾词矩阵.html">
-      <div class="t">⑥ 长尾词矩阵</div>
-      <div class="d">4 环节 × 3 地域词表 ｜ 第 6~10 篇排产 + 10 条标题草案（<b>第 6~10 篇正文已出</b>）+ 标签池</div>
-      <div class="go">打开矩阵 →</div>
-    </a>
-  </div>
+    <article class="post" id="post-4" aria-labelledby="post-4-title">
+      <div class="cover-column">
+        <figure>
+          <a href="20261126-cover-4.png" aria-label="打开《找师父前，先把这件事想明白》封面原图"><img src="20261126-cover-4.png" width="1242" height="1660" alt="找师父，先把目的说清楚"></a>
+          <figcaption><a class="image-download" href="20261126-cover-4.png" download>下载封面 PNG <span>1242 × 1660</span></a></figcaption>
+        </figure>
+      </div>
+      <div class="copy-column">
+        <header class="post-header">
+          <p class="topic">师承路径 <span>· 正文 320 字</span></p>
+          <h2 id="post-4-title">找师父前，先把这件事想明白</h2>
+          <button class="copy-title" type="button" data-copy="title">复制标题</button>
+        </header>
+        
+        <div class="post-body"><p>你让我推荐师父，那我得先问一句，你想跟着学什么？</p>
+<p>是准备签师承合同、办公证，以后参加出师考核？还是已经有这方面的安排，想再跟老师学针灸、学方剂？</p>
+<p>两方面都想要，也可以，但得先讲清楚。</p>
+<p>走第52号令规定的师承出师考核路径，指导老师要符合相应条件，师徒签订师承关系合同后，还要办理公证。这些都有具体规定。</p>
+<p>我认识的老师里，也有医术很好、但暂时不符合这条路径带教条件的。</p>
+<p>如果你已经把考证的安排弄好了，就是想认真学一门技术，那可以了解的老师，又会多一些。</p>
+<p>我也是跟师父学习以后，慢慢认识师兄师姐和其他老师，才有机会向他们请教。</p>
+<p>所以来找我推荐，先说清楚你的目标、基础和时间安排。我了解得多一点，才能判断有没有合适的人。</p>
+<p>光一句“想找个好师父”，范围实在太大了。🤷</p></div>
+        <p class="post-tags">#中医师承 #中医拜师 #师承公证 #跟师学医 #学中医的凯</p>
+        <p class="source"><a href="https://www.nhc.gov.cn/wjw/c100221/202201/6ce13fc2e98f4e35973ef62d1e6f32da.shtml" target="_blank" rel="noopener">核对依据 · 国家卫健委第52号令</a></p>
+        <div class="actions">
+          <button class="primary" type="button" data-copy="body">复制正文和标签</button>
+          <a class="secondary" href="20261126-article-4.txt" download>下载文案 TXT</a>
+          <span class="copy-status" role="status" aria-live="polite"></span>
+        </div>
+      </div>
+    </article>
 
-  <h2>封面 · 前 12 篇 · 14 张图（1242×1660 · 可直接发）</h2>
-  <p><a href="预览-第12篇.html">第12篇：考官问我专长，我却只说了药渣泡脚｜图文预览与PNG下载 →</a></p><div class="covergrid"><a class="cv" href="预览-第12篇.html"><img src="封面成品/12-专长考核.svg" alt="第12篇封面"><div class="cap">12 · 专长考核现场</div></a><a class="cv" href="预览-第12篇.html"><img src="封面成品/12-专长考核-现场经过.svg" alt="第12篇现场经过"><div class="cap">12 · 现场经过</div></a>
-    <a class="cv" href="封面成品/01-人设总纲.png" target="_blank" rel="noopener">
-      <img src="封面成品/01-人设总纲.png" alt="第 1 篇封面：互联网干了 10 年，栽在中医考试上">
-      <div class="cap">01 · 人设总纲（置顶）</div>
-      <div class="hint">点开 → 长按保存</div>
-    </a>
-    <a class="cv" href="封面成品/02-两块九.png" target="_blank" rel="noopener">
-      <img src="封面成品/02-两块九.png" alt="第 2 篇封面：两块九毛钱">
-      <div class="cap">02 · 两块九</div>
-      <div class="hint">点开 → 长按保存</div>
-    </a>
-    <a class="cv" href="封面成品/03-考官批语.png" target="_blank" rel="noopener">
-      <img src="封面成品/03-考官批语.png" alt="第 3 篇封面：考官写在卷子上的那句话">
-      <div class="cap">03 · 考官批语</div>
-      <div class="hint">点开 → 长按保存</div>
-    </a>
-    <a class="cv" href="封面成品/04-机构避坑.png" target="_blank" rel="noopener">
-      <img src="封面成品/04-机构避坑.png" alt="第 4 篇封面：差点交 5 万">
-      <div class="cap">04 · 机构避坑</div>
-      <div class="hint">点开 → 长按保存</div>
-    </a>
-    <a class="cv" href="封面成品/05-拜师流程.png" target="_blank" rel="noopener">
-      <img src="封面成品/05-拜师流程.png" alt="第 5 篇封面：拜师全流程">
-      <div class="cap">05 · 拜师流程</div>
-      <div class="hint">点开 → 长按保存</div>
-    </a>
-    <a class="cv" href="封面成品/06-师承公证.png" target="_blank" rel="noopener">
-      <img src="封面成品/06-师承公证.png" alt="第 6 篇封面：师承公证到底区级还是市级">
-      <div class="cap">06 · 师承公证<span style="font-weight:400;color:#8a8276">（待发 09-24）</span></div>
-      <div class="hint">点开 → 长按保存</div>
-    </a>
-    <a class="cv" href="封面成品/07-报名材料.png" target="_blank" rel="noopener">
-      <img src="封面成品/07-报名材料.png" alt="第 7 篇封面：报名交什么，原文抄给你">
-      <div class="cap">07 · 报名材料<span style="font-weight:400;color:#8a8276">（09-26）</span></div>
-      <div class="hint">点开 → 长按保存</div>
-    </a>
-    <a class="cv" href="封面成品/08-找师父.png" target="_blank" rel="noopener">
-      <img src="封面成品/08-找师父.png" alt="第 8 篇封面：师父怎么找，我被考了三题">
-      <div class="cap">08 · 找师父<span style="font-weight:400;color:#8a8276">（09-28）</span></div>
-      <div class="hint">点开 → 长按保存</div>
-    </a>
-    <a class="cv" href="封面成品/09-技能考核.png" target="_blank" rel="noopener">
-      <img src="封面成品/09-技能考核.png" alt="第 9 篇封面：技能挂了，笔试没资格">
-      <div class="cap">09 · 技能考核<span style="font-weight:400;color:#8a8276">（09-30）</span></div>
-      <div class="hint">点开 → 长按保存</div>
-    </a>
-    <a class="cv" href="封面成品/10-情绪篇.png" target="_blank" rel="noopener">
-      <img src="封面成品/10-情绪篇.png" alt="第 10 篇封面：会成功的，我不敢信">
-      <div class="cap">10 · 情绪篇<span style="font-weight:400;color:#8a8276">（10-02）</span></div>
-      <div class="hint">点开 → 长按保存</div>
-    </a>
-    <a class="cv" href="封面成品/11-推荐医师签字.png" target="_blank" rel="noopener">
-      <img src="封面成品/11-推荐医师签字.png" alt="第 11 篇封面图 1：我花了 1 万 5，连医师都没见着">
-      <div class="cap">11 · 推荐医师签字<span style="font-weight:400;color:#8a8276">（待发 10-09 · 图 1）</span></div>
-      <div class="hint">点开 → 长按保存</div>
-    </a>
-    <a class="cv" href="封面成品/11-推荐医师签字-图2清单.png" target="_blank" rel="noopener">
-      <img src="封面成品/11-推荐医师签字-图2清单.png" alt="第 11 篇图 2：签字这件事，我踩了坑才明白的三条">
-      <div class="cap">11 · 踩坑三条<span style="font-weight:400;color:#8a8276">（待发 10-09 · 图 2 · 冲收藏）</span></div>
-      <div class="hint">点开 → 长按保存</div>
-    </a>
-  </div>
-  <div style="margin-top:14px;font-size:12.5px;color:#8a8276;line-height:1.9;">
-    源文件：<a href="封面成品/源文件/01-人设总纲.html" target="_blank" rel="noopener" style="color:#b5893f;font-weight:600;">封面成品/源文件/</a>
-    —— 12 个纯 CSS 的 html，双击就能看，改文案 / 换表情后重新截图即可。<br>
-    ⚠️ 第 11 篇是<b>两张图</b>：图 1 封面 + 图 2 「三条经验」清单卡，发布时两张都要选上。<br>
-    备选：无表情的纸感版、深绿 A / B 版仍保留在 <b>封面成品/</b> 目录，需要时随时换。
-  </div>
-
-  <h2>主页背景图 · 已选定 C 版（1125×633 · 与封面同色系）</h2>
-  <div class="bggrid">
-    <a class="cv" href="封面成品/主页背景图/主页背景图-C-朱印转行.png" target="_blank" rel="noopener">
-      <img src="封面成品/主页背景图/主页背景图-C-朱印转行.png" alt="主页背景图 C 版：朱印「转行」">
-      <div class="cap">C · 朱印「转行」✓ 已选定</div>
-      <div class="hint">点开 → 长按保存 → 主页上传</div>
-    </a>
-  </div>
-  <div style="margin-top:14px;font-size:12.5px;color:#8a8276;line-height:1.9;">
-    备选：<a href="封面成品/主页背景图/主页背景图-三版对比.png" target="_blank" rel="noopener" style="color:#b5893f;font-weight:600;">三版对比图</a>（A 极简留白 / B 纸签卡 / C 朱印）。
-    源文件：<a href="封面成品/主页背景图/源文件/C-朱印转行.html" target="_blank" rel="noopener" style="color:#b5893f;font-weight:600;">封面成品/主页背景图/源文件/</a>
-    —— 三个纯 CSS 的 html，改字换色后重新截图即可。<br>
-    安全区：文字全部压在垂直中带（约 y 156~410），上下各留 1/4 空白，头图被裁切或压头像都不会切到字。
-  </div>
-
-  <div class="note">
-    说明：所有交付物以 <b>HTML 为准</b>，双击可看、离线可用。原文案草稿（.md）仅作源文件留存。
-    账号人设统一口径：学中医的凯；不露脸，只露手和桌面；师父为四川省名中医，可提师徒关系不提姓名/科室/方子。
-  </div>
-
-  <div class="foot">学中医的凯 · 项目首页 v1.1 · 由 Git 仓库托管，手机端可访问</div>
-</div>
-<script>
-  document.querySelectorAll('#new-stories article').forEach(article => {
-    const title = article.querySelector('h2').textContent.trim();
-    const status = article.querySelector('.copy-status');
-    const body = Array.from(article.querySelectorAll(':scope > p, :scope > .tags'), part =>
-      part.textContent.trim()
-    ).join('\n\n');
-
-    article.querySelector('[data-action="copy"]').addEventListener('click', async () => {
-      try {
-        await navigator.clipboard.writeText(body);
-        status.textContent = '已复制';
-      } catch {
-        status.textContent = '复制未成功，可以下载文案。';
-      }
+    <article class="post" id="post-5" aria-labelledby="post-5-title">
+      <div class="cover-column">
+        <figure>
+          <a href="20261126-cover-5.png" aria-label="打开《我花钱买的中医资料，群里免费发》封面原图"><img src="20261126-cover-5.png" width="1242" height="1660" alt="以为找到组织了？，又是套路"></a>
+          <figcaption><a class="image-download" href="20261126-cover-5.png" download>下载封面 PNG <span>1242 × 1660</span></a></figcaption>
+        </figure>
+      </div>
+      <div class="copy-column">
+        <header class="post-header">
+          <p class="topic">自学踩坑 <span>· 正文 307 字</span></p>
+          <h2 id="post-5-title">我花钱买的中医资料，群里免费发</h2>
+          <button class="copy-title" type="button" data-copy="title">复制标题</button>
+        </header>
+        
+        <div class="post-body"><p>拜师之前，我自学了三年中医。</p>
+<p>小时候就喜欢，后来开始看倪海厦的讲课视频，越看越想学，资料也就越买越多。</p>
+<p>几十块的、几百块的，视频、纸质笔记，觉得有用就买。</p>
+<p>买回来才发现，有的缺内容，有的视频糊得看不清。想着缺什么补什么，就一直找，一直买。</p>
+<p>后来进了学习群，一看，我之前花钱买的那些资料，群里直接免费发。😅</p>
+<p>你以为终于找到组织了？</p>
+<p>恰恰相反，这也是他们的套路。先拿免费的把你引进来，再慢慢收割。</p>
+<p>我当时加的一些群里，资料发着发着，就开始卖别的了。祛湿茶、各种药丸，有人问病，就有人给方子，连药材也能接着卖给你。</p>
+<p>我当时一心想把中医学明白，碰到有人分享资料、回答问题，就愿意听，慢慢也就信了。</p>
+<p>现在回头看看，觉得自己当时真是一个大傻X。</p></div>
+        <p class="post-tags">#自学中医 #中医学习 #学习资料 #踩坑经历 #学中医的凯</p>
+        
+        <div class="actions">
+          <button class="primary" type="button" data-copy="body">复制正文和标签</button>
+          <a class="secondary" href="20261126-article-5.txt" download>下载文案 TXT</a>
+          <span class="copy-status" role="status" aria-live="polite"></span>
+        </div>
+      </div>
+    </article></main>
+  <script>
+    document.querySelectorAll('.post').forEach(article => {
+      const title = article.querySelector('h2').textContent;
+      const text = Array.from(article.querySelectorAll('.post-body p'), p => p.textContent).join('\n\n')
+        + '\n\n' + article.querySelector('.post-tags').textContent;
+      const status = article.querySelector('.copy-status');
+      article.querySelectorAll('[data-copy]').forEach(button => {
+        button.addEventListener('click', async () => {
+          const value = button.dataset.copy === 'title' ? title : text;
+          try {
+            await navigator.clipboard.writeText(value);
+            status.textContent = button.dataset.copy === 'title' ? '标题已复制' : '正文和标签已复制';
+          } catch {
+            status.textContent = '复制未成功，请长按文字，或下载文案。';
+          }
+        });
+      });
     });
-
-    article.querySelector('[data-action="download"]').addEventListener('click', () => {
-      const file = new Blob(['\uFEFF', title, '\n\n', body, '\n'], { type: 'text/plain;charset=utf-8' });
-      const link = document.createElement('a');
-      const url = URL.createObjectURL(file);
-      link.href = url;
-      link.download = title + '.txt';
-      document.body.append(link);
-      link.click();
-      link.remove();
-      setTimeout(() => URL.revokeObjectURL(url), 1000);
-    });
-  });
-</script>
+    const navigation = Array.from(document.querySelectorAll('.nav-links a'));
+    const articleObserver = new IntersectionObserver(entries => {
+      const visible = entries.filter(entry => entry.isIntersecting);
+      if (!visible.length) return;
+      const id = visible[0].target.id;
+      navigation.forEach(link => {
+        if (link.hash === '#' + id) link.setAttribute('aria-current','true');
+        else link.removeAttribute('aria-current');
+      });
+    }, { rootMargin: '-15% 0px -65% 0px' });
+    document.querySelectorAll('.post').forEach(article => articleObserver.observe(article));
+  </script>
 </body>
 </html>
-
